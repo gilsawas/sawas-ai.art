@@ -21,7 +21,9 @@
             line-height: 1.8;
         }
         
-        /* Header Rouge */
+        /* ========================================
+           HEADER ROUGE
+           ======================================== */
         .site-header {
             background: #8B0000;
             padding: 20px 40px;
@@ -30,7 +32,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            border-bottom: 2px solid #E5B906;
+            border-bottom: 2px solid #D4AF37; /* ✨ CORRIGÉ : Or pâle */
         }
         
         .header-content {
@@ -42,10 +44,10 @@
         }
         
         .site-logo {
-            font-family: 'Audiowide', 'Saira Condensed', sans-serif;;
+            font-family: 'Audiowide', 'Saira Condensed', sans-serif;
             font-size: 24px;
             font-weight: 400;
-            color: #E5B906;
+            color: #D4AF37; /* ✨ CORRIGÉ : Or pâle */
             text-decoration: none;
             letter-spacing: 2px;
         }
@@ -56,7 +58,8 @@
         }
         
         .nav-link {
-            color: #E5B906;
+            font-family: 'Audiowide', sans-serif; /* ✨ AJOUTÉ : Police Audiowide */
+            color: #D4AF37; /* ✨ CORRIGÉ : Or pâle */
             text-decoration: none;
             font-size: 16px;
             transition: color 0.3s;
@@ -66,7 +69,9 @@
             color: #FFFFFF;
         }
         
-        /* Hero Section */
+        /* ========================================
+           HERO SECTION
+           ======================================== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -79,30 +84,34 @@
         }
         
         .tagline {
+            font-family: 'Audiowide', sans-serif; /* ✨ AJOUTÉ : Police Audiowide */
             font-size: 1.5em;
-            color: #E5B906;
+            color: #D4AF37; /* ✨ CORRIGÉ : Or pâle */
             margin-bottom: 30px;
             font-style: italic;
         }
         
-         .main-title {
+        .main-title {
             font-family: 'Audiowide', 'Saira Condensed', sans-serif;
             font-size: 3.5em;
             font-weight: 400;
-            color: #E5B906;
+            color: #D4AF37; /* ✨ CORRIGÉ : Or pâle */
             margin-bottom: 25px;
             line-height: 1.3;
         }
         
         .subtitle {
+            font-family: 'Audiowide', sans-serif; /* ✨ AJOUTÉ : Police Audiowide */
             font-size: 1.3em;
-            color: #E5B906;
+            color: #D4AF37; /* ✨ CORRIGÉ : Or pâle */
             margin-bottom: 40px;
             font-style: italic;
             max-width: 800px;
         }
         
-        /* Choix ART / LUZ */
+        /* ========================================
+           CHOIX ART / LUZ
+           ======================================== */
         .choice-container {
             display: flex;
             gap: 60px;
@@ -113,7 +122,7 @@
         
         .choice-card {
             background: rgba(139, 0, 0, 0.2);
-            border: 2px solid #E5B906;
+            border: 2px solid #D4AF37; /* ✨ CORRIGÉ : Or pâle */
             padding: 60px 80px;
             text-decoration: none;
             color: #FFFFFF;
@@ -125,39 +134,43 @@
         .choice-card:hover {
             background: rgba(139, 0, 0, 0.4);
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4); /* ✨ CORRIGÉ : Or pâle en RGBA */
         }
         
         .choice-title {
-            font-family: 'Audiowide', 'Saira Condensed', sans-serif;;
+            font-family: 'Audiowide', 'Saira Condensed', sans-serif;
             font-size: 3em;
             font-weight: 400;
-            color: #E5B906;
+            color: #D4AF37; /* ✨ CORRIGÉ : Or pâle */
             margin-bottom: 20px;
         }
         
         .choice-desc {
+            font-family: 'Audiowide', sans-serif; /* ✨ AJOUTÉ : Police Audiowide */
             font-size: 1.2em;
             color: #e0e0e0;
             line-height: 1.6;
         }
         
-        /* Footer */
+        /* ========================================
+           FOOTER
+           ======================================== */
         .site-footer {
             background: #8B0000;
-            border-top: 2px solid #E5B906;
+            border-top: 2px solid #D4AF37; /* ✨ CORRIGÉ : Or pâle */
             padding: 30px 40px;
             text-align: center;
             margin-top: 100px;
         }
         
         .footer-text {
-            color: #E5B906;
+            font-family: 'Audiowide', sans-serif; /* ✨ AJOUTÉ : Police Audiowide */
+            color: #D4AF37; /* ✨ CORRIGÉ : Or pâle */
             font-size: 14px;
         }
         
         .footer-link {
-            color: #E5B906;
+            color: #D4AF37; /* ✨ CORRIGÉ : Or pâle */
             text-decoration: none;
         }
         
@@ -165,6 +178,9 @@
             color: #FFFFFF;
         }
         
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
         @media (max-width: 768px) {
             .main-title {
                 font-size: 2.5em;
@@ -179,7 +195,9 @@
             }
         }
         
-        /* Étoiles scintillantes */
+        /* ========================================
+           ÉTOILES SCINTILLANTES
+           ======================================== */
         .stars {
             position: absolute;
             top: 0;
@@ -188,6 +206,7 @@
             height: 100%;
             pointer-events: none;
         }
+        
         .star {
             position: absolute;
             width: 2px;
@@ -196,6 +215,7 @@
             border-radius: 50%;
             animation: twinkle 3s ease-in-out infinite;
         }
+        
         .star:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
         .star:nth-child(2) { top: 40%; left: 80%; animation-delay: 0.5s; }
         .star:nth-child(3) { top: 60%; left: 20%; animation-delay: 1s; }
@@ -204,12 +224,15 @@
         .star:nth-child(6) { top: 70%; left: 40%; animation-delay: 2.5s; }
         .star:nth-child(7) { top: 15%; left: 90%; animation-delay: 0.8s; }
         .star:nth-child(8) { top: 85%; left: 15%; animation-delay: 1.8s; }
+        
         @keyframes twinkle {
             0%, 100% { opacity: 0.3; transform: scale(1); }
             50% { opacity: 1; transform: scale(1.5); }
         }
         
-        /* Étoiles filantes */
+        /* ========================================
+           ÉTOILES FILANTES
+           ======================================== */
         .shooting-star {
             position: absolute;
             width: 2px;
@@ -219,21 +242,25 @@
             box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
             animation: shoot 3s linear infinite;
         }
+        
         .shooting-star:nth-child(9) {
             top: 10%;
             left: 80%;
             animation-delay: 0s;
         }
+        
         .shooting-star:nth-child(10) {
             top: 50%;
             left: 20%;
             animation-delay: 2s;
         }
+        
         .shooting-star:nth-child(11) {
             top: 80%;
             left: 60%;
             animation-delay: 4s;
         }
+        
         @keyframes shoot {
             0% {
                 transform: translateX(0) translateY(0);
@@ -243,10 +270,6 @@
                 transform: translateX(-300px) translateY(300px);
                 opacity: 0;
             }
-        }
-        
-        .hero {
-            position: relative;
         }
     </style>
 </head>
@@ -278,6 +301,7 @@
         <div class="shooting-star"></div>
         <div class="shooting-star"></div>
         <div class="shooting-star"></div>
+        
         <p class="tagline">Celui qui dialogue avec les algorithmes...</p>
         
         <h1 class="main-title">Bienvenue dans l'univers visuel</h1>
@@ -315,4 +339,3 @@
     </footer>
 </body>
 </html>
-
