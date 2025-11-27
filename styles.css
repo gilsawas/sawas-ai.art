@@ -89,6 +89,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Audiowide', 'Cinzel', sans-serif;
     color: var(--gold);
     line-height: var(--leading-tight);
+    font-weight: 400; /* Plus léger comme l'ancien */
 }
 
 h1 {
@@ -202,7 +203,7 @@ a:hover {
     align-items: center;
     text-align: center;
     padding: var(--space-3xl) var(--space-lg) var(--space-2xl);
-    background: var(--gradient-hero);
+    background: #000000; /* Noir pur comme ancien site */
     overflow: hidden;
 }
 
