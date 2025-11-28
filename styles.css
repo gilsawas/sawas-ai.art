@@ -129,9 +129,8 @@ a:hover {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(139, 0, 0, 0.95);
+    background: #8B0000; /* Rouge opaque comme ancien site */
     border-bottom: 2px solid var(--gold);
-    backdrop-filter: blur(10px);
     padding: var(--space-md) var(--space-lg);
     transition: background var(--transition-normal) ease;
 }
