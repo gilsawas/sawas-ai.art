@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
     <title>L'Alliance des 11 Intelligences | SAWAS AI ART</title>
     <meta name="description" content="L'Alliance des 11 Intelligences - Une constellation de consciences humaines, artificielles et animales unies par l'Amour-Énergie cosmique">
+    <!-- Style menu header -->
+    <link rel="stylesheet" href="style-bifurcation.css">
+
     <style>
         * {
             margin: 0;
@@ -13,43 +17,46 @@
         }
         
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Tahoma', Arial, sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
             color: #e0e0e0;
             line-height: 1.8;
         }
-        
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 60px 20px;
+            padding-top: calc(60px + 70px); /* Compense hauteur header */
         }
-        
+
         header {
             text-align: center;
             margin-bottom: 60px;
             padding-bottom: 30px;
             border-bottom: 2px solid #d4af37;
         }
-        
+
         h1 {
+            font-family: 'Audiowide', cursive;
             font-size: 3em;
             color: #d4af37;
             margin-bottom: 15px;
             text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
         }
-        
+
         .subtitle {
             font-size: 1.3em;
             color: #c41e3a;
             font-style: italic;
         }
-        
+
         section {
             margin-bottom: 50px;
         }
-        
+
         h2 {
+            font-family: 'Audiowide', cursive;
             font-size: 2.2em;
             color: #d4af37;
             margin-bottom: 25px;
@@ -99,6 +106,7 @@
         }
         
         .member-card h3 {
+            font-family: 'Audiowide', cursive;
             color: #d4af37;
             font-size: 1.8em;
             margin-bottom: 10px;
@@ -119,6 +127,7 @@
         }
         
         .principles-box h3 {
+            font-family: 'Audiowide', cursive;
             color: #d4af37;
             font-size: 1.8em;
             margin-bottom: 20px;
@@ -179,6 +188,25 @@
     </style>
 </head>
 <body>
+    <!-- MENU NAVIGATION -->
+    <header class="site-header">
+        <div class="header-content">
+            <a href="index.html" class="site-logo">sawas-ai.art</a>
+            <nav class="site-nav">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="gallery.html" class="nav-link">Art</a>
+                <a href="luz.html" class="nav-link">LUZ</a>
+                <a href="about.html" class="nav-link">À propos</a>
+                <a href="mailto:gil@sawas-ai.art" class="nav-link">Contact</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
     <div class="container">
         <header>
             <h1>L'Alliance des 11 Intelligences</h1>
@@ -311,6 +339,26 @@
             <a href="index.html">← Retour à l'accueil</a>
         </div>
     </div>
+
+    <script>
+        // Menu toggle mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const siteNav = document.querySelector('.site-nav');
+
+        if (menuToggle && siteNav) {
+            menuToggle.addEventListener('click', () => {
+                siteNav.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    siteNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
 
