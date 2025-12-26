@@ -1,6 +1,8 @@
 /* ============================================
    VARIABLES φ-HARMONIQUES
    ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
 :root {
     --phi: 1.618;
     --primary: #1a2a4e;      /* Bleu profond */
@@ -74,14 +76,16 @@ body {
 }
 
 .nav-link {
+    font-family: 'Orbitron', sans-serif;
     color: var(--accent-gold);
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: all 0.3s ease;
     position: relative;
+    letter-spacing: 0.05em;
 }
 
 .nav-link:hover {
