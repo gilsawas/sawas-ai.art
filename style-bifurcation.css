@@ -77,7 +77,7 @@ body {
 
 .nav-link {
     font-family: 'Orbitron', sans-serif;
-    color: var(--accent-gold);
+    color: white;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -89,12 +89,14 @@ body {
 }
 
 .nav-link:hover {
-    background-color: rgba(201, 169, 97, 0.1);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--accent-gold);
 }
 
 .nav-link.active {
     font-weight: 600;
-    background-color: rgba(201, 169, 97, 0.15);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--accent-gold);
 }
 
 .nav-link.active::after {
