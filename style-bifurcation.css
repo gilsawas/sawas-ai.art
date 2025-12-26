@@ -94,7 +94,7 @@ body {
 .video-placeholder {
     position: absolute;
     inset: 0;
-    display: flex;
+    display: none; /* Caché par défaut - s'affiche seulement si vidéo fail */
     flex-direction: column;
     align-items: center;
     justify-content: center;
