@@ -153,39 +153,49 @@
         
         .lightbox-content {
             max-width: 90%;
-            max-height: 90%;
+            max-height: 90vh;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
         }
-        
+
         .lightbox-content img {
             max-width: 100%;
-            max-height: 80vh;
+            max-height: 60vh;
             object-fit: contain;
             border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(212, 175, 55, 0.3);
         }
-        
+
         .lightbox-info {
-            background: rgba(10, 10, 10, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
+            background: rgba(10, 10, 10, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 25px;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            width: 100%;
+            border: 2px solid rgba(212, 175, 55, 0.3);
         }
-        
+
         .lightbox-title {
+            font-family: 'Audiowide', cursive;
             color: #d4af37;
-            font-size: 1.8em;
-            margin-bottom: 15px;
+            font-size: 2em;
+            margin-bottom: 20px;
             text-align: center;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
         }
-        
+
         .lightbox-description {
+            font-family: 'Tahoma', Arial, sans-serif;
             color: #e0e0e0;
-            font-size: 1.1em;
+            font-size: 1.15em;
             line-height: 1.8;
-            text-align: justify;
+            text-align: left;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
         
         .lightbox-close {
@@ -619,8 +629,8 @@
         function updateLightbox() {
             const item = galleryData[currentImageIndex];
             document.getElementById('lightbox-img').src = `images/${item.filename}`;
-            document.getElementById('lightbox-title').textContent = item.title;
-            document.getElementById('lightbox-description').textContent = item.description;
+            document.getElementById('lightbox-title').innerHTML = item.title || 'Sans titre';
+            document.getElementById('lightbox-description').innerHTML = item.description || item.poem || 'Aucune description disponible';
         }
         
         // Keyboard navigation
