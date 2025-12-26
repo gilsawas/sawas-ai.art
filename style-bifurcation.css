@@ -172,10 +172,10 @@ body {
    ============================================ */
 .video-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 400px; /* Réduit de 1/3 (600px → 400px) */
     aspect-ratio: 1 / 1; /* Format carré */
     margin-bottom: 3rem;
-    margin-top: -0.5rem; /* Remonte la vidéo de 0.5 cm */
+    margin-top: -3rem; /* Remonte la vidéo plus haut */
     position: relative;
     border-radius: 8px;
     overflow: hidden;
@@ -473,7 +473,7 @@ body {
     }
 
     .video-container {
-        max-width: 90vw;
+        max-width: 60vw; /* Réduit aussi sur mobile */
     }
 
     .hero-title {
@@ -503,7 +503,7 @@ body {
 
 @media (max-width: 480px) {
     .video-container {
-        max-width: 100%;
+        max-width: 70%; /* Plus petit sur très petits écrans */
     }
 
     .hero-subtitle br {
