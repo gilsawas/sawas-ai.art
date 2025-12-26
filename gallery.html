@@ -18,7 +18,7 @@
         }
         
         body {
-            font-family: "Audiowide", cursive;
+            font-family: 'Tahoma', Arial, sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
             color: #e0e0e0;
             line-height: 1.8;
@@ -143,59 +143,81 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.95);
             z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .lightbox.active {
-            display: flex;
-        }
-        
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90vh;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             overflow-y: auto;
         }
 
+        .lightbox.active {
+            display: block;
+        }
+
+        .lightbox-content {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+        }
+
+        .lightbox-image-section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px 40px;
+        }
+
         .lightbox-content img {
-            max-width: 100%;
-            max-height: 60vh;
+            max-width: 90%;
+            max-height: 70vh;
             object-fit: contain;
             border-radius: 10px;
             box-shadow: 0 10px 50px rgba(212, 175, 55, 0.3);
         }
 
-        .lightbox-info {
-            background: rgba(10, 10, 10, 0.95);
-            padding: 30px;
-            border-radius: 12px;
-            margin-top: 25px;
-            max-width: 800px;
-            width: 100%;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-        }
-
         .lightbox-title {
             font-family: 'Audiowide', cursive;
             color: #d4af37;
-            font-size: 2em;
-            margin-bottom: 20px;
+            font-size: 2.5em;
+            margin-top: 30px;
             text-align: center;
             text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            padding: 0 20px;
+        }
+
+        .scroll-indicator {
+            margin-top: 40px;
+            text-align: center;
+            color: #d4af37;
+            font-size: 2em;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        .lightbox-info {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 60px 40px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-top: 3px solid rgba(212, 175, 55, 0.5);
         }
 
         .lightbox-description {
             font-family: 'Tahoma', Arial, sans-serif;
             color: #e0e0e0;
-            font-size: 1.15em;
-            line-height: 1.8;
+            font-size: 1.2em;
+            line-height: 1.9;
             text-align: left;
             white-space: pre-wrap;
             word-wrap: break-word;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .lightbox-close {
@@ -313,9 +335,12 @@
         <span class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">&#10094;</span>
         <span class="lightbox-nav lightbox-next" onclick="changeImage(1)">&#10095;</span>
         <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="">
-            <div class="lightbox-info">
+            <div class="lightbox-image-section">
+                <img id="lightbox-img" src="" alt="">
                 <h2 class="lightbox-title" id="lightbox-title"></h2>
+                <div class="scroll-indicator">↓</div>
+            </div>
+            <div class="lightbox-info">
                 <p class="lightbox-description" id="lightbox-description"></p>
             </div>
         </div>
