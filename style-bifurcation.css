@@ -24,7 +24,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Tahoma', Arial, sans-serif;
     background-color: var(--black);
     color: var(--accent-gold);
     line-height: calc(1.5 * var(--phi));
@@ -279,7 +279,7 @@ body {
 }
 
 .placeholder-subtext {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Tahoma', Arial, sans-serif;
     font-size: 1rem;
     color: var(--accent-gold);
     opacity: 0.7;
@@ -302,7 +302,7 @@ body {
 }
 
 .hero-subtitle {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Tahoma', Arial, sans-serif;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 300;
     color: var(--accent-gold);
@@ -417,7 +417,7 @@ body {
     background: linear-gradient(135deg, var(--accent-gold) 0%, var(--light-gold) 100%);
     color: var(--black);
     text-decoration: none;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Tahoma', Arial, sans-serif;
     font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.05em;
