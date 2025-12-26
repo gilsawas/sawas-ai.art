@@ -175,6 +175,7 @@ body {
     max-width: 600px;
     aspect-ratio: 1 / 1; /* Format carré */
     margin-bottom: 3rem;
+    margin-top: -0.5rem; /* Remonte la vidéo de 0.5 cm */
     position: relative;
     border-radius: 8px;
     overflow: hidden;
