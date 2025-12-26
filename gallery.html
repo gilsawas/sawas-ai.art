@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galerie - Visions de l'Âme Augmentée | SAWAS AI ART</title>
     <meta name="description" content="Galerie d'art génératif - Dialogue entre intuition humaine et puissance algorithmique">
+
+    <!-- Style menu header -->
+    <link rel="stylesheet" href="style-bifurcation.css">
+
     <style>
         * {
             margin: 0;
@@ -23,6 +27,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 60px 20px;
+            padding-top: calc(60px + 70px); /* Compense hauteur header */
         }
         
         header {
@@ -250,6 +255,25 @@
     </style>
 </head>
 <body>
+    <!-- MENU NAVIGATION -->
+    <header class="site-header">
+        <div class="header-content">
+            <a href="index.html" class="site-logo">SAWAS · Gil SAWAS</a>
+            <nav class="site-nav">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="gallery.html" class="nav-link active">Art</a>
+                <a href="luz.html" class="nav-link">LUZ</a>
+                <a href="about.html" class="nav-link">À propos</a>
+                <a href="mailto:contact@sawas-ai.art" class="nav-link">Contact</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
     <div class="container">
         <header>
             <h1>Galerie</h1>
@@ -609,6 +633,24 @@
         
         // Initialize on load
         initGallery();
+
+        // Menu toggle mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const siteNav = document.querySelector('.site-nav');
+
+        if (menuToggle && siteNav) {
+            menuToggle.addEventListener('click', () => {
+                siteNav.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    siteNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

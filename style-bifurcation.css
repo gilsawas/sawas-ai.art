@@ -32,6 +32,128 @@ body {
 }
 
 /* ============================================
+   HEADER / MENU NAVIGATION
+   ============================================ */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bordeaux);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: opacity 0.3s ease;
+}
+
+.site-logo:hover {
+    opacity: 0.8;
+}
+
+.site-nav {
+    display: flex;
+    gap: calc(1.618rem);
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    background-color: rgba(201, 169, 97, 0.1);
+}
+
+.nav-link.active {
+    font-weight: 600;
+    background-color: rgba(201, 169, 97, 0.15);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background-color: var(--accent-gold);
+}
+
+/* Menu hamburger mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--accent-gold);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .site-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bordeaux);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        display: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .site-nav.active {
+        display: flex;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 0;
+    }
+}
+
+/* ============================================
    HERO SECTION
    ============================================ */
 .hero {
@@ -41,6 +163,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 4rem 2rem;
+    padding-top: calc(4rem + 70px); /* Compense hauteur header */
     background-color: var(--black);
 }
 
