@@ -185,7 +185,6 @@ body {
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 40px rgba(201, 169, 97, 0.3);
 }
 
 .luz-video {
