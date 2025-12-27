@@ -243,9 +243,9 @@
             const star = document.createElement('div');
             star.className = 'shooting-star';
 
-            // Position aléatoire en haut à gauche de l'écran
-            star.style.top = Math.random() * 50 + '%';
-            star.style.left = Math.random() * 50 + '%';
+            // Position aléatoire en haut de l'écran
+            star.style.top = Math.random() * 30 + '%'; // Plus concentré en haut
+            star.style.left = Math.random() * 80 + '%';
 
             // Durée aléatoire entre 0.8s et 1.5s
             star.style.animationDuration = (Math.random() * 0.7 + 0.8) + 's';
@@ -256,6 +256,26 @@
             setTimeout(() => {
                 star.remove();
             }, 1500);
+        }
+
+        // Crée une petite étoile statique en haut
+        function createStaticStar() {
+            const star = document.createElement('div');
+            star.className = 'white-particle';
+
+            // Position en haut de l'écran uniquement
+            star.style.top = Math.random() * 25 + '%'; // 25% du haut
+            star.style.left = Math.random() * 100 + '%';
+
+            // Plus petite taille
+            star.style.width = '2px';
+            star.style.height = '2px';
+
+            // Délai et durée aléatoires
+            star.style.animationDelay = Math.random() * 2.5 + 's';
+            star.style.animationDuration = (Math.random() * 1.5 + 2) + 's';
+
+            cosmicBg.appendChild(star);
         }
 
         // Crée une particule d'or scintillante
@@ -276,13 +296,18 @@
             cosmicBg.appendChild(particle);
         }
 
-        // Génère les étoiles filantes à intervalles aléatoires
+        // Génère 3 étoiles filantes à intervalles réguliers
         function startShootingStars() {
-            setInterval(() => {
-                if (Math.random() > 0.5) { // 50% de chance
-                    createShootingStar();
+            let count = 0;
+            const interval = setInterval(() => {
+                createShootingStar();
+                count++;
+                if (count >= 3) {
+                    clearInterval(interval);
+                    // Relance après un délai
+                    setTimeout(startShootingStars, 8000); // Relance toutes les 8 secondes
                 }
-            }, 2000); // Toutes les 2 secondes
+            }, 2500); // Une étoile toutes les 2.5 secondes
         }
 
         // Crée une particule blanche scintillante
@@ -317,10 +342,18 @@
             }
         }
 
+        // Génère 6 petites étoiles statiques en haut
+        function createStaticStars() {
+            for (let i = 0; i < 6; i++) {
+                createStaticStar();
+            }
+        }
+
         // Lance les effets au chargement
         window.addEventListener('load', () => {
             createGoldParticles();
             createWhiteParticles();
+            createStaticStars(); // Ajoute les petites étoiles en haut
             startShootingStars();
         });
     </script>
