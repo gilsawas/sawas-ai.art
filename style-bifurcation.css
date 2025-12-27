@@ -47,7 +47,7 @@ body {
 }
 
 .header-content {
-    max-width: 1400px;
+    max-width: 1200px; /* Réduit pour harmoniser avec pages internes */
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
@@ -185,7 +185,6 @@ body {
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 40px rgba(201, 169, 97, 0.3);
 }
 
 .luz-video {
@@ -299,7 +298,7 @@ body {
     font-family: 'Audiowide', cursive;
     font-size: clamp(1.75rem, 5vw, 3rem);
     font-weight: 400;
-    color: var(--accent-gold);
+    color: #d4af37; /* Or brillant comme logo LUZ */
     text-align: center;
     margin-bottom: 2rem;
     max-width: 900px;
