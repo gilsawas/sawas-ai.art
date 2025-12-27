@@ -73,6 +73,17 @@
             animation: twinkleWhite 2.5s ease-in-out infinite;
         }
 
+        /* Petites étoiles statiques en haut */
+        .static-star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 3px rgba(255, 255, 255, 1), 0 0 25px 5px rgba(255, 255, 255, 0.8);
+            animation: twinkleWhite 3s ease-in-out infinite;
+        }
+
         @keyframes twinkle {
             0%, 100% {
                 opacity: 0;
@@ -261,19 +272,15 @@
         // Crée une petite étoile statique en haut
         function createStaticStar() {
             const star = document.createElement('div');
-            star.className = 'white-particle';
+            star.className = 'static-star';
 
             // Position en haut de l'écran uniquement
-            star.style.top = Math.random() * 25 + '%'; // 25% du haut
+            star.style.top = Math.random() * 20 + 5 + '%'; // Entre 5% et 25% du haut
             star.style.left = Math.random() * 100 + '%';
 
-            // Plus petite taille
-            star.style.width = '2px';
-            star.style.height = '2px';
-
             // Délai et durée aléatoires
-            star.style.animationDelay = Math.random() * 2.5 + 's';
-            star.style.animationDuration = (Math.random() * 1.5 + 2) + 's';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.animationDuration = (Math.random() * 2 + 2.5) + 's';
 
             cosmicBg.appendChild(star);
         }
