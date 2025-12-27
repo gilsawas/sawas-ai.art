@@ -47,9 +47,9 @@ body {
 }
 
 .header-content {
-    max-width: 1200px; /* Réduit pour harmoniser avec pages internes */
+    max-width: 100%; /* Pleine largeur pour espacer logo et onglets */
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 1rem 3rem; /* Plus de padding horizontal */
     display: flex;
     justify-content: space-between;
     align-items: center;
