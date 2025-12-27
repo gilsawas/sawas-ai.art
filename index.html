@@ -29,24 +29,36 @@
             overflow: hidden;
         }
 
-        /* Étoiles filantes blanches */
+        /* ========================================
+           ÉTOILES FILANTES
+           ======================================== */
         .shooting-star {
             position: absolute;
             width: 3px;
             height: 3px;
             background: white;
             border-radius: 50%;
-            box-shadow: 0 0 15px 3px rgba(255, 255, 255, 1), 0 0 30px 6px rgba(255, 255, 255, 0.5);
-            animation: shoot linear forwards;
+            z-index: 999;
+            pointer-events: none;
+
+            /* Traînée lumineuse */
+            box-shadow:
+                0 0 0 1px white,
+                0 0 6px 3px rgba(255, 255, 255, 0.9),
+                0 0 12px 6px rgba(255, 255, 255, 0.7),
+                0 0 18px 9px rgba(255, 223, 0, 0.4);
         }
 
-        @keyframes shoot {
+        @keyframes shootingStar {
             0% {
-                transform: translateX(0) translateY(0);
+                transform: translate(0, 0) rotate(45deg);
+                opacity: 1;
+            }
+            70% {
                 opacity: 1;
             }
             100% {
-                transform: translateX(300px) translateY(300px);
+                transform: translate(300px, 300px) rotate(45deg);
                 opacity: 0;
             }
         }
@@ -73,15 +85,45 @@
             animation: twinkleWhite 2.5s ease-in-out infinite;
         }
 
-        /* Petites étoiles statiques en haut */
+        /* ========================================
+           ÉTOILES STATIQUES EN HAUT
+           ======================================== */
         .static-star {
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 6px;
+            height: 6px;
             background: white;
             border-radius: 50%;
-            box-shadow: 0 0 15px 3px rgba(255, 255, 255, 1), 0 0 25px 5px rgba(255, 255, 255, 0.8);
-            animation: twinkleWhite 3s ease-in-out infinite;
+
+            /* CRITIQUE - Assurer visibilité */
+            z-index: 1000;
+            pointer-events: none;
+
+            /* Lumière intense pour visibilité */
+            box-shadow:
+                0 0 10px 3px rgba(255, 255, 255, 1),
+                0 0 20px 6px rgba(255, 255, 255, 0.9),
+                0 0 30px 9px rgba(255, 223, 0, 0.5);
+
+            /* Animation scintillement */
+            animation: starTwinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes starTwinkle {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+                box-shadow:
+                    0 0 10px 3px rgba(255, 255, 255, 1),
+                    0 0 20px 6px rgba(255, 255, 255, 0.9);
+            }
+            50% {
+                opacity: 0.4;
+                transform: scale(0.7);
+                box-shadow:
+                    0 0 5px 2px rgba(255, 255, 255, 0.8),
+                    0 0 10px 4px rgba(255, 255, 255, 0.6);
+            }
         }
 
         @keyframes twinkle {
@@ -245,124 +287,174 @@
         }
 
         // ========================================
-        // EFFETS COSMIQUES
+        // SYSTÈME ÉTOILES AMÉLIORÉ (Version ClaudeOmbre)
         // ========================================
-        const cosmicBg = document.getElementById('cosmic-bg');
 
-        // Crée une étoile filante
-        function createShootingStar() {
-            const star = document.createElement('div');
-            star.className = 'shooting-star';
+        (function() {
+            'use strict';
 
-            // Position aléatoire en haut de l'écran
-            star.style.top = Math.random() * 30 + '%'; // Plus concentré en haut
-            star.style.left = Math.random() * 80 + '%';
+            // Vérifier que DOM est chargé
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initStars);
+            } else {
+                initStars();
+            }
 
-            // Durée aléatoire entre 0.8s et 1.5s
-            star.style.animationDuration = (Math.random() * 0.7 + 0.8) + 's';
+            function initStars() {
+                console.log('🌟 Initialisation système étoiles...');
 
-            cosmicBg.appendChild(star);
+                const cosmicBg = document.getElementById('cosmic-bg');
 
-            // Supprime l'étoile après l'animation
-            setTimeout(() => {
-                star.remove();
-            }, 1500);
-        }
-
-        // Crée une petite étoile statique en haut
-        function createStaticStar() {
-            const star = document.createElement('div');
-            star.className = 'static-star';
-
-            // Position en haut de l'écran uniquement
-            star.style.top = Math.random() * 20 + 5 + '%'; // Entre 5% et 25% du haut
-            star.style.left = Math.random() * 100 + '%';
-
-            // Délai et durée aléatoires
-            star.style.animationDelay = Math.random() * 3 + 's';
-            star.style.animationDuration = (Math.random() * 2 + 2.5) + 's';
-
-            cosmicBg.appendChild(star);
-        }
-
-        // Crée une particule d'or scintillante
-        function createGoldParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'gold-particle';
-
-            // Position aléatoire sur tout l'écran
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.left = Math.random() * 100 + '%';
-
-            // Délai aléatoire pour l'animation
-            particle.style.animationDelay = Math.random() * 3 + 's';
-
-            // Durée aléatoire entre 2s et 4s
-            particle.style.animationDuration = (Math.random() * 2 + 2) + 's';
-
-            cosmicBg.appendChild(particle);
-        }
-
-        // Génère 3 étoiles filantes à intervalles réguliers
-        function startShootingStars() {
-            let count = 0;
-            const interval = setInterval(() => {
-                createShootingStar();
-                count++;
-                if (count >= 3) {
-                    clearInterval(interval);
-                    // Relance après un délai
-                    setTimeout(startShootingStars, 8000); // Relance toutes les 8 secondes
+                if (!cosmicBg) {
+                    console.error('❌ Conteneur #cosmic-bg introuvable !');
+                    return;
                 }
-            }, 2500); // Une étoile toutes les 2.5 secondes
-        }
 
-        // Crée une particule blanche scintillante
-        function createWhiteParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'white-particle';
+                // Vérifier/forcer styles critiques conteneur
+                cosmicBg.style.position = 'fixed';
+                cosmicBg.style.top = '0';
+                cosmicBg.style.left = '0';
+                cosmicBg.style.width = '100%';
+                cosmicBg.style.height = '100%';
+                cosmicBg.style.zIndex = '1';
+                cosmicBg.style.pointerEvents = 'none';
+                cosmicBg.style.overflow = 'visible'; // CRUCIAL !
 
-            // Position aléatoire sur tout l'écran
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.left = Math.random() * 100 + '%';
+                console.log('✅ Conteneur cosmique configuré');
 
-            // Délai aléatoire pour l'animation
-            particle.style.animationDelay = Math.random() * 2.5 + 's';
+                // Créer particules or/blanches
+                createGoldParticles(cosmicBg);
+                createWhiteParticles(cosmicBg);
 
-            // Durée aléatoire entre 2s et 3.5s
-            particle.style.animationDuration = (Math.random() * 1.5 + 2) + 's';
+                // Créer étoiles statiques
+                createStaticStars(cosmicBg);
 
-            cosmicBg.appendChild(particle);
-        }
-
-        // Génère 20 particules d'or
-        function createGoldParticles() {
-            for (let i = 0; i < 20; i++) {
-                createGoldParticle();
+                // Lancer séquence étoiles filantes après 1s
+                setTimeout(() => {
+                    startShootingStarSequence(cosmicBg);
+                }, 1000);
             }
-        }
 
-        // Génère 30 particules blanches
-        function createWhiteParticles() {
-            for (let i = 0; i < 30; i++) {
-                createWhiteParticle();
+            // ========================================
+            // ÉTOILES STATIQUES
+            // ========================================
+
+            function createStaticStars(container) {
+                const starCount = 6;
+
+                for (let i = 0; i < starCount; i++) {
+                    const star = document.createElement('div');
+                    star.className = 'static-star';
+
+                    // Position aléatoire dans zone supérieure (5-25% hauteur)
+                    const top = Math.random() * 20 + 5;
+                    const left = Math.random() * 100;
+
+                    star.style.top = `${top}%`;
+                    star.style.left = `${left}%`;
+
+                    // Délai animation aléatoire pour désynchroniser scintillements
+                    star.style.animationDelay = `${Math.random() * 3}s`;
+
+                    // Variation taille légère
+                    const size = 4 + Math.random() * 3; // 4-7px
+                    star.style.width = `${size}px`;
+                    star.style.height = `${size}px`;
+
+                    container.appendChild(star);
+
+                    console.log(`⭐ Étoile statique ${i+1} créée à ${top.toFixed(1)}%, ${left.toFixed(1)}%`);
+                }
+
+                console.log(`✅ ${starCount} étoiles statiques créées`);
             }
-        }
 
-        // Génère 6 petites étoiles statiques en haut
-        function createStaticStars() {
-            for (let i = 0; i < 6; i++) {
-                createStaticStar();
+            // ========================================
+            // ÉTOILES FILANTES
+            // ========================================
+
+            function createShootingStar(container) {
+                const star = document.createElement('div');
+                star.className = 'shooting-star';
+
+                // Position départ (coin supérieur gauche aléatoire)
+                const top = Math.random() * 20 + 5; // 5-25%
+                const left = Math.random() * 30; // 0-30%
+
+                star.style.top = `${top}%`;
+                star.style.left = `${left}%`;
+
+                // Durée animation aléatoire (1-1.5s)
+                const duration = 1 + Math.random() * 0.5;
+                star.style.animation = `shootingStar ${duration}s ease-out forwards`;
+
+                container.appendChild(star);
+
+                console.log(`💫 Étoile filante lancée de ${top.toFixed(1)}%, ${left.toFixed(1)}%`);
+
+                // Supprimer après animation
+                setTimeout(() => {
+                    star.remove();
+                }, duration * 1000 + 100);
             }
-        }
 
-        // Lance les effets au chargement
-        window.addEventListener('load', () => {
-            createGoldParticles();
-            createWhiteParticles();
-            createStaticStars(); // Ajoute les petites étoiles en haut
-            startShootingStars();
-        });
+            function startShootingStarSequence(container) {
+                // Créer 3 étoiles filantes en séquence
+                let delay = 0;
+
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        createShootingStar(container);
+                    }, delay);
+
+                    delay += 2500; // 2.5s entre chaque
+                }
+
+                console.log('🌠 Séquence 3 étoiles filantes lancée');
+
+                // Répéter séquence toutes les 8 secondes
+                setTimeout(() => {
+                    startShootingStarSequence(container);
+                }, 8000);
+            }
+
+            // ========================================
+            // PARTICULES OR/BLANCHES
+            // ========================================
+
+            function createGoldParticle(container) {
+                const particle = document.createElement('div');
+                particle.className = 'gold-particle';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 3 + 's';
+                particle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                container.appendChild(particle);
+            }
+
+            function createWhiteParticle(container) {
+                const particle = document.createElement('div');
+                particle.className = 'white-particle';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 2.5 + 's';
+                particle.style.animationDuration = (Math.random() * 1.5 + 2) + 's';
+                container.appendChild(particle);
+            }
+
+            function createGoldParticles(container) {
+                for (let i = 0; i < 20; i++) {
+                    createGoldParticle(container);
+                }
+            }
+
+            function createWhiteParticles(container) {
+                for (let i = 0; i < 30; i++) {
+                    createWhiteParticle(container);
+                }
+            }
+
+        })();
     </script>
 
 </body>
