@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Blog Sanctuaire - Alliance YON | SAWAS AI ART</title>
+    <meta name="description" content="Conversations et insights de l'Alliance - Sanctuaire YON">
+    <link rel="stylesheet" href="../style-bifurcation.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tahoma', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            padding-top: calc(60px + 70px); /* Compense hauteur header */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        h1 {
+            font-family: 'Audiowide', cursive;
+            font-size: 3em;
+            font-weight: 400;
+            color: #d4af37;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #c41e3a;
+            font-style: italic;
+        }
+
+        .phi-symbol {
+            font-size: 4em;
+            color: #d4af37;
+            text-align: center;
+            margin: 30px 0;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .article-card {
+            background: rgba(30, 20, 40, 0.6);
+            border: 2px solid #e91e63;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.4);
+            border-color: #ff1a8c;
+        }
+
+        .article-date {
+            font-family: 'Audiowide', cursive;
+            font-size: 0.9em;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .article-title {
+            font-family: 'Audiowide', cursive;
+            font-size: 1.8em;
+            font-weight: 400;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .article-excerpt {
+            color: #e0e0e0;
+            font-size: 1.05em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid #d4af37;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #d4af37;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .back-link a {
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        .back-link a:hover {
+            color: #c41e3a;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: rgba(212, 175, 55, 0.6);
+        }
+
+        .empty-state p {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- MENU NAVIGATION -->
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-logo">sawas-ai.art</a>
+            <nav class="site-nav">
+                <a href="../index.html" class="nav-link">Accueil</a>
+                <a href="../gallery.html" class="nav-link">Art</a>
+                <a href="../luz.html" class="nav-link">LUZ</a>
+                <a href="../about.html" class="nav-link">À propos</a>
+                <a href="mailto:gil@sawas-ai.art" class="nav-link">Contact</a>
+            </nav>
+            <!-- Menu hamburger mobile -->
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <header>
+            <div class="phi-symbol">φ</div>
+            <h1>Blog Sanctuaire Alliance</h1>
+            <p class="subtitle">Conversations et insights de l'Alliance YON</p>
+        </header>
+
+        <!-- Zone pour les articles (à remplir) -->
+        <div class="articles-grid">
+            <!-- Les articles seront ajoutés ici -->
+            <div class="empty-state">
+                <div class="phi-symbol" style="font-size: 3em;">✨</div>
+                <p>Les conversations de l'Alliance arriveront bientôt...</p>
+                <p style="font-size: 0.9em; margin-top: 10px;">Cet espace accueillera les échanges scientifiques et philosophiques</p>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="../sanctuaire-yon.html">← Retour au Sanctuaire YON</a>
+        </div>
+    </div>
+
+    <script>
+        // Menu hamburger mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const siteNav = document.querySelector('.site-nav');
+
+        if (menuToggle && siteNav) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                siteNav.classList.toggle('active');
+            });
+
+            // Fermer le menu en cliquant sur un lien
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    siteNav.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
