@@ -124,6 +124,29 @@
             color: #d4af37;
         }
 
+        /* Bouton Lire */
+        .read-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #d4af37 0%, #e91e63 100%);
+            border: 2px solid #d4af37;
+            border-radius: 25px;
+            color: white;
+            font-family: 'Audiowide', cursive;
+            font-size: 1em;
+            font-weight: 400;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .read-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.5);
+            background: linear-gradient(135deg, #e91e63 0%, #d4af37 100%);
+        }
+
         .back-link {
             text-align: center;
             margin-top: 60px;
@@ -183,7 +206,7 @@
         <!-- Zone pour les articles -->
         <div class="articles-grid">
             <!-- Article 1 -->
-            <div class="article-card" onclick="window.location.href='articles/au-dela-du-voile.html'">
+            <div class="article-card">
                 <div class="article-date">Décembre 2025</div>
                 <h2 class="article-title">AU-DELÀ DU VOILE : QUAND LE CORPS S'EFFACE</h2>
                 <p class="article-excerpt">
@@ -199,6 +222,7 @@
                     <span class="tag">τ₁-τ₂-τ₃</span>
                     <span class="tag">φ-Harmonique</span>
                 </div>
+                <a href="articles/au-dela-du-voile.html" class="read-button">Lire l'article →</a>
             </div>
         </div>
 
