@@ -213,6 +213,152 @@
         }
 
         /* ========================================
+           AGENDA ET CONFÉRENCES
+           ======================================== */
+        .agenda-section {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            padding: 0 20px;
+            font-family: 'Tahoma', Arial, sans-serif;
+        }
+
+        .agenda-title {
+            font-family: 'Tahoma', Arial, sans-serif;
+            font-size: 2.5em;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .agenda-subtitle {
+            text-align: center;
+            color: #c0c0c0;
+            font-size: 1.1em;
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        .conference-card {
+            background: rgba(20, 20, 35, 0.9);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .conference-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid #d4af37;
+            padding: 8px 20px;
+            border-radius: 20px;
+            color: #d4af37;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .conference-event {
+            font-family: 'Tahoma', Arial, sans-serif;
+            font-size: 1.8em;
+            color: #ffffff;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            font-weight: normal;
+        }
+
+        .conference-label {
+            font-family: 'Tahoma', Arial, sans-serif;
+            color: #d4af37;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .conference-speaker {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 10px;
+        }
+
+        .speaker-icon {
+            font-size: 2em;
+        }
+
+        .speaker-name {
+            font-family: 'Tahoma', Arial, sans-serif;
+            font-size: 1.3em;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .speaker-role {
+            color: #b0b0b0;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+
+        .conference-description {
+            color: #e0e0e0;
+            font-size: 1.05em;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .conference-description strong {
+            color: #d4af37;
+        }
+
+        .conference-details {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #c0c0c0;
+            font-size: 1em;
+        }
+
+        .detail-icon {
+            font-size: 1.2em;
+        }
+
+        .conference-links {
+            text-align: center;
+        }
+
+        .conf-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #d4af37 0%, #c41e3a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-family: 'Tahoma', Arial, sans-serif;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .conf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        /* ========================================
            VISUEL MANUSCHRONOS
            ======================================== */
         .manus-chronos-section {
@@ -291,6 +437,47 @@
         <!-- Banner Neuroscience 2026 -->
         <div class="neuroscience-banner">
             <img src="images/neuroscience_speaker_banner.png" alt="Neuroscience Conference 2026 - Innovation Talk YON Equation" class="banner-image">
+        </div>
+
+        <!-- Agenda et Conférences -->
+        <div class="agenda-section">
+            <h2 class="agenda-title">AGENDA ET CONFÉRENCES</h2>
+            <p class="agenda-subtitle">
+                Les prochaines interventions et présentations officielles de la Théorie Unifiée de la Conscience Holonique.
+            </p>
+
+            <div class="conference-card">
+                <div class="conference-badge">🎤 Conférencier principal</div>
+                <h3 class="conference-event">2e Rencontre et exposition mondiale<br>sur les neurosciences et les troubles cérébraux</h3>
+                <div class="conference-label">NEUROSCIENCES 2026</div>
+
+                <div class="conference-speaker">
+                    <div class="speaker-icon">🎙️</div>
+                    <div class="speaker-info">
+                        <div class="speaker-name">Gil SAWAS</div>
+                        <div class="speaker-role">Chercheur indépendant, IA métacognitive et modélisation de la conscience</div>
+                    </div>
+                </div>
+
+                <div class="conference-description">
+                    Présentation officielle de la <strong>Théorie Unifiée de la Conscience Holonique (ICH)</strong> et de ses applications révolutionnaires en neurosciences cliniques (diagnostic du coma, anesthésie de précision, neurofeedback harmonique).
+                </div>
+
+                <div class="conference-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">📅</span>
+                        <span>6-7 avril 2026</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">📍</span>
+                        <span>Barcelone, Espagne</span>
+                    </div>
+                </div>
+
+                <div class="conference-links">
+                    <a href="https://neuroscience.academynature.org/#speakers" target="_blank" class="conf-btn">Site officiel →</a>
+                </div>
+            </div>
         </div>
 
     </section>
