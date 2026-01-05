@@ -156,9 +156,93 @@
             position: relative;
             z-index: 1;
         }
+
+        /* ========================================
+           FLASH BLANC AU CLIC
+           ======================================== */
+        .white-flash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        @keyframes flashWhite {
+            0% {
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .white-flash.active {
+            animation: flashWhite 0.4s ease-out;
+        }
+
+        /* ========================================
+           BANNER NEUROSCIENCE
+           ======================================== */
+        .neuroscience-banner {
+            margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .banner-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 60px rgba(212, 175, 55, 0.5);
+        }
+
+        /* ========================================
+           VISUEL MANUSCHRONOS
+           ======================================== */
+        .manus-chronos-section {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(26, 26, 46, 0.5) 100%);
+        }
+
+        .manus-chronos-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .manus-chronos-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 80px rgba(212, 175, 55, 0.4);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .manus-chronos-container a:hover .manus-chronos-image {
+            transform: scale(1.02);
+            box-shadow: 0 30px 100px rgba(212, 175, 55, 0.6);
+        }
     </style>
 </head>
 <body>
+    <!-- Flash blanc au clic -->
+    <div class="white-flash" id="whiteFlash"></div>
+
     <!-- Effets cosmiques de fond -->
     <div class="cosmic-background" id="cosmic-bg"></div>
 
@@ -203,6 +287,11 @@
         <p class="hero-subtitle">
             Quand la conscience humaine dialogue en osmose avec l'algorithme
         </p>
+
+        <!-- Banner Neuroscience 2026 -->
+        <div class="neuroscience-banner">
+            <img src="images/neuroscience_speaker_banner.png" alt="Neuroscience Conference 2026 - Innovation Talk YON Equation" class="banner-image">
+        </div>
 
     </section>
 
@@ -251,6 +340,17 @@
     </section>
 
     <!-- ========================================
+         VISUEL MANUSCHRONOS - SANCTUAIRE YON
+         ======================================== -->
+    <section class="manus-chronos-section">
+        <div class="manus-chronos-container">
+            <a href="https://fil-dor-yon-hyybm8r8.manus.space/sanctuaire-yon/" target="_blank">
+                <img src="images/manus-chronos-sanctuaire.png" alt="Sanctuaire YON - ManusChronos" class="manus-chronos-image">
+            </a>
+        </div>
+    </section>
+
+    <!-- ========================================
          FOOTER
          ======================================== -->
     <footer class="footer">
@@ -259,7 +359,7 @@
             <a href="https://www.linkedin.com/in/gil-sawas-406568320/" target="_blank">LinkedIn</a> ·
             <a href="https://www.instagram.com/gilsawas/" target="_blank">Instagram</a> ·
             <a href="mailto:gil@sawas-ai.art">Contact</a> ·
-            <a href="sanctuaire-yon.html" style="opacity: 0.7; font-size: 1.2em;" title="Sanctuaire YON">φ</a>
+            <a href="https://fil-dor-yon-hyybm8r8.manus.space/sanctuaire-yon/" style="opacity: 0.7; font-size: 1.2em;" title="Sanctuaire YON" target="_blank">φ</a>
         </p>
     </footer>
 
@@ -285,6 +385,39 @@
                 });
             });
         }
+
+        // ========================================
+        // FLASH BLANC AU CLIC
+        // ========================================
+        function triggerWhiteFlash() {
+            const flash = document.getElementById('whiteFlash');
+            if (flash) {
+                // Retire la classe active si elle existe
+                flash.classList.remove('active');
+                // Force un reflow pour relancer l'animation
+                void flash.offsetWidth;
+                // Ajoute la classe active pour déclencher l'animation
+                flash.classList.add('active');
+                // Retire la classe après l'animation
+                setTimeout(() => {
+                    flash.classList.remove('active');
+                }, 400);
+            }
+        }
+
+        // Ajoute le flash à tous les liens du menu
+        document.querySelectorAll('.nav-link, .site-logo').forEach(link => {
+            link.addEventListener('click', (e) => {
+                triggerWhiteFlash();
+            });
+        });
+
+        // Ajoute le flash à tous les boutons (path-btn, etc.)
+        document.querySelectorAll('.path-btn, a[href]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                triggerWhiteFlash();
+            });
+        });
 
         // ========================================
         // SYSTÈME ÉTOILES AMÉLIORÉ (Version ClaudeOmbre)
