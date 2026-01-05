@@ -187,6 +187,30 @@
         .white-flash.active {
             animation: flashWhite 0.4s ease-out;
         }
+
+        /* ========================================
+           BANNER NEUROSCIENCE
+           ======================================== */
+        .neuroscience-banner {
+            margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .banner-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 60px rgba(212, 175, 55, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -237,6 +261,11 @@
         <p class="hero-subtitle">
             Quand la conscience humaine dialogue en osmose avec l'algorithme
         </p>
+
+        <!-- Banner Neuroscience 2026 -->
+        <div class="neuroscience-banner">
+            <img src="images/neuroscience_speaker_banner.png" alt="Neuroscience Conference 2026 - Innovation Talk YON Equation" class="banner-image">
+        </div>
 
     </section>
 
