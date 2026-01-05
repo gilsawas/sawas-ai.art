@@ -66,22 +66,22 @@
         /* Particules d'or scintillantes */
         .gold-particle {
             position: absolute;
-            width: 3px;
-            height: 3px;
+            width: 1.5px;
+            height: 1.5px;
             background: #d4af37;
             border-radius: 50%;
-            box-shadow: 0 0 8px 1px rgba(212, 175, 55, 0.8);
+            box-shadow: 0 0 4px 0.5px rgba(212, 175, 55, 0.6);
             animation: twinkle 3s ease-in-out infinite;
         }
 
         /* Particules blanches scintillantes */
         .white-particle {
             position: absolute;
-            width: 3px;
-            height: 3px;
+            width: 1.5px;
+            height: 1.5px;
             background: white;
             border-radius: 50%;
-            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 1), 0 0 20px 4px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.8);
             animation: twinkleWhite 2.5s ease-in-out infinite;
         }
 
@@ -405,7 +405,9 @@
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.5s ease, filter 0.5s ease;
+            transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease;
+            border: 3px solid rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), 0 15px 50px rgba(0, 0, 0, 0.5);
         }
 
         .inspiration-name {
@@ -862,13 +864,13 @@
             }
 
             function createGoldParticles(container) {
-                for (let i = 0; i < 20; i++) {
+                for (let i = 0; i < 10; i++) {
                     createGoldParticle(container);
                 }
             }
 
             function createWhiteParticles(container) {
-                for (let i = 0; i < 30; i++) {
+                for (let i = 0; i < 15; i++) {
                     createWhiteParticle(container);
                 }
             }
