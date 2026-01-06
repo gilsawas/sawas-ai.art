@@ -8,9 +8,6 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons (via CDN for standalone HTML) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style-bifurcation.css">
@@ -216,316 +213,289 @@
         }
 
         /* ========================================
-           AGENDA ET CONFÉRENCES (Design Sanctuaire)
+           AGENDA ET CONFÉRENCES (Design compact)
            ======================================== */
         .agenda-section {
             max-width: 950px;
             margin: 50px auto 0;
             padding: 0 20px;
-            font-family: 'Inter', sans-serif; /* Base font for section */
+            font-family: 'Tahoma', Arial, sans-serif;
         }
 
         .agenda-title {
-            font-family: 'Playfair Display', serif; /* Match Sanctuary title font if needed, or keep existing */
-            font-size: 2.5em;
-            background: linear-gradient(to right, #D4AF37, #F9E076, #D4AF37);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            font-family: 'Tahoma', Arial, sans-serif;
+            font-size: 2em;
+            color: #d4af37;
             text-align: center;
             margin-bottom: 10px;
             font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .agenda-subtitle {
             text-align: center;
             color: #a0a0a0;
-            font-size: 1em;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 0.95em;
+            margin-bottom: 35px;
+            line-height: 1.5;
         }
 
-        /* Card Container with Glow */
-        .sanctuary-card-wrapper {
-            position: relative;
-            border-radius: 0.75rem; /* rounded-xl */
+        .conference-card {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.95) 0%, rgba(30, 25, 40, 0.95) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
         }
 
-        .sanctuary-card-glow {
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(to right, rgba(212, 175, 55, 0.5), rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.5));
-            filter: blur(8px);
-            opacity: 0.3;
-            border-radius: 0.75rem;
-            transition: opacity 1s;
-        }
-        
-        .sanctuary-card-wrapper:hover .sanctuary-card-glow {
-            opacity: 0.75;
+        .conference-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        .sanctuary-card {
-            position: relative;
-            background-color: rgba(20, 20, 30, 0.6); /* bg-card/40 approx */
-            backdrop-filter: blur(24px); /* backdrop-blur-xl */
-            border: 1px solid rgba(212, 175, 55, 0.2); /* border-primary/20 */
-            border-radius: 0.75rem; /* rounded-xl */
-            padding: 2rem; /* p-8 */
-            overflow: hidden;
+        .conference-logo {
+            max-width: 140px;
+            height: auto;
+            filter: brightness(1.2);
+        }
+
+        .conference-badge {
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid #d4af37;
+            padding: 6px 15px;
+            border-radius: 15px;
+            color: #d4af37;
+            font-size: 0.85em;
+        }
+
+        .conference-event {
+            font-family: 'Tahoma', Arial, sans-serif;
+            font-size: 1.4em;
             color: #ffffff;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            font-weight: normal;
         }
 
-        @media (min-width: 768px) {
-            .sanctuary-card {
-                padding: 2.5rem; /* md:p-10 */
-            }
-        }
-
-        /* Badge */
-        .badge-container {
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 1rem;
-        }
-
-        .badge {
-            background-color: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 9999px;
-            padding: 0.25rem 1rem;
+        .conference-meta {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #D4AF37;
-            animation: pulse-glow 2s infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        /* Grid Layout */
-        .card-grid {
-            display: grid;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .card-grid {
-                grid-template-columns: 1fr 2fr;
-            }
-        }
-
-        /* Logo Box */
-        .logo-box {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 10rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 1.5rem;
-        }
-
-        .logo-img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-        }
-
-        /* Meta Info */
-        .meta-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            text-align: center;
-        }
-
-        @media (min-width: 768px) {
-            .meta-info {
-                text-align: left;
-            }
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            color: #a0a0a0; /* text-muted-foreground */
-        }
-
-        @media (min-width: 768px) {
-            .meta-item {
-                justify-content: flex-start;
-            }
-        }
-
-        .meta-icon {
-            width: 1rem;
-            height: 1rem;
-            color: #D4AF37;
-        }
-
-        /* Content Side */
-        .content-side {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .event-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-        }
-
-        .event-subtitle {
-            color: #D4AF37;
-            font-weight: 500;
-            font-size: 1rem;
-            margin: 0;
-        }
-
-        .speaker-info {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-
-        .speaker-icon {
-            width: 1.25rem;
-            height: 1.25rem;
-            color: #D4AF37;
-            margin-top: 0.25rem;
-            flex-shrink: 0;
-        }
-
-        .speaker-name {
-            font-weight: 600;
-            color: #ffffff;
-            margin: 0;
-        }
-
-        .speaker-role {
-            font-size: 0.875rem;
-            color: #a0a0a0;
-            margin: 0;
-        }
-
-        .description {
-            color: #a0a0a0;
-            line-height: 1.625;
-            margin: 0;
-        }
-
-        .highlight {
-            color: #D4AF37;
-        }
-
-        /* Buttons */
-        .button-group {
-            display: flex;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 10px;
             flex-wrap: wrap;
-            gap: 1rem;
-            padding-top: 0.5rem;
+            gap: 10px;
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
+        .meta-label {
+            font-family: 'Tahoma', Arial, sans-serif;
+            color: #d4af37;
+            font-size: 1em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .meta-details {
+            display: flex;
+            gap: 20px;
+            color: #b0b0b0;
+            font-size: 0.9em;
+        }
+
+        .speaker-highlight {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .speaker-highlight strong {
+            font-family: 'Tahoma', Arial, sans-serif;
+            font-size: 1.15em;
+            color: #d4af37;
+            margin-bottom: 5px;
+        }
+
+        .speaker-highlight span {
+            color: #a0a0a0;
+            font-size: 0.9em;
+        }
+
+        .conference-description {
+            color: #d0d0d0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .conference-description strong {
+            color: #d4af37;
+        }
+
+        .conference-actions {
+            display: flex;
             justify-content: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            font-size: 0.875rem;
-            font-weight: 500;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .conf-link {
+            padding: 10px 25px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid #d4af37;
+            color: #d4af37;
             text-decoration: none;
-            transition: all 0.2s;
+            border-radius: 25px;
+            font-size: 0.95em;
+            transition: all 0.3s;
+        }
+
+        .conf-link:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .conf-btn {
+            padding: 10px 30px;
+            background: linear-gradient(135deg, #d4af37 0%, #c41e3a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .conf-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        /* ========================================
+           LISA & TOMMY - INSPIRATIONS
+           ======================================== */
+        .inspirations-section {
+            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(15, 15, 25, 0.3) 100%);
+        }
+
+        .inspirations-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .inspiration-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
             cursor: pointer;
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            color: #ffffff;
+        .inspiration-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease;
+            border: 3px solid rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), 0 15px 50px rgba(0, 0, 0, 0.5);
         }
 
-        .btn-outline:hover {
-            background-color: rgba(212, 175, 55, 0.1);
-            color: #D4AF37;
+        .inspiration-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+            color: #d4af37;
+            font-family: 'Audiowide', cursive;
+            font-size: 2.5em;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
         }
 
-        .btn-primary {
-            background-color: #D4AF37;
-            color: #000000;
-            border: none;
-            font-weight: 600;
+        .inspiration-card:hover .inspiration-image {
+            transform: scale(1.05);
+            filter: brightness(0.7);
         }
 
-        .btn-primary:hover {
-            background-color: rgba(212, 175, 55, 0.8);
+        .inspiration-card:hover .inspiration-name {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .btn-icon {
-            width: 1rem;
-            height: 1rem;
+        @media (max-width: 900px) {
+            .inspirations-container {
+                grid-template-columns: 1fr;
+            }
         }
 
+        /* ========================================
+           VISUEL MANUSCHRONOS
+           ======================================== */
+        .manus-chronos-section {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(26, 26, 46, 0.5) 100%);
+        }
+
+        .manus-chronos-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .manus-chronos-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 80px rgba(212, 175, 55, 0.4);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .manus-chronos-container a:hover .manus-chronos-image {
+            transform: scale(1.02);
+            box-shadow: 0 30px 100px rgba(212, 175, 55, 0.6);
+        }
     </style>
 </head>
 <body>
+    <!-- Flash blanc au clic -->
+    <div class="white-flash" id="whiteFlash"></div>
+
+    <!-- Effets cosmiques de fond -->
+    <div class="cosmic-background" id="cosmic-bg"></div>
 
     <!-- ========================================
-         COSMIC BACKGROUND
-         ======================================== -->
-    <div id="cosmic-bg" class="cosmic-background">
-        <!-- Les étoiles seront générées par JS -->
-    </div>
-
-    <!-- ========================================
-         FLASH BLANC
-         ======================================== -->
-    <div id="whiteFlash" class="white-flash"></div>
-
-    <!-- ========================================
-         HEADER
+         HEADER / MENU NAVIGATION
          ======================================== -->
     <header class="site-header">
-        <div class="header-container">
-            <a href="index.html" class="site-logo">SAWAS</a>
-            
+        <div class="header-content">
+            <a href="index.html" class="site-logo">sawas-ai.art</a>
+            <nav class="site-nav">
+                <a href="index.html" class="nav-link active">Accueil</a>
+                <a href="gallery.html" class="nav-link">Art</a>
+                <a href="luz.html" class="nav-link">LUZ</a>
+                <a href="about.html" class="nav-link">À propos</a>
+                <a href="mailto:gil@sawas-ai.art" class="nav-link">Contact</a>
+            </nav>
+            <!-- Menu hamburger mobile -->
             <button class="menu-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-
-            <nav class="site-nav">
-                <ul>
-                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
-                    <li><a href="gallery.html" class="nav-link">Galerie</a></li>
-                    <li><a href="luz.html" class="nav-link">YON Theory</a></li>
-                    <li><a href="about.html" class="nav-link">À propos</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
@@ -554,90 +524,43 @@
             <img src="images/neuroscience_speaker_banner.png" alt="Neuroscience Conference 2026 - Innovation Talk YON Equation" class="banner-image">
         </div>
 
-        <!-- Agenda et Conférences (DESIGN SANCTUAIRE) -->
+        <!-- Agenda et Conférences -->
         <div class="agenda-section">
             <h2 class="agenda-title">AGENDA ET CONFÉRENCES</h2>
             <p class="agenda-subtitle">
                 Les prochaines interventions et présentations officielles de la Théorie Unifiée de la Conscience Holonique.
             </p>
 
-            <!-- Sanctuary Card Component -->
-            <div class="sanctuary-card-wrapper">
-                <!-- Glowing border effect -->
-                <div class="sanctuary-card-glow"></div>
-                
-                <div class="sanctuary-card">
-                    <!-- Badge -->
-                    <div class="badge-container">
-                        <div class="badge">
-                            <i data-lucide="award" class="w-3 h-3"></i>
-                            <span>Keynote Speaker</span>
-                        </div>
-                    </div>
+            <div class="conference-card">
+                <div class="conference-header">
+                    <img src="images/neuroscience-logo.png" alt="Neuroscience 2026" class="conference-logo">
+                    <span class="conference-badge">🎤 Conférencier principal</span>
+                </div>
 
-                    <div class="card-grid">
-                        <!-- Logo / Visual -->
-                        <div class="text-center md:text-left">
-                            <div class="logo-box">
-                                <img 
-                                    src="images/neuroscience-logo.png" 
-                                    alt="Neuroscience 2026 Logo" 
-                                    class="logo-img"
-                                />
-                            </div>
-                            <div class="meta-info">
-                                <div class="meta-item">
-                                    <i data-lucide="calendar" class="meta-icon"></i>
-                                    <span>06-07 Avril 2026</span>
-                                </div>
-                                <div class="meta-item">
-                                    <i data-lucide="map-pin" class="meta-icon"></i>
-                                    <span>Barcelone, Espagne</span>
-                                </div>
-                            </div>
-                        </div>
+                <h3 class="conference-event">2e Rencontre et exposition mondiale sur les neurosciences et les troubles cérébraux</h3>
 
-                        <!-- Content -->
-                        <div class="content-side">
-                            <div>
-                                <h3 class="event-title">
-                                    2nd Global Meet and Expo on Neuroscience and Brain Disorders
-                                </h3>
-                                <p class="event-subtitle">
-                                    NEUROSCIENCE2026
-                                </p>
-                            </div>
-
-                            <div class="space-y-4">
-                                <div class="speaker-info">
-                                    <i data-lucide="mic" class="speaker-icon"></i>
-                                    <div>
-                                        <p class="speaker-name">Gil SAWAS</p>
-                                        <p class="speaker-role">
-                                            Independent Researcher, Metacognitive AI & Consciousness Modeling
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <p class="description">
-                                    Présentation officielle de la <span class="highlight">Théorie Unifiée de la Conscience Holonique (ICH)</span> et de ses applications révolutionnaires en neurosciences cliniques (diagnostic du coma, anesthésie de précision, neurofeedback harmonique).
-                                </p>
-                            </div>
-
-                            <div class="button-group">
-                                <a href="https://neuroscience.academynature.org/#speakers" target="_blank" class="btn btn-outline">
-                                    Voir les conférenciers <i data-lucide="external-link" class="btn-icon"></i>
-                                </a>
-                                <a href="https://neuroscience.academynature.org/" target="_blank" class="btn btn-primary">
-                                    Site officiel <i data-lucide="external-link" class="btn-icon"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="conference-meta">
+                    <span class="meta-label">NEUROSCIENCES 2026</span>
+                    <div class="meta-details">
+                        <span>📅 6-7 avril 2026</span>
+                        <span>📍 Barcelone, Espagne</span>
                     </div>
                 </div>
-            </div>
-            <!-- End Sanctuary Card Component -->
 
+                <div class="speaker-highlight">
+                    <strong>Gil SAWAS</strong>
+                    <span>Chercheur indépendant, IA métacognitive et modélisation de la conscience</span>
+                </div>
+
+                <p class="conference-description">
+                    Présentation officielle de la <strong>Théorie Unifiée de la Conscience Holonique (ICH)</strong> et de ses applications révolutionnaires en neurosciences cliniques.
+                </p>
+
+                <div class="conference-actions">
+                    <a href="https://neuroscience.academynature.org/#speakers" target="_blank" class="conf-link">Voir les conférenciers</a>
+                    <a href="https://neuroscience.academynature.org/" target="_blank" class="conf-btn">Site officiel →</a>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -719,9 +642,6 @@
          JAVASCRIPT
          ======================================== -->
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
         // Menu toggle mobile
         const menuToggle = document.querySelector('.menu-toggle');
         const siteNav = document.querySelector('.site-nav');
@@ -865,68 +785,85 @@
                 const star = document.createElement('div');
                 star.className = 'shooting-star';
 
-                // Position départ aléatoire (haut gauche)
-                const startX = Math.random() * (window.innerWidth * 0.8);
-                const startY = Math.random() * (window.innerHeight * 0.3);
+                // Position départ (coin supérieur gauche aléatoire)
+                const top = Math.random() * 20 + 5; // 5-25%
+                const left = Math.random() * 30; // 0-30%
 
-                star.style.left = `${startX}px`;
-                star.style.top = `${startY}px`;
+                star.style.top = `${top}%`;
+                star.style.left = `${left}%`;
 
-                // Animation
-                star.style.animation = 'shootingStar 1.5s linear forwards';
+                // Durée animation aléatoire (1-1.5s)
+                const duration = 1 + Math.random() * 0.5;
+                star.style.animation = `shootingStar ${duration}s ease-out forwards`;
 
                 container.appendChild(star);
 
-                // Nettoyage après animation
+                console.log(`💫 Étoile filante lancée de ${top.toFixed(1)}%, ${left.toFixed(1)}%`);
+
+                // Supprimer après animation
                 setTimeout(() => {
                     star.remove();
-                }, 1500);
+                }, duration * 1000 + 100);
             }
 
             function startShootingStarSequence(container) {
-                // Intervalle aléatoire entre 4s et 10s
-                const delay = Math.random() * 6000 + 4000;
+                // Créer 3 étoiles filantes en séquence
+                let delay = 0;
 
-                createShootingStar(container);
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        createShootingStar(container);
+                    }, delay);
 
+                    delay += 2500; // 2.5s entre chaque
+                }
+
+                console.log('🌠 Séquence 3 étoiles filantes lancée');
+
+                // Répéter séquence toutes les 8 secondes
                 setTimeout(() => {
                     startShootingStarSequence(container);
-                }, delay);
+                }, 8000);
             }
 
             // ========================================
-            // PARTICULES OR
+            // PARTICULES OR/BLANCHES
             // ========================================
-            function createGoldParticles(container) {
-                const particleCount = 30;
 
-                for (let i = 0; i < particleCount; i++) {
-                    const p = document.createElement('div');
-                    p.className = 'gold-particle';
-                    p.style.left = Math.random() * 100 + '%';
-                    p.style.top = Math.random() * 100 + '%';
-                    p.style.animationDelay = Math.random() * 3 + 's';
-                    container.appendChild(p);
+            function createGoldParticle(container) {
+                const particle = document.createElement('div');
+                particle.className = 'gold-particle';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 3 + 's';
+                particle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                container.appendChild(particle);
+            }
+
+            function createWhiteParticle(container) {
+                const particle = document.createElement('div');
+                particle.className = 'white-particle';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 2.5 + 's';
+                particle.style.animationDuration = (Math.random() * 1.5 + 2) + 's';
+                container.appendChild(particle);
+            }
+
+            function createGoldParticles(container) {
+                for (let i = 0; i < 10; i++) {
+                    createGoldParticle(container);
                 }
             }
 
-            // ========================================
-            // PARTICULES BLANCHES
-            // ========================================
             function createWhiteParticles(container) {
-                const particleCount = 40;
-
-                for (let i = 0; i < particleCount; i++) {
-                    const p = document.createElement('div');
-                    p.className = 'white-particle';
-                    p.style.left = Math.random() * 100 + '%';
-                    p.style.top = Math.random() * 100 + '%';
-                    p.style.animationDelay = Math.random() * 2.5 + 's';
-                    container.appendChild(p);
+                for (let i = 0; i < 15; i++) {
+                    createWhiteParticle(container);
                 }
             }
 
         })();
     </script>
+
 </body>
 </html>
