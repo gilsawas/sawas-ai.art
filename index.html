@@ -463,13 +463,14 @@
            HERO TRIPLE LAYOUT
            ======================================== */
         .hero-triple {
-            position: relative;
-            width: 100%;
-            height: calc(100vh - 70px);
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            bottom: 0;
             display: grid;
-            grid-template-columns: 1.2fr 1fr 1.2fr;
+            grid-template-columns: 1fr 1.5fr 1fr;
             overflow: hidden;
-            margin-top: 70px;
         }
 
         .hero-section {
@@ -702,6 +703,7 @@
         .hero-continuation {
             background-color: #000;
             padding: 60px 20px 0;
+            margin-top: calc(100vh - 70px);
         }
 
         /* RESPONSIVE HERO TRIPLE */
