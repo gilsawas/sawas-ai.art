@@ -1,15 +1,29 @@
-# 📹 Dossier Vidéos
+# Dossier Videos
 
-## Fichier à uploader ici :
+## Fichiers requis pour le Hero Triple :
 
-**Nom du fichier :** `kling_20251211_Image_to_Video__quelques__1801_0__1_.mp4`
+### 1. Video "Gil Through Time" (GAUCHE)
 
-**Caractéristiques :**
+**Nom du fichier :** `gil_through_time_FINAL_v3.mp4`
+
+**Caracteristiques :**
+- Format : MP4 (H.264)
+- Resolution : 1920x1080 (Full HD)
+- Duree : 30 secondes
+- Poids : ~3.6 MB
+- Contenu : Video personnelle "Gil Through Time"
+- Usage : Hero section gauche (background)
+
+### 2. Video Logo LUZ (CENTRE) - DEJA PRESENT
+
+**Nom du fichier :** `kling_20251211_Image_to_Video__pas_de_mo_1543_0 (1).mp4`
+
+**Caracteristiques :**
 - Format : MP4
-- Durée : 10 secondes
-- Format vidéo : Carré (1:1)
-- Contenu : Logo LUZ avec particules scintillantes et éclair
-- Fond : Noir
+- Duree : ~10 secondes
+- Format video : Carre (1:1)
+- Contenu : Logo LUZ avec particules scintillantes
+- Usage : Hero section centre (background anime)
 
 ## Instructions Upload :
 

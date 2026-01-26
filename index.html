@@ -468,6 +468,304 @@
             transform: scale(1.02);
             box-shadow: 0 30px 100px rgba(212, 175, 55, 0.6);
         }
+
+        /* ========================================
+           HERO TRIPLE LAYOUT
+           ======================================== */
+        .hero-triple {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            overflow: hidden;
+            margin-top: 70px; /* Compense header height */
+        }
+
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* GAUCHE : Video Gil Through Time */
+        .hero-left {
+            background: #000;
+        }
+
+        .hero-video-left {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.75);
+        }
+
+        .hero-left-overlay,
+        .hero-right-overlay {
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 0.6rem 1.8rem;
+            background: rgba(0,0,0,0.75);
+            color: #d4af37;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212,175,55,0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Tahoma', Arial, sans-serif;
+        }
+
+        /* CENTRE : Logo LUZ + Contenu */
+        .hero-center {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-luz-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.25;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-luz-animation video {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 750px;
+        }
+
+        .hero-title-triple {
+            font-family: 'Audiowide', cursive;
+            font-size: clamp(2rem, 5vw, 3.8rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow:
+                2px 2px 4px rgba(0,0,0,0.9),
+                0 0 30px rgba(255,215,0,0.3);
+            letter-spacing: 3px;
+            line-height: 1.2;
+            color: #d4af37;
+        }
+
+        .hero-tagline {
+            font-family: 'Tahoma', Arial, sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+            opacity: 0.95;
+            font-weight: 300;
+            color: #c9a961;
+        }
+
+        .hero-stats {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-bottom: 2.5rem;
+            color: #ffd700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.05rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #000;
+            box-shadow: 0 4px 20px rgba(255,215,0,0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(255,215,0,0.6);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: white;
+            box-shadow: 0 4px 20px rgba(74,144,226,0.4);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(74,144,226,0.6);
+        }
+
+        .btn-tertiary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-tertiary:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-3px);
+        }
+
+        /* DROITE : Galerie Art Slideshow */
+        .hero-right {
+            background: #000;
+            position: relative;
+        }
+
+        .art-gallery-slideshow {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .gallery-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .gallery-image.active {
+            opacity: 1;
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        .scroll-indicator span {
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 0 0 15px rgba(255,255,255,0.6);
+            display: block;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-12px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-6px);
+            }
+        }
+
+        /* Hero Continuation Section */
+        .hero-continuation {
+            background-color: #000;
+            padding: 60px 20px 0;
+        }
+
+        /* RESPONSIVE HERO TRIPLE */
+        @media (max-width: 1024px) {
+            .hero-triple {
+                grid-template-columns: 1fr;
+                grid-template-rows: 25vh 50vh 25vh;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .hero-content {
+                padding: 1.5rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-triple {
+                grid-template-rows: 20vh 60vh 20vh;
+            }
+
+            .hero-title-triple {
+                font-size: 1.8rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                font-size: 0.85rem;
+            }
+
+            .hero-label {
+                font-size: 0.8rem;
+                padding: 0.5rem 1.2rem;
+            }
+
+            .scroll-indicator {
+                bottom: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -500,25 +798,78 @@
     </header>
 
     <!-- ========================================
-         HERO SECTION
+         HERO SECTION - TRIPLE LAYOUT
          ======================================== -->
-    <section class="hero">
+    <section class="hero-triple">
 
-        <!-- Vidéo LUZ centrée -->
-        <div class="video-container">
-            <video autoplay muted loop playsinline class="luz-video">
-                <source src="videos/kling_20251211_Image_to_Video__pas_de_mo_1543_0 (1).mp4" type="video/mp4">
+        <!-- GAUCHE : Vidéo Gil Through Time -->
+        <div class="hero-section hero-left">
+            <video autoplay muted loop playsinline class="hero-video-left">
+                <source src="videos/gil_through_time_FINAL_v3.mp4" type="video/mp4">
             </video>
+            <div class="hero-left-overlay">
+                <span class="hero-label">40 ans de recherche</span>
+            </div>
         </div>
 
-        <!-- Identité -->
-        <h1 class="hero-title">Gil SAWAS · Hermano de Luz</h1>
+        <!-- CENTRE : Logo LUZ + Contenu principal -->
+        <div class="hero-section hero-center">
+            <!-- Logo LUZ animé background -->
+            <div class="logo-luz-animation">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/kling_20251211_Image_to_Video__pas_de_mo_1543_0 (1).mp4" type="video/mp4">
+                </video>
+            </div>
 
-        <!-- Philosophie (VERSION FINALE) -->
-        <p class="hero-subtitle">
-            Quand la conscience humaine dialogue en osmose avec l'algorithme
-        </p>
+            <!-- Contenu principal -->
+            <div class="hero-content">
+                <h1 class="hero-title-triple">Gil SAWAS · Hermano de Luz</h1>
 
+                <p class="hero-tagline">
+                    Quand la conscience humaine dialogue<br>
+                    en osmose avec l'algorithme
+                </p>
+
+                <div class="hero-stats">
+                    40 ans de recherche · 95 000 creations · YON Theory
+                </div>
+
+                <div class="hero-cta">
+                    <a href="gallery.html" class="btn btn-primary">ART</a>
+                    <a href="luz.html" class="btn btn-secondary">LUZ</a>
+                    <a href="#videos-section" class="btn btn-tertiary">Videos</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- DROITE : Galerie Art Slideshow -->
+        <div class="hero-section hero-right">
+            <div class="art-gallery-slideshow">
+                <div class="gallery-image active" style="background-image: url('images/2bmuB6UH7HTKwzxXr8MT--0--23twz.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/AGMcbQ8tBfITeCZIMbUI--1--jennq.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/GjiioZLJYYlbeebYodmN--1--qk2rd.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/iXk98c8IoJVmqrsNEMMv--0--jpafy.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/kMl7AxZCVNalt8GOLfeT--1--huxk0.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/srWBxY157wThmGhI1BG3--1--kc6fc.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/yYciLLHejB2PoV7tFwVK--1--zv9u4.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/qgC6AhTIUyy9keBwruZp--1--lkevn.jpg');"></div>
+            </div>
+            <div class="hero-right-overlay">
+                <span class="hero-label">95 000 creations</span>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span>&#8595;</span>
+        </div>
+
+    </section>
+
+    <!-- ========================================
+         SECTION APRÈS HERO
+         ======================================== -->
+    <section class="hero-continuation">
         <!-- Banner Neuroscience 2026 -->
         <div class="neuroscience-banner">
             <img src="images/neuroscience_speaker_banner.png" alt="Neuroscience Conference 2026 - Innovation Talk YON Equation" class="banner-image">
@@ -564,6 +915,8 @@
         </div>
 
     </section>
+
+    <!-- Ferme hero-continuation -->
 
     <!-- ========================================
          LISA & TOMMY - INSPIRATIONS
@@ -862,6 +1215,50 @@
                 }
             }
 
+        })();
+
+        // ========================================
+        // ART GALLERY SLIDESHOW - Hero Right
+        // ========================================
+
+        (function() {
+            'use strict';
+
+            const galleryImages = document.querySelectorAll('.gallery-image');
+            if (galleryImages.length === 0) return;
+
+            let currentIndex = 0;
+            const transitionDuration = 4000; // 4 secondes par image
+
+            function nextImage() {
+                galleryImages[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % galleryImages.length;
+                galleryImages[currentIndex].classList.add('active');
+            }
+
+            setInterval(nextImage, transitionDuration);
+            console.log('🎨 Slideshow galerie art initialisé avec ' + galleryImages.length + ' images');
+        })();
+
+        // ========================================
+        // SCROLL INDICATOR
+        // ========================================
+
+        (function() {
+            'use strict';
+
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            if (scrollIndicator) {
+                scrollIndicator.addEventListener('click', function() {
+                    const heroTriple = document.querySelector('.hero-triple');
+                    if (heroTriple) {
+                        const nextSection = heroTriple.nextElementSibling;
+                        if (nextSection) {
+                            nextSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            }
         })();
     </script>
 
