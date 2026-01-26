@@ -66,23 +66,23 @@
         /* Particules d'or scintillantes */
         .gold-particle {
             position: absolute;
-            width: 1.5px;
-            height: 1.5px;
+            width: 1px;
+            height: 1px;
             background: #d4af37;
             border-radius: 50%;
-            box-shadow: 0 0 4px 0.5px rgba(212, 175, 55, 0.6);
-            animation: twinkle 3s ease-in-out infinite;
+            box-shadow: 0 0 2px 0.5px rgba(212, 175, 55, 0.4);
+            animation: twinkle 4s ease-in-out infinite;
         }
 
         /* Particules blanches scintillantes */
         .white-particle {
             position: absolute;
-            width: 1.5px;
-            height: 1.5px;
+            width: 1px;
+            height: 1px;
             background: white;
             border-radius: 50%;
-            box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.8);
-            animation: twinkleWhite 2.5s ease-in-out infinite;
+            box-shadow: 0 0 2px 0.5px rgba(255, 255, 255, 0.5);
+            animation: twinkleWhite 3.5s ease-in-out infinite;
         }
 
         /* ========================================
@@ -90,8 +90,8 @@
            ======================================== */
         .static-star {
             position: absolute;
-            width: 6px;
-            height: 6px;
+            width: 2px;
+            height: 2px;
             background: white;
             border-radius: 50%;
 
@@ -99,30 +99,22 @@
             z-index: 1000;
             pointer-events: none;
 
-            /* Lumière intense pour visibilité */
+            /* Lumière subtile */
             box-shadow:
-                0 0 10px 3px rgba(255, 255, 255, 1),
-                0 0 20px 6px rgba(255, 255, 255, 0.9),
-                0 0 30px 9px rgba(255, 223, 0, 0.5);
+                0 0 2px 1px rgba(255, 255, 255, 0.8);
 
             /* Animation scintillement */
-            animation: starTwinkle 3s ease-in-out infinite;
+            animation: starTwinkle 4s ease-in-out infinite;
         }
 
         @keyframes starTwinkle {
             0%, 100% {
-                opacity: 1;
+                opacity: 0.8;
                 transform: scale(1);
-                box-shadow:
-                    0 0 10px 3px rgba(255, 255, 255, 1),
-                    0 0 20px 6px rgba(255, 255, 255, 0.9);
             }
             50% {
-                opacity: 0.4;
-                transform: scale(0.7);
-                box-shadow:
-                    0 0 5px 2px rgba(255, 255, 255, 0.8),
-                    0 0 10px 4px rgba(255, 255, 255, 0.6);
+                opacity: 0.3;
+                transform: scale(0.8);
             }
         }
 
@@ -830,15 +822,6 @@
                     en osmose avec l'algorithme
                 </p>
 
-                <div class="hero-stats">
-                    40 ans de recherche · 95 000 creations · YON Theory
-                </div>
-
-                <div class="hero-cta">
-                    <a href="gallery.html" class="btn btn-primary">ART</a>
-                    <a href="luz.html" class="btn btn-secondary">LUZ</a>
-                    <a href="#videos-section" class="btn btn-tertiary">Videos</a>
-                </div>
             </div>
         </div>
 
@@ -1101,7 +1084,7 @@
             // ========================================
 
             function createStaticStars(container) {
-                const starCount = 6;
+                const starCount = 3;
 
                 for (let i = 0; i < starCount; i++) {
                     const star = document.createElement('div');
@@ -1115,19 +1098,15 @@
                     star.style.left = `${left}%`;
 
                     // Délai animation aléatoire pour désynchroniser scintillements
-                    star.style.animationDelay = `${Math.random() * 3}s`;
+                    star.style.animationDelay = `${Math.random() * 4}s`;
 
-                    // Variation taille légère
-                    const size = 4 + Math.random() * 3; // 4-7px
+                    // Taille petite et uniforme
+                    const size = 1.5 + Math.random() * 1; // 1.5-2.5px
                     star.style.width = `${size}px`;
                     star.style.height = `${size}px`;
 
                     container.appendChild(star);
-
-                    console.log(`⭐ Étoile statique ${i+1} créée à ${top.toFixed(1)}%, ${left.toFixed(1)}%`);
                 }
-
-                console.log(`✅ ${starCount} étoiles statiques créées`);
             }
 
             // ========================================
@@ -1204,13 +1183,13 @@
             }
 
             function createGoldParticles(container) {
-                for (let i = 0; i < 10; i++) {
+                for (let i = 0; i < 5; i++) {
                     createGoldParticle(container);
                 }
             }
 
             function createWhiteParticles(container) {
-                for (let i = 0; i < 15; i++) {
+                for (let i = 0; i < 6; i++) {
                     createWhiteParticle(container);
                 }
             }
