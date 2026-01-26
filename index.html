@@ -465,11 +465,11 @@
         .hero-triple {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: calc(100vh - 70px);
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-columns: 1.2fr 1fr 1.2fr;
             overflow: hidden;
-            margin-top: 70px; /* Compense header height */
+            margin-top: 70px;
         }
 
         .hero-section {
@@ -527,17 +527,19 @@
 
         .logo-luz-animation {
             width: 100%;
-            max-width: 400px;
+            max-width: 350px;
             aspect-ratio: 1 / 1;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             position: relative;
             z-index: 1;
+            background: #000;
         }
 
         .logo-luz-animation video {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            background: #000;
         }
 
         .hero-content {
