@@ -777,6 +777,124 @@
                 bottom: 1rem;
             }
         }
+
+        /* ============================================
+           MODIFICATIONS HOMEPAGE - VIDÉO GAUCHE
+           ============================================ */
+
+        /* 1. VIDÉO PLUS GRANDE (30%) + PLUS HAUTE (2cm) + COINS ARRONDIS */
+        .hero-section.hero-left {
+            flex: 1.3; /* au lieu de 1 - augmente largeur 30% */
+            position: relative;
+            overflow: visible; /* permet au logo de déborder */
+            margin-top: -2cm; /* remonte de 2cm */
+        }
+
+        .hero-left video,
+        .hero-left .hero-video-left {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px; /* coins arrondis */
+            position: relative;
+            z-index: 1; /* sous le logo */
+        }
+
+        /* 2. LOGO NOIR EMPIÈTE SUR VIDÉO */
+        .hero-left .hero-left-overlay {
+            position: absolute;
+            bottom: 20px; /* ajuste selon besoin */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10; /* au-dessus de la vidéo */
+            background: #000; /* fond noir */
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .hero-left .hero-left-overlay .hero-caption,
+        .hero-left .hero-left-overlay .hero-label {
+            color: #ffd700; /* doré */
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-align: center;
+            margin: 0;
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        /* 3. LIEN "VOIR VIDÉO COMPLÈTE" SOUS LA VIDÉO */
+        .video-link-wrapper {
+            text-align: center;
+            margin-top: 15px;
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
+
+        .video-complete-link {
+            display: inline-block;
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            padding: 8px 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .video-complete-link:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: #ffd700;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .video-complete-link::after {
+            content: " →";
+            margin-left: 5px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .video-complete-link:hover::after {
+            margin-left: 10px;
+        }
+
+        .video-complete-link .icon {
+            font-size: 10px;
+            margin-right: 5px;
+            opacity: 0.8;
+        }
+
+        /* 4. AJUSTEMENTS RESPONSIVE VIDÉO GAUCHE */
+        @media (max-width: 768px) {
+            .hero-section.hero-left {
+                flex: 1;
+                margin-top: -1cm; /* moins de décalage sur mobile */
+            }
+
+            .hero-left video,
+            .hero-left .hero-video-left {
+                border-radius: 15px; /* coins moins arrondis sur mobile */
+            }
+
+            .video-link-wrapper {
+                bottom: -35px;
+            }
+
+            .video-complete-link {
+                font-size: 12px;
+                padding: 6px 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -816,11 +934,21 @@
 
         <!-- GAUCHE : Vidéo Gil Through Time -->
         <div class="hero-section hero-left">
-            <video autoplay muted loop playsinline class="hero-video-left">
+            <!-- Vidéo -->
+            <video class="hero-video-left" autoplay loop muted playsinline>
                 <source src="videos/gil_through_time_FINAL_v3.mp4" type="video/mp4">
             </video>
+
+            <!-- Logo overlay qui empiète sur vidéo -->
             <div class="hero-left-overlay">
-                <span class="hero-label">40 ans de recherche</span>
+                <p class="hero-caption">40 ans de recherche</p>
+            </div>
+
+            <!-- Lien "Voir vidéo complète" sous la vidéo -->
+            <div class="video-link-wrapper">
+                <a href="videos.html" class="video-complete-link">
+                    <span class="icon">▶</span> Voir vidéo complète
+                </a>
             </div>
         </div>
 
