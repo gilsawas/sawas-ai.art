@@ -779,70 +779,68 @@
         }
 
         /* ============================================
-           MODIFICATIONS HOMEPAGE - VIDÉO GAUCHE
+           HOMEPAGE - VIDÉO FORMAT YOUTUBE (16:9)
            ============================================ */
 
-        /* 1. VIDÉO PLUS GRANDE (30%) + PLUS HAUTE (2cm) + COINS ARRONDIS */
+        /* 1. CONTENEUR GAUCHE - Plus large pour vidéo horizontale */
         .hero-section.hero-left {
-            flex: 1.3; /* au lieu de 1 - augmente largeur 30% */
-            position: relative;
-            overflow: visible; /* permet au logo de déborder */
-            margin-top: -2cm; /* remonte de 2cm */
+            flex: 1.5; /* 50% plus large pour format 16:9 */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: -2cm; /* 2cm plus haut */
+            gap: 15px;
+            padding: 10px;
         }
 
+        /* 2. WRAPPER VIDÉO - Force ratio 16:9 comme YouTube */
+        .hero-video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Ratio 16:9 (9÷16 = 0.5625 = 56.25%) */
+            border-radius: 20px; /* Coins arrondis */
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 150, 255, 0.3);
+        }
+
+        /* 3. VIDÉO - Remplit le wrapper en 16:9 */
         .hero-left video,
-        .hero-left .hero-video-left {
+        .hero-video-left {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            border-radius: 20px; /* coins arrondis */
-            position: relative;
-            z-index: 1; /* sous le logo */
+            object-fit: cover; /* Remplit tout l'espace */
+            border-radius: 20px;
         }
 
-        /* 2. LOGO NOIR EMPIÈTE SUR VIDÉO */
-        .hero-left .hero-left-overlay {
-            position: absolute;
-            bottom: 20px; /* ajuste selon besoin */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10; /* au-dessus de la vidéo */
-            background: #000; /* fond noir */
-            padding: 15px 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-
-        .hero-left .hero-left-overlay .hero-caption,
-        .hero-left .hero-left-overlay .hero-label {
-            color: #ffd700; /* doré */
-            font-size: 18px;
+        /* 4. CAPTION "40 ans de recherche" - EN-DESSOUS de la vidéo */
+        .hero-video-caption {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            color: #ffd700;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
             font-weight: 300;
             letter-spacing: 2px;
             text-align: center;
-            margin: 0;
-            background: transparent;
-            border: none;
-            padding: 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            width: fit-content;
         }
 
-        /* 3. LIEN "VOIR VIDÉO COMPLÈTE" SOUS LA VIDÉO */
-        .video-link-wrapper {
+        /* 5. LIEN "Voir vidéo complète" */
+        .hero-video-link {
             text-align: center;
-            margin-top: 15px;
-            position: absolute;
-            bottom: -40px;
-            left: 0;
-            right: 0;
-            z-index: 10;
         }
 
-        .video-complete-link {
+        .hero-video-link a {
             display: inline-block;
             color: #ffd700;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 400;
             letter-spacing: 1px;
             padding: 8px 20px;
@@ -851,46 +849,61 @@
             transition: all 0.3s ease;
         }
 
-        .video-complete-link:hover {
+        .hero-video-link a:hover {
             background: rgba(255, 215, 0, 0.1);
             border-color: #ffd700;
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
         }
 
-        .video-complete-link::after {
+        .hero-video-link a::after {
             content: " →";
             margin-left: 5px;
             transition: margin-left 0.3s ease;
         }
 
-        .video-complete-link:hover::after {
+        .hero-video-link a:hover::after {
             margin-left: 10px;
         }
 
-        .video-complete-link .icon {
+        .hero-video-link .icon {
             font-size: 10px;
             margin-right: 5px;
             opacity: 0.8;
         }
 
-        /* 4. AJUSTEMENTS RESPONSIVE VIDÉO GAUCHE */
+        /* 6. RESPONSIVE VIDÉO 16:9 */
+        @media (max-width: 1400px) {
+            .hero-section.hero-left {
+                flex: 1.3;
+                margin-top: -1.5cm;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-section.hero-left {
+                flex: 1.2;
+                margin-top: -1cm;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-section.hero-left {
                 flex: 1;
-                margin-top: -1cm; /* moins de décalage sur mobile */
+                margin-top: 0;
+                width: 100%;
             }
 
-            .hero-left video,
-            .hero-left .hero-video-left {
-                border-radius: 15px; /* coins moins arrondis sur mobile */
+            .hero-video-wrapper {
+                border-radius: 15px;
             }
 
-            .video-link-wrapper {
-                bottom: -35px;
+            .hero-video-caption {
+                font-size: 14px;
+                padding: 10px 25px;
             }
 
-            .video-complete-link {
+            .hero-video-link a {
                 font-size: 12px;
                 padding: 6px 15px;
             }
@@ -932,21 +945,21 @@
          ======================================== -->
     <section class="hero-triple">
 
-        <!-- GAUCHE : Vidéo Gil Through Time -->
+        <!-- GAUCHE : Vidéo Gil Through Time - Format 16:9 -->
         <div class="hero-section hero-left">
-            <!-- Vidéo -->
-            <video class="hero-video-left" autoplay loop muted playsinline>
-                <source src="videos/gil_through_time_FINAL_v3.mp4" type="video/mp4">
-            </video>
-
-            <!-- Logo overlay qui empiète sur vidéo -->
-            <div class="hero-left-overlay">
-                <p class="hero-caption">40 ans de recherche</p>
+            <!-- Wrapper vidéo 16:9 -->
+            <div class="hero-video-wrapper">
+                <video class="hero-video-left" autoplay loop muted playsinline>
+                    <source src="videos/gil_through_time_FINAL_v3.mp4" type="video/mp4">
+                </video>
             </div>
 
-            <!-- Lien "Voir vidéo complète" sous la vidéo -->
-            <div class="video-link-wrapper">
-                <a href="videos.html" class="video-complete-link">
+            <!-- Caption "40 ans de recherche" - sous la vidéo -->
+            <div class="hero-video-caption">40 ans de recherche</div>
+
+            <!-- Lien "Voir vidéo complète" -->
+            <div class="hero-video-link">
+                <a href="videos.html">
                     <span class="icon">▶</span> Voir vidéo complète
                 </a>
             </div>
@@ -986,7 +999,7 @@
                 <div class="gallery-image" style="background-image: url('images/qgC6AhTIUyy9keBwruZp--1--lkevn.jpg');"></div>
             </div>
             <div class="hero-right-overlay">
-                <span class="hero-label">40 000 creations</span>
+                <span class="hero-label">40 000 créations</span>
             </div>
         </div>
 
@@ -1080,7 +1093,7 @@
                     <p class="path-tagline">L'Intuition Révélée</p>
 
                     <div class="path-description">
-                        <p>95 000 créations visuelles</p>
+                        <p>40 000 créations visuelles</p>
                         <p>Dialogue humain-algorithme</p>
                         <p>Quête de la beauté sacrée</p>
                     </div>
