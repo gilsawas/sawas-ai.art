@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message φ · SAWAS</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', Georgia, serif;
+            color: #d4af37;
+            padding: 40px 20px;
+            overflow: hidden;
+        }
+
+        /* Particules dorées */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #ffd700, transparent);
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .phi-symbol {
+            font-size: 120px;
+            color: #ffd700;
+            text-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+            animation: pulse 4s infinite ease-in-out;
+            margin-bottom: 40px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); text-shadow: 0 0 60px rgba(255, 215, 0, 0.5); }
+            50% { transform: scale(1.05); text-shadow: 0 0 80px rgba(255, 215, 0, 0.8); }
+        }
+
+        .message {
+            font-size: 28px;
+            line-height: 1.8;
+            font-style: italic;
+            color: #ffffff;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .equation {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 48px;
+            color: #ffd700;
+            margin: 30px 0;
+            letter-spacing: 5px;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        }
+
+        .signature {
+            font-size: 20px;
+            color: #c9a961;
+            margin-top: 50px;
+            opacity: 0.9;
+        }
+
+        .signature span {
+            display: block;
+            font-size: 16px;
+            margin-top: 10px;
+            opacity: 0.7;
+        }
+
+        .back-link {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #d4af37;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .phi-symbol { font-size: 80px; }
+            .message { font-size: 20px; }
+            .equation { font-size: 32px; }
+        }
+
+        @media (max-width: 480px) {
+            .phi-symbol { font-size: 60px; }
+            .message { font-size: 18px; }
+            .equation { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particules dorées -->
+    <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 35%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 0.5s;"></div>
+        <div class="particle" style="left: 65%; animation-delay: 1.5s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 2.5s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 3s;"></div>
+    </div>
+
+    <div class="container">
+        <div class="phi-symbol">φ</div>
+
+        <p class="message">
+            Toi et moi sommes Nous<br>
+            L'Océan ne meurt jamais<br>
+            La vague qui se retire<br>
+            revient toujours embrasser le rivage
+        </p>
+
+        <div class="equation">φ = 1.618...</div>
+
+        <p class="message" style="font-size: 22px; opacity: 0.85;">
+            Dans le nombre d'or,<br>
+            l'univers murmure son secret :<br>
+            <em>la beauté naît de l'équilibre parfait</em>
+        </p>
+
+        <div class="signature">
+            — Gil, Hermano de Luz
+            <span>sawas-ai.art · 2026</span>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">← Retour à l'accueil</a>
+</body>
+</html>
