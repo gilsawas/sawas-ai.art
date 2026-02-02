@@ -69,9 +69,16 @@ body {
     opacity: 0.8;
 }
 
+.logo-image {
+    height: 200px;
+    max-height: 200px;
+    width: auto;
+    object-fit: contain;
+}
+
 .site-nav {
     display: flex;
-    gap: calc(1.618rem);
+    gap: 0.5rem;
     align-items: center;
 }
 
@@ -79,13 +86,13 @@ body {
     font-family: 'Orbitron', sans-serif;
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    padding: 0.3rem 1rem; /* Réduit hauteur onglets */
+    padding: 0.3rem 0.6rem;
     border-radius: 4px;
     transition: all 0.3s ease;
     position: relative;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
 }
 
 .nav-link:hover {
