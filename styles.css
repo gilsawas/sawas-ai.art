@@ -145,11 +145,31 @@ a:hover {
 }
 
 .site-logo {
-    font-family: 'Audiowide', sans-serif;
-    font-size: var(--text-lg);
-    color: var(--gold);
-    font-weight: 700;
-    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
+}
+
+@media (max-width: 768px) {
+    .logo-image {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-image {
+        height: 35px;
+    }
 }
 
 .site-nav {
