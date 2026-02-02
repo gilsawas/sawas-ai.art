@@ -45,9 +45,9 @@ header,
     top: 0;
     left: 0;
     right: 0;
-    height: 90px !important;
-    min-height: 90px !important;
-    max-height: 90px !important;
+    height: 100px !important;
+    min-height: 100px !important;
+    max-height: 100px !important;
     padding: 15px 60px !important;
     background-color: var(--bordeaux);
     z-index: 1000;
@@ -67,25 +67,36 @@ header,
 
 /* Logo */
 .site-logo,
-.logo {
+.logo,
+header .logo {
     display: flex;
     align-items: center;
+    height: 100%;
+    padding: 5px 0;
     flex-shrink: 0;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .logo img,
 .logo-image,
-header .logo img {
-    height: 70px !important;
+header .logo img,
+.site-logo img {
+    height: 90px !important;
     width: auto;
-    max-width: 250px;
+    max-width: 280px;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
 .logo img:hover,
 .logo-image:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.7));
 }
 
 /* Navigation */
@@ -94,20 +105,21 @@ nav,
 .navigation {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 nav a,
 .nav-link,
 header nav a,
-.navigation a {
+.navigation a,
+.menu-link {
     font-family: 'Orbitron', sans-serif;
-    font-size: 18px !important;
+    font-size: 16px !important;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color: #ffffff;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 18px;
     transition: all 0.3s ease;
     text-transform: uppercase;
     border-radius: 4px;
@@ -117,14 +129,16 @@ nav a:hover,
 .nav-link:hover,
 header nav a:hover {
     color: #ffd700;
-    background: rgba(255, 215, 0, 0.1);
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
 }
 
 nav a.active,
 .nav-link.active {
     font-weight: 600;
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--accent-gold);
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    color: #ffffff;
 }
 
 /* Menu hamburger mobile */
@@ -147,41 +161,64 @@ nav a.active,
 }
 
 /* RESPONSIVE */
-@media (max-width: 1200px) {
-    header,
-    .site-header {
-        padding: 15px 40px !important;
-    }
-
+@media (max-width: 1400px) {
     .logo img,
     .logo-image {
-        height: 60px !important;
+        height: 80px !important;
+    }
+
+    header,
+    .site-header {
+        height: 95px !important;
+        min-height: 95px !important;
     }
 
     nav a,
     .nav-link {
-        font-size: 16px !important;
+        font-size: 15px !important;
         padding: 8px 15px;
     }
 }
 
-@media (max-width: 768px) {
-    header,
-    .site-header {
-        height: 70px !important;
-        min-height: 70px !important;
-        padding: 10px 20px !important;
-    }
-
+@media (max-width: 1200px) {
     .logo img,
     .logo-image {
-        height: 50px !important;
+        height: 70px !important;
+    }
+
+    header,
+    .site-header {
+        padding: 12px 40px !important;
+        height: 85px !important;
+        min-height: 85px !important;
     }
 
     nav a,
     .nav-link {
         font-size: 14px !important;
+        padding: 8px 12px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img,
+    .logo-image {
+        height: 60px !important;
+    }
+
+    header,
+    .site-header {
+        height: 75px !important;
+        min-height: 75px !important;
+        padding: 10px 20px !important;
+    }
+
+    nav a,
+    .nav-link {
+        font-size: 13px !important;
         padding: 6px 10px;
+        letter-spacing: 0.5px;
     }
 
     .menu-toggle {
@@ -219,19 +256,18 @@ nav a.active,
         flex-direction: column;
         height: auto !important;
         min-height: auto !important;
-        padding: 15px !important;
+        padding: 12px 15px !important;
+        gap: 10px;
     }
 
     .logo img,
     .logo-image {
-        height: 45px !important;
-        margin-bottom: 10px;
+        height: 50px !important;
     }
 
     nav,
     .site-nav {
         width: 100%;
-        display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 5px;
@@ -239,9 +275,40 @@ nav a.active,
 
     nav a,
     .nav-link {
-        font-size: 13px !important;
-        padding: 5px 8px;
+        font-size: 12px !important;
+        padding: 5px 10px;
+        letter-spacing: 0.5px;
     }
+}
+
+/* Grand écran : logo très visible */
+@media (min-width: 1400px) {
+    .logo img,
+    .logo-image {
+        height: 90px !important;
+    }
+
+    nav a,
+    .nav-link {
+        font-size: 16px !important;
+    }
+}
+
+/* FIX SPÉCIFIQUE SI LOGO NE S'AGRANDIT PAS */
+body header .logo img,
+body .site-logo img,
+body #logo img,
+html body header .logo img {
+    height: 90px !important;
+    width: auto !important;
+    max-height: 90px !important;
+    min-height: 90px !important;
+}
+
+.logo img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* ============================================
