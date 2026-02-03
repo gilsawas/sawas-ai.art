@@ -655,18 +655,17 @@ html body header .logo img {
 }
 
 /* ============================================
-   FOOTER - BOUTONS MYSTÈRE
+   FOOTER - BOUTONS SOCIAUX DORÉS
    ============================================ */
 
-.footer-mysteries {
+.footer-social {
     text-align: center;
     margin: 30px 0;
     padding: 25px;
-    background: rgba(255, 215, 0, 0.05);
-    border-radius: 15px;
+    background: transparent;
 }
 
-.footer-mysteries h3 {
+.footer-social h3 {
     color: #ffd700;
     font-size: 20px;
     margin-bottom: 8px;
@@ -675,41 +674,47 @@ html body header .logo img {
     font-family: 'Orbitron', sans-serif;
 }
 
-.mystery-hint {
+.social-hint {
     color: #cccccc;
     font-size: 14px;
     font-style: italic;
     margin-bottom: 20px;
 }
 
-.mystery-buttons {
+.social-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
-.mystery-link {
+.social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #d4af37, #c9a961);
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #d4af37, #b8941e);
     border-radius: 50%;
-    font-size: 24px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    border: 2px solid #c9a961;
 }
 
-.mystery-link:hover {
-    transform: translateY(-8px) rotate(5deg);
-    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
+.social-link svg {
+    width: 26px;
+    height: 26px;
+    color: #1a1a1a;
 }
 
-.mystery-tagline {
+.social-link:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+}
+
+.social-tagline {
     font-style: italic;
     color: #888;
     font-size: 13px;
