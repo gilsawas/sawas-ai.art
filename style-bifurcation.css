@@ -45,11 +45,11 @@ header,
     top: 0;
     left: 0;
     right: 0;
-    height: 160px !important;
-    min-height: 160px !important;
-    max-height: 160px !important;
-    padding: 20px 60px !important;
-    background: #8B1538 !important; /* Bordeaux profond */
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    padding: 15px 40px !important;
+    background: #b22222 !important; /* Rouge firebrick comme page vidéos */
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -65,7 +65,7 @@ header,
     align-items: center;
 }
 
-/* Logo AGRANDI */
+/* Logo TRÈS GRAND */
 .site-logo,
 .logo,
 header .logo {
@@ -86,9 +86,9 @@ header .logo {
 .logo-image,
 header .logo img,
 .site-logo img {
-    height: 150px !important;
+    height: 280px !important;
     width: auto;
-    max-width: 400px;
+    max-width: 600px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -99,13 +99,13 @@ header .logo img,
     filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.8));
 }
 
-/* Navigation */
+/* Navigation COMPACTE */
 nav,
 .site-nav,
 .navigation {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 3px;
 }
 
 nav a,
@@ -114,12 +114,12 @@ header nav a,
 .navigation a,
 .menu-link {
     font-family: 'Orbitron', sans-serif;
-    font-size: 14px !important;
+    font-size: 12px !important;
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: #ffffff;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 8px 10px;
     transition: all 0.3s ease;
     text-transform: uppercase;
     border-radius: 4px;
@@ -166,56 +166,14 @@ nav a.active,
 @media (min-width: 1200px) and (max-width: 1599px) {
     .logo img,
     .logo-image {
-        height: 130px !important;
+        height: 220px !important;
     }
 
     header,
     .site-header {
-        height: 140px !important;
-        min-height: 140px !important;
-        padding: 15px 40px !important;
-    }
-
-    nav a,
-    .nav-link {
-        font-size: 13px !important;
-        padding: 8px 16px;
-    }
-}
-
-/* Desktop (992-1199px) */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .logo img,
-    .logo-image {
-        height: 110px !important;
-    }
-
-    header,
-    .site-header {
-        height: 120px !important;
-        min-height: 120px !important;
-        padding: 12px 30px !important;
-    }
-
-    nav a,
-    .nav-link {
-        font-size: 12px !important;
-        padding: 8px 14px;
-    }
-}
-
-/* Tablet (768-991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-    .logo img,
-    .logo-image {
-        height: 90px !important;
-    }
-
-    header,
-    .site-header {
-        height: 100px !important;
-        min-height: 100px !important;
-        padding: 10px 20px !important;
+        height: 180px !important;
+        min-height: 180px !important;
+        padding: 15px 30px !important;
     }
 
     nav a,
@@ -225,24 +183,66 @@ nav a.active,
     }
 }
 
-/* Mobile Large (576-767px) */
-@media (min-width: 576px) and (max-width: 767px) {
+/* Desktop (992-1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
     .logo img,
     .logo-image {
-        height: 80px !important;
+        height: 180px !important;
     }
 
     header,
     .site-header {
-        height: 90px !important;
-        min-height: 90px !important;
-        padding: 10px 15px !important;
+        height: 160px !important;
+        min-height: 160px !important;
+        padding: 12px 25px !important;
     }
 
     nav a,
     .nav-link {
         font-size: 10px !important;
-        padding: 5px 8px;
+        padding: 6px 8px;
+    }
+}
+
+/* Tablet (768-991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .logo img,
+    .logo-image {
+        height: 140px !important;
+    }
+
+    header,
+    .site-header {
+        height: 130px !important;
+        min-height: 130px !important;
+        padding: 10px 20px !important;
+    }
+
+    nav a,
+    .nav-link {
+        font-size: 9px !important;
+        padding: 5px 7px;
+    }
+}
+
+/* Mobile Large (576-767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .logo img,
+    .logo-image {
+        height: 100px !important;
+    }
+
+    header,
+    .site-header {
+        height: 110px !important;
+        min-height: 110px !important;
+        padding: 10px 15px !important;
+    }
+
+    nav a,
+    .nav-link {
+        font-size: 9px !important;
+        padding: 5px 6px;
     }
 
     .menu-toggle {
@@ -254,7 +254,7 @@ nav a.active,
         top: 100%;
         left: 0;
         right: 0;
-        background: #8B1538;
+        background: #b22222;
         flex-direction: column;
         gap: 0;
         padding: 1rem 0;
@@ -287,7 +287,7 @@ nav a.active,
 
     .logo img,
     .logo-image {
-        height: 80px !important;
+        height: 100px !important;
     }
 
     nav,
@@ -295,14 +295,14 @@ nav a.active,
         width: 100%;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px;
+        gap: 5px;
     }
 
     nav a,
     .nav-link {
-        font-size: 10px !important;
-        padding: 6px 10px;
-        letter-spacing: 1px;
+        font-size: 9px !important;
+        padding: 5px 8px;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -310,18 +310,18 @@ nav a.active,
 @media (min-width: 1600px) {
     .logo img,
     .logo-image {
-        height: 150px !important;
+        height: 280px !important;
     }
 
     header,
     .site-header {
-        height: 160px !important;
-        min-height: 160px !important;
+        height: 200px !important;
+        min-height: 200px !important;
     }
 
     nav a,
     .nav-link {
-        font-size: 14px !important;
+        font-size: 12px !important;
     }
 }
 
@@ -330,10 +330,10 @@ body header .logo img,
 body .site-logo img,
 body #logo img,
 html body header .logo img {
-    height: 150px !important;
+    height: 280px !important;
     width: auto !important;
-    max-height: 150px !important;
-    min-height: 150px !important;
+    max-height: 280px !important;
+    min-height: 280px !important;
 }
 
 .logo img {
