@@ -106,6 +106,8 @@ nav,
     display: flex;
     align-items: center;
     gap: 0;
+    margin-left: auto;
+    flex-wrap: nowrap;
 }
 
 nav a,
@@ -119,10 +121,13 @@ header nav a,
     letter-spacing: 1px;
     color: #ffffff;
     text-decoration: none;
-    padding: 6px 4px;
+    padding: 4px 3px;
+    margin: 0 1px;
     transition: all 0.3s ease;
     text-transform: uppercase;
     border-radius: 4px;
+    white-space: nowrap;
+    display: inline-block;
 }
 
 nav a:hover,
