@@ -73,7 +73,7 @@ header,
     align-items: center;
 }
 
-/* Logo plaque marbre 220x75px */
+/* Logo plaque marbre GRANDE 320x100px */
 .site-logo,
 .logo,
 header .logo {
@@ -90,11 +90,11 @@ header .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 220px;
-    height: 75px;
-    padding: 8px 15px;
+    width: 320px;
+    height: 85px;
+    padding: 10px 20px;
     background: linear-gradient(145deg, #1A1A1A, #2a2a2a, #111);
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 3px rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(212, 175, 55, 0.3);
     position: relative;
@@ -111,8 +111,8 @@ header .logo {
 .logo-plaque::after {
     content: '';
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background: linear-gradient(135deg, #D4AF37, #FFC87C);
     border-radius: 50%;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 3px rgba(212, 175, 55, 0.3);
@@ -121,28 +121,35 @@ header .logo {
 .logo a::before,
 .site-logo::before,
 .logo-plaque::before {
-    top: 8px;
-    left: 8px;
+    top: 10px;
+    left: 10px;
 }
 
 .logo a::after,
 .site-logo::after,
 .logo-plaque::after {
-    top: 8px;
-    right: 8px;
+    top: 10px;
+    right: 10px;
 }
 
+/* Effet lumineux BLANC au survol */
 .logo a:hover,
 .site-logo:hover,
 .logo-plaque:hover {
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3), inset 0 1px 3px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 8px 25px rgba(212, 175, 55, 0.3);
     transform: translateY(-2px);
+}
+
+.logo-plaque:hover img,
+.site-logo:hover img,
+.logo a:hover img {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
 }
 
 /* Texte logo */
 .logo-plaque .logo-text {
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 700;
     color: #D4AF37;
     letter-spacing: 2px;
@@ -156,11 +163,11 @@ header .logo {
 header .logo img,
 .site-logo img,
 .logo-plaque img {
-    height: 55px !important;
+    height: 70px !important;
     width: auto;
-    max-width: 190px;
+    max-width: 280px;
     object-fit: contain;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
     z-index: 1;
 }
@@ -168,7 +175,7 @@ header .logo img,
 .logo img:hover,
 .logo-image:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6));
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
 }
 
 /* Navigation compacte - 14px */
@@ -206,6 +213,8 @@ header nav a:hover {
     color: #ffd700;
     background: rgba(255, 255, 255, 0.15);
     border-radius: 5px;
+    border-bottom: 3px solid #ffffff;
+    padding-bottom: 5px;
 }
 
 nav a.active,
