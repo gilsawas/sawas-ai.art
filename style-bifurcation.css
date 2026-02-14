@@ -45,7 +45,7 @@ body {
    HEADER / MENU NAVIGATION
    ============================================ */
 
-/* Header principal - 70px hauteur */
+/* Header principal - 90px hauteur, ROUGE VIF */
 header,
 .header,
 .site-header {
@@ -53,11 +53,11 @@ header,
     top: 0;
     left: 0;
     right: 0;
-    height: 70px !important;
-    min-height: 70px !important;
-    max-height: 70px !important;
-    padding: 5px 30px !important;
-    background: linear-gradient(135deg, #8B1538, #660F28) !important;
+    height: 90px !important;
+    min-height: 90px !important;
+    max-height: 90px !important;
+    padding: 10px 30px !important;
+    background: linear-gradient(135deg, #b22222, #8b0000) !important;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -73,7 +73,7 @@ header,
     align-items: center;
 }
 
-/* Logo plaque marbre 180x60px */
+/* Logo plaque marbre 220x75px */
 .site-logo,
 .logo,
 header .logo {
@@ -90,9 +90,9 @@ header .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 180px;
-    height: 60px;
-    padding: 5px 15px;
+    width: 220px;
+    height: 75px;
+    padding: 8px 15px;
     background: linear-gradient(145deg, #1A1A1A, #2a2a2a, #111);
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 3px rgba(255, 255, 255, 0.05);
@@ -154,10 +154,11 @@ header .logo {
 .logo img,
 .logo-image,
 header .logo img,
-.site-logo img {
-    height: 50px !important;
+.site-logo img,
+.logo-plaque img {
+    height: 55px !important;
     width: auto;
-    max-width: 150px;
+    max-width: 190px;
     object-fit: contain;
     transition: transform 0.3s ease;
     position: relative;
@@ -287,7 +288,7 @@ nav a.active,
         top: 100%;
         left: 0;
         right: 0;
-        background: linear-gradient(135deg, #8B1538, #660F28);
+        background: linear-gradient(135deg, #b22222, #8b0000);
         flex-direction: column;
         gap: 0;
         padding: 1rem 0;
@@ -673,7 +674,7 @@ nav a.active,
    FOOTER BORDEAUX
    ============================================ */
 .footer {
-    background-color: var(--bordeaux);
+    background: linear-gradient(135deg, #b22222, #8b0000);
     color: var(--accent-gold);
     padding: 2rem;
     text-align: center;
