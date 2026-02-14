@@ -465,7 +465,7 @@
         .hero-triple {
             position: relative;
             width: 100%;
-            height: calc(100vh - 70px);
+            height: calc(100vh - 80px);
             display: grid;
             grid-template-columns: 1fr 1.8fr 1fr;
             overflow: hidden;
@@ -474,7 +474,6 @@
         .hero-section {
             position: relative;
             overflow: hidden;
-            margin-top: -80px;
         }
 
         /* GAUCHE : Video Gil Through Time */
@@ -898,12 +897,8 @@
          ======================================== -->
     <header class="site-header">
         <div class="header-content">
-            <a href="index.html" class="site-logo" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border-radius: 4px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); border: 1px solid rgba(244, 228, 193, 0.1); padding: 2px 3px; position: relative; display: flex; align-items: center; justify-content: center;">
-                <img src="images/sawas-ai-logo-gold.png" alt="Sawas-ai.art" class="logo-image" style="height: 90px; max-height: 90px; width: auto; position: relative; z-index: 1;">
-                <!-- Vis dorée gauche -->
-                <div style="position: absolute; top: 4px; left: 4px; width: 6px; height: 6px; background: radial-gradient(circle at 30% 30%, #f4e4c1, #d4af37); border-radius: 50%; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), inset -0.5px -0.5px 1px rgba(0, 0, 0, 0.3); z-index: 2;"></div>
-                <!-- Vis dorée droite -->
-                <div style="position: absolute; top: 4px; right: 4px; width: 6px; height: 6px; background: radial-gradient(circle at 30% 30%, #f4e4c1, #d4af37); border-radius: 50%; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), inset -0.5px -0.5px 1px rgba(0, 0, 0, 0.3); z-index: 2;"></div>
+            <a href="index.html" class="logo-plaque">
+                <span class="logo-text">Sawas-ai</span>
             </a>
             <nav class="site-nav">
                 <a href="index.html" class="nav-link active">Accueil</a>
@@ -925,7 +920,7 @@
     <!-- ========================================
          HERO SECTION - TRIPLE LAYOUT
          ======================================== -->
-    <section class="hero-triple">
+    <section class="hero-triple" style="margin-top: 80px;">
 
         <!-- GAUCHE : Vidéo Gil Through Time - Simple et équilibré -->
         <div class="hero-section hero-left">
@@ -963,6 +958,19 @@
                     en osmose avec l'algorithme
                 </p>
 
+                <!-- Banner Stats VISIBLE -->
+                <div class="hero-stats-banner">
+                    <span>40,000 créations</span>
+                    <span class="stat-separator">·</span>
+                    <span>60,000 oeuvres Tengr.ai</span>
+                    <span class="stat-separator">·</span>
+                    <span>40 ans de recherche</span>
+                </div>
+
+                <!-- Bouton vidéo centré et agrandi -->
+                <div class="hero-video-btn-center">
+                    <a href="videos.html">&#9658; Voir vidéo complète &#8594;</a>
+                </div>
             </div>
         </div>
 
