@@ -631,11 +631,15 @@ html body header .logo img {
    FOOTER BORDEAUX
    ============================================ */
 .footer {
-    background-color: var(--bordeaux);
+    background-color: rgba(139, 0, 0, 0.95);
     color: var(--accent-gold);
-    padding: 2.5rem 2rem;
+    padding: var(--space-md) var(--space-lg);
     text-align: center;
     margin-top: calc(4rem * var(--phi));
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 2px solid var(--accent-gold);
 }
 
 .footer p {
