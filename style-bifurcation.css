@@ -45,7 +45,7 @@ body {
    HEADER / MENU NAVIGATION
    ============================================ */
 
-/* Header principal - 90px hauteur, ROUGE VIF */
+/* Header principal - 110px hauteur, ROUGE VIF */
 header,
 .header,
 .site-header {
@@ -53,9 +53,9 @@ header,
     top: 0;
     left: 0;
     right: 0;
-    height: 90px !important;
-    min-height: 90px !important;
-    max-height: 90px !important;
+    height: 110px !important;
+    min-height: 110px !important;
+    max-height: 110px !important;
     padding: 10px 30px !important;
     background: linear-gradient(135deg, #b22222, #8b0000) !important;
     z-index: 1000;
@@ -90,9 +90,9 @@ header .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 320px;
-    height: 85px;
-    padding: 10px 20px;
+    width: 380px;
+    height: 95px;
+    padding: 10px 25px;
     background: linear-gradient(145deg, #1A1A1A, #2a2a2a, #111);
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 3px rgba(255, 255, 255, 0.05);
@@ -163,9 +163,9 @@ header .logo {
 header .logo img,
 .site-logo img,
 .logo-plaque img {
-    height: 80px !important;
+    height: 85px !important;
     width: auto;
-    max-width: 300px;
+    max-width: 350px;
     object-fit: contain;
     transition: all 0.3s ease;
     position: relative;
