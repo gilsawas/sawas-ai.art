@@ -127,9 +127,9 @@ header .logo {
 .logo-image,
 header .logo img,
 .site-logo img {
-    height: 280px !important;
+    height: 90px !important;
     width: auto;
-    max-width: 600px;
+    max-width: 200px;
     object-fit: contain;
     transition: transform 0.3s ease;
     position: relative;
