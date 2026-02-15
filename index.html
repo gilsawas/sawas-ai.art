@@ -465,19 +465,18 @@
         .hero-triple {
             position: relative;
             width: 100%;
-            height: calc(100vh - 70px);
+            height: calc(100vh - 110px);
             display: grid;
-            grid-template-columns: 1fr 1.8fr 1fr;
+            grid-template-columns: 1.5fr 1.2fr 1fr;
             overflow: hidden;
         }
 
         .hero-section {
             position: relative;
             overflow: hidden;
-            margin-top: -80px;
         }
 
-        /* GAUCHE : Video Gil Through Time */
+        /* GAUCHE : Vidéo GRANDE */
         .hero-left {
             background: #000;
             display: flex;
@@ -485,6 +484,7 @@
             justify-content: center;
             padding: 0;
             overflow: hidden;
+            position: relative;
         }
 
         .hero-video-left {
@@ -557,7 +557,7 @@
             background: #000;
         }
 
-        /* DROITE : Galerie Art Slideshow - Format carre */
+        /* DROITE : Galerie Art Slideshow */
         .hero-right {
             background: #000;
             position: relative;
@@ -568,9 +568,9 @@
         }
 
         .art-gallery-slideshow {
-            width: 90%;
+            width: 95%;
             aspect-ratio: 1 / 1;
-            max-height: 85%;
+            max-height: 90%;
             position: relative;
             border-radius: 8px;
             overflow: hidden;
@@ -898,12 +898,8 @@
          ======================================== -->
     <header class="site-header">
         <div class="header-content">
-            <a href="index.html" class="site-logo" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border-radius: 4px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); border: 1px solid rgba(244, 228, 193, 0.1); padding: 2px 3px; position: relative; display: flex; align-items: center; justify-content: center;">
-                <img src="images/sawas-ai-logo-gold.png" alt="Sawas-ai.art" class="logo-image" style="height: 90px; max-height: 90px; width: auto; position: relative; z-index: 1;">
-                <!-- Vis dorée gauche -->
-                <div style="position: absolute; top: 4px; left: 4px; width: 6px; height: 6px; background: radial-gradient(circle at 30% 30%, #f4e4c1, #d4af37); border-radius: 50%; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), inset -0.5px -0.5px 1px rgba(0, 0, 0, 0.3); z-index: 2;"></div>
-                <!-- Vis dorée droite -->
-                <div style="position: absolute; top: 4px; right: 4px; width: 6px; height: 6px; background: radial-gradient(circle at 30% 30%, #f4e4c1, #d4af37); border-radius: 50%; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), inset -0.5px -0.5px 1px rgba(0, 0, 0, 0.3); z-index: 2;"></div>
+            <a href="index.html" class="logo-plaque">
+                <img src="images/sawas-ai-logo-gold.png" alt="Sawas-ai" class="logo-image">
             </a>
             <nav class="site-nav">
                 <a href="index.html" class="nav-link active">Accueil</a>
@@ -925,11 +921,10 @@
     <!-- ========================================
          HERO SECTION - TRIPLE LAYOUT
          ======================================== -->
-    <section class="hero-triple">
+    <section class="hero-triple" style="margin-top: 110px;">
 
-        <!-- GAUCHE : Vidéo Gil Through Time - Simple et équilibré -->
+        <!-- GAUCHE : Vidéo Gil Through Time - GRANDE -->
         <div class="hero-section hero-left">
-            <!-- Vidéo (pas de wrapper, layout simple) -->
             <video class="hero-video-left" autoplay loop muted playsinline>
                 <source src="videos/gil_through_time_FINAL_v3.mp4" type="video/mp4">
             </video>
@@ -963,6 +958,12 @@
                     en osmose avec l'algorithme
                 </p>
 
+                <!-- Banner Stats VISIBLE -->
+                <div class="hero-stats-banner">
+                    <span>40,000 créations</span>
+                    <span class="stat-separator">·</span>
+                    <span>40 ans de recherche</span>
+                </div>
             </div>
         </div>
 
