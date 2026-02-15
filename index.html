@@ -465,9 +465,9 @@
         .hero-triple {
             position: relative;
             width: 100%;
-            height: calc(100vh - 90px);
+            height: calc(100vh - 110px);
             display: grid;
-            grid-template-columns: 1fr 1.2fr 1.5fr;
+            grid-template-columns: 1.5fr 1.2fr 1fr;
             overflow: hidden;
         }
 
@@ -476,28 +476,18 @@
             overflow: hidden;
         }
 
-        /* GAUCHE : Galerie Art */
+        /* GAUCHE : Vidéo GRANDE */
         .hero-left {
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* DROITE : Vidéo GRANDE */
-        .hero-video-section {
             background: #000;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0;
             overflow: hidden;
+            position: relative;
         }
 
-        .hero-video-right {
+        .hero-video-left {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -566,17 +556,16 @@
             background: #000;
         }
 
-        /* DROITE : Vidéo GRANDE */
+        /* DROITE : Galerie Art Slideshow */
         .hero-right {
             background: #000;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0;
+            padding: 1rem;
         }
 
-        /* Galerie Art Slideshow (maintenant à gauche) */
         .art-gallery-slideshow {
             width: 95%;
             aspect-ratio: 1 / 1;
@@ -931,22 +920,22 @@
     <!-- ========================================
          HERO SECTION - TRIPLE LAYOUT
          ======================================== -->
-    <section class="hero-triple" style="margin-top: 90px;">
+    <section class="hero-triple" style="margin-top: 110px;">
 
-        <!-- GAUCHE : Galerie Art Slideshow -->
+        <!-- GAUCHE : Vidéo Gil Through Time - GRANDE -->
         <div class="hero-section hero-left">
-            <div class="art-gallery-slideshow">
-                <div class="gallery-image active" style="background-image: url('images/2bmuB6UH7HTKwzxXr8MT--0--23twz.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/AGMcbQ8tBfITeCZIMbUI--1--jennq.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/GjiioZLJYYlbeebYodmN--1--qk2rd.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/iXk98c8IoJVmqrsNEMMv--0--jpafy.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/kMl7AxZCVNalt8GOLfeT--1--huxk0.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/srWBxY157wThmGhI1BG3--1--kc6fc.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/yYciLLHejB2PoV7tFwVK--1--zv9u4.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/qgC6AhTIUyy9keBwruZp--1--lkevn.jpg');"></div>
-            </div>
-            <div class="hero-left-overlay">
-                <span class="hero-label">40 000 créations</span>
+            <video class="hero-video-left" autoplay loop muted playsinline>
+                <source src="videos/gil_through_time_FINAL_v3.mp4" type="video/mp4">
+            </video>
+
+            <!-- Caption "40 ans de recherche" -->
+            <div class="hero-video-caption">40 ans de recherche</div>
+
+            <!-- Lien "Voir vidéo complète" -->
+            <div class="hero-video-link">
+                <a href="videos.html">
+                    <span class="icon">▶</span> Voir vidéo complète
+                </a>
             </div>
         </div>
 
@@ -977,21 +966,20 @@
             </div>
         </div>
 
-        <!-- DROITE : Vidéo Gil Through Time - GRANDE -->
-        <div class="hero-section hero-right hero-video-section">
-            <!-- Vidéo GRANDE -->
-            <video class="hero-video-right" autoplay loop muted playsinline>
-                <source src="videos/gil_through_time_FINAL_v3.mp4" type="video/mp4">
-            </video>
-
-            <!-- Caption "40 ans de recherche" -->
-            <div class="hero-video-caption">40 ans de recherche</div>
-
-            <!-- Lien "Voir vidéo complète" -->
-            <div class="hero-video-link">
-                <a href="videos.html">
-                    <span class="icon">▶</span> Voir vidéo complète
-                </a>
+        <!-- DROITE : Galerie Art Slideshow -->
+        <div class="hero-section hero-right">
+            <div class="art-gallery-slideshow">
+                <div class="gallery-image active" style="background-image: url('images/2bmuB6UH7HTKwzxXr8MT--0--23twz.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/AGMcbQ8tBfITeCZIMbUI--1--jennq.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/GjiioZLJYYlbeebYodmN--1--qk2rd.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/iXk98c8IoJVmqrsNEMMv--0--jpafy.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/kMl7AxZCVNalt8GOLfeT--1--huxk0.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/srWBxY157wThmGhI1BG3--1--kc6fc.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/yYciLLHejB2PoV7tFwVK--1--zv9u4.jpg');"></div>
+                <div class="gallery-image" style="background-image: url('images/qgC6AhTIUyy9keBwruZp--1--lkevn.jpg');"></div>
+            </div>
+            <div class="hero-right-overlay">
+                <span class="hero-label">40 000 créations</span>
             </div>
         </div>
 
