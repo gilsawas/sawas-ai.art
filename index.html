@@ -796,11 +796,11 @@
             /* PAS de margin-top négatif ! */
         }
 
-        /* 2. VIDÉO - Taille normale avec coins arrondis */
+        /* 2. VIDÉO - Taille agrandie à 60% */
         .hero-left video,
         .hero-video-left {
             width: 100%;
-            max-width: 350px;
+            max-width: 600px;
             height: auto;
             object-fit: contain; /* Garde proportions originales */
             border-radius: 20px;
@@ -824,14 +824,22 @@
         /* 4. LIEN "Voir vidéo complète" */
         .hero-video-link {
             text-align: center;
+            margin-top: 20px;
+            opacity: 1;
+            visibility: visible;
         }
 
         .hero-video-link a {
             display: inline-block;
             color: #f4e4c1;
             text-decoration: none;
-            font-size: 13px;
-            font-weight: 400;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 20px;
+            background: rgba(212, 175, 55, 0.05);
+            transition: all 0.3s ease;
             letter-spacing: 1px;
             padding: 8px 20px;
             border: 1px solid rgba(255, 215, 0, 0.3);
@@ -906,6 +914,7 @@
                 <a href="gallery.html" class="nav-link">Art</a>
                 <a href="luz.html" class="nav-link">LUZ</a>
                 <a href="videos.html" class="nav-link">Vidéos</a>
+                <a href="articles.html" class="nav-link">Articles</a>
                 <a href="about.html" class="nav-link">À propos</a>
                 <a href="mailto:gil@sawas-ai.art" class="nav-link">Contact</a>
             </nav>
@@ -954,14 +963,14 @@
         <!-- DROITE : Galerie Art Slideshow -->
         <div class="hero-section hero-right">
             <div class="art-gallery-slideshow">
-                <div class="gallery-image active" style="background-image: url('images/2bmuB6UH7HTKwzxXr8MT--0--23twz.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/AGMcbQ8tBfITeCZIMbUI--1--jennq.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/GjiioZLJYYlbeebYodmN--1--qk2rd.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/iXk98c8IoJVmqrsNEMMv--0--jpafy.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/kMl7AxZCVNalt8GOLfeT--1--huxk0.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/srWBxY157wThmGhI1BG3--1--kc6fc.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/yYciLLHejB2PoV7tFwVK--1--zv9u4.jpg');"></div>
-                <div class="gallery-image" style="background-image: url('images/qgC6AhTIUyy9keBwruZp--1--lkevn.jpg');"></div>
+                <div class="gallery-image active" style="background-image: url('images/2bmuB6UH7HTKwzxXr8MT--0--23twz.jpg');" loading="lazy"></div>
+                <div class="gallery-image" style="background-image: url('images/AGMcbQ8tBfITeCZIMbUI--1--jennq.jpg');" loading="lazy"></div>
+                <div class="gallery-image" style="background-image: url('images/GjiioZLJYYlbeebYodmN--1--qk2rd.jpg');" loading="lazy"></div>
+                <div class="gallery-image" style="background-image: url('images/iXk98c8IoJVmqrsNEMMv--0--jpafy.jpg');" loading="lazy"></div>
+                <div class="gallery-image" style="background-image: url('images/kMl7AxZCVNalt8GOLfeT--1--huxk0.jpg');" loading="lazy"></div>
+                <div class="gallery-image" style="background-image: url('images/srWBxY157wThmGhI1BG3--1--kc6fc.jpg');" loading="lazy"></div>
+                <div class="gallery-image" style="background-image: url('images/yYciLLHejB2PoV7tFwVK--1--zv9u4.jpg');" loading="lazy"></div>
+                <div class="gallery-image" style="background-image: url('images/qgC6AhTIUyy9keBwruZp--1--lkevn.jpg');" loading="lazy"></div>
             </div>
         </div>
 
