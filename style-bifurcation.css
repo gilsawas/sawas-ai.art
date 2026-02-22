@@ -163,9 +163,9 @@ header .logo {
 header .logo img,
 .site-logo img,
 .logo-plaque img {
-    height: 90px !important;
+    height: 135px !important;
     width: auto;
-    max-width: 200px;
+    max-width: 300px;
     object-fit: contain;
     transition: all 0.3s ease;
     position: relative;

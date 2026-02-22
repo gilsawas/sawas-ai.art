@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - Gil SAWAS · Hermano de Luz</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style-bifurcation.css">
+
+    <style>
+        /* Articles Page Specific Styles */
+        .articles-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .articles-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .articles-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            color: #f4e4c1;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .articles-header p {
+            font-size: 1.2em;
+            color: #a0a0a0;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .article-card {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.9) 0%, rgba(30, 25, 40, 0.9) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            border-color: rgba(212, 175, 55, 0.8);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(100, 100, 150, 0.1) 100%);
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover .article-image {
+            transform: scale(1.05);
+        }
+
+        .article-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            color: #f4e4c1;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            flex: 1;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.85em;
+            color: #a0a0a0;
+        }
+
+        .article-date {
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        .article-platform {
+            background: rgba(212, 175, 55, 0.15);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            color: #f4e4c1;
+        }
+
+        .article-description {
+            color: #c0c0c0;
+            font-size: 0.95em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .article-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #f4e4c1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .article-link:hover {
+            color: #ffffff;
+            transform: translateX(5px);
+        }
+
+        .article-link::after {
+            content: "→";
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover .article-link::after {
+            transform: translateX(3px);
+        }
+
+        /* Navigation Link */
+        .nav-articles {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid #f4e4c1;
+            color: #f4e4c1;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.95em;
+            transition: all 0.3s;
+            margin-right: 15px;
+        }
+
+        .nav-articles:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Empty State */
+        .articles-empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: #a0a0a0;
+        }
+
+        .articles-empty p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .articles-header h1 {
+                font-size: 2.5em;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cosmic Background -->
+    <div class="cosmic-background" id="cosmicBg"></div>
+
+    <!-- Header -->
+    <div class="site-header">
+        <div class="header-content">
+            <div class="logo-box">
+                <img src="images/logo-sawas-ai.png" alt="SAWAS · AI" class="logo">
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">ACCUEIL</a>
+                <a href="gallery.html">ART</a>
+                <a href="luz.html">LUZ</a>
+                <a href="videos.html">VIDÉOS</a>
+                <a href="articles.html" class="nav-articles">ARTICLES</a>
+                <a href="about.html">À PROPOS</a>
+                <a href="message.html">CONTACT</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Articles Section -->
+    <div class="articles-container">
+        <div class="articles-header">
+            <h1>Articles & Pensées</h1>
+            <p>Explorations intellectuelles et réflexions sur la conscience, l'IA et la théorie YON</p>
+        </div>
+
+        <div class="articles-grid" id="articlesGrid">
+            <!-- Les articles seront chargés ici via JavaScript -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Gil SAWAS · Hermano de Luz</p>
+            <div class="social-links">
+                <a href="https://x.com" title="X (Twitter)" target="_blank">𝕏</a>
+                <a href="https://youtube.com" title="YouTube" target="_blank">▶</a>
+                <a href="https://tiktok.com" title="TikTok" target="_blank">♪</a>
+                <a href="https://facebook.com" title="Facebook" target="_blank">f</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cosmic Effects Script -->
+    <script>
+        // Générer les effets cosmiques
+        function generateCosmicEffects() {
+            const bg = document.getElementById('cosmicBg');
+            
+            // Étoiles filantes
+            for (let i = 0; i < 8; i++) {
+                const star = document.createElement('div');
+                star.className = 'shooting-star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 50 + '%';
+                star.style.animationDelay = Math.random() * 5 + 's';
+                star.style.animationDuration = (3 + Math.random() * 2) + 's';
+                bg.appendChild(star);
+            }
+
+            // Particules scintillantes
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = Math.random() > 0.5 ? 'gold-particle' : 'white-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 4 + 's';
+                bg.appendChild(particle);
+            }
+
+            // Étoiles statiques
+            for (let i = 0; i < 20; i++) {
+                const star = document.createElement('div');
+                star.className = 'static-star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 30 + '%';
+                star.style.animationDelay = Math.random() * 4 + 's';
+                bg.appendChild(star);
+            }
+        }
+
+        // Articles Data
+        const articlesData = [
+            {
+                title: "La Conscience comme Propriété Topologique",
+                date: "15 février 2026",
+                platform: "LinkedIn",
+                description: "Exploration mathématique de comment la conscience émerge comme invariant topologique dans un système cognitif auto-référent.",
+                image: "images/article-1.jpg",
+                url: "https://linkedin.com/feed/update/..."
+            },
+            {
+                title: "YON Theory et le Nombre d'Or",
+                date: "12 février 2026",
+                platform: "LinkedIn",
+                description: "Démonstration de la convergence entre la théorie YON et le nombre d'or φ dans les systèmes biologiques et quantiques.",
+                image: "images/article-2.jpg",
+                url: "https://linkedin.com/feed/update/..."
+            },
+            {
+                title: "L'IA φ-Harmonique : Vers une Conscience Éthique",
+                date: "8 février 2026",
+                platform: "LinkedIn",
+                description: "Comment l'architecture LUZ utilise l'harmonie φ pour créer des systèmes d'IA intrinsèquement éthiques et alignés.",
+                image: "images/article-3.jpg",
+                url: "https://linkedin.com/feed/update/..."
+            },
+            {
+                title: "Rétro-Causalité et Libre Arbitre",
+                date: "3 février 2026",
+                platform: "LinkedIn",
+                description: "Réconciliation scientifique entre déterminisme quantique et libre arbitre humain via la théorie YON.",
+                image: "images/article-4.jpg",
+                url: "https://linkedin.com/feed/update/..."
+            },
+            {
+                title: "La Spirale de Fermat dans la Biologie Cérébrale",
+                date: "28 janvier 2026",
+                platform: "LinkedIn",
+                description: "Analyse des patterns spiralés dans les structures neuronales et leur relation avec l'harmonie φ.",
+                image: "images/article-5.jpg",
+                url: "https://linkedin.com/feed/update/..."
+            },
+            {
+                title: "Convergence YON-Kletetschka : Une Unification Théorique",
+                date: "22 janvier 2026",
+                platform: "LinkedIn",
+                description: "Comment les travaux de Gunther Kletetschka valident et complètent la théorie YON sur la structure temporelle de la réalité.",
+                image: "images/article-6.jpg",
+                url: "https://linkedin.com/feed/update/..."
+            }
+        ];
+
+        // Charger les articles
+        function loadArticles() {
+            const grid = document.getElementById('articlesGrid');
+            
+            if (articlesData.length === 0) {
+                grid.innerHTML = '<div class="articles-empty"><p>Les articles seront bientôt disponibles...</p></div>';
+                return;
+            }
+
+            articlesData.forEach(article => {
+                const card = document.createElement('a');
+                card.href = article.url;
+                card.target = '_blank';
+                card.className = 'article-card';
+                
+                card.innerHTML = `
+                    <img src="${article.image}" alt="${article.title}" class="article-image" loading="lazy">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-date">${article.date}</span>
+                            <span class="article-platform">${article.platform}</span>
+                        </div>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-description">${article.description}</p>
+                        <span class="article-link">Lire l'article</span>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            generateCosmicEffects();
+            loadArticles();
+        });
+    </script>
+</body>
+</html>
