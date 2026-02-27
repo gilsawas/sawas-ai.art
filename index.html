@@ -481,7 +481,7 @@
             background: #000;
             display: block;
             padding: 0;
-            overflow: hidden;
+            overflow: visible;
             position: relative;
         }
 
@@ -494,6 +494,7 @@
             object-fit: cover;
             border-radius: 0;
             filter: brightness(0.95);
+            max-width: 500px;
         }
 
         .hero-left-overlay {
@@ -827,6 +828,33 @@
             margin-top: 20px;
             opacity: 1;
             visibility: visible;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+
+        .btn-video-complete {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #D4AF37 0%, #C5A028 100%);
+            color: #1a1a1a;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-video-complete:hover {
+            background: linear-gradient(135deg, #E5C158 0%, #D4AF37 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
 
         .hero-video-link a {
@@ -930,14 +958,16 @@
     <!-- ========================================
          HERO SECTION - TRIPLE LAYOUT
          ======================================== -->
-    <section class="hero-triple" style="margin-top: 110px;">
+    <section class="hero-triple" style="margin-top: 90px;">
 
         <!-- GAUCHE : Vidéo Gil Through Time - GRANDE -->
         <div class="hero-section hero-left">
             <video class="hero-video-left" autoplay loop muted playsinline>
                 <source src="videos/gil_through_time_FINAL_v3.mp4" type="video/mp4">
             </video>
-
+            <div class="hero-video-link">
+                <a href="/videos.html" class="btn-video-complete">VOIR VIDÉO COMPLÈTE</a>
+            </div>
         </div>
 
         <!-- CENTRE : Logo LUZ + Contenu principal -->
