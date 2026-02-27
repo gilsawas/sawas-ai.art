@@ -30,7 +30,18 @@
             padding-top: calc(60px + 70px); /* Compense hauteur header */
         }
         
-        header {
+        /* Proteger le site-header du CSS inline */
+        .site-header {
+            display: flex !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 1000 !important;
+        }
+        
+        /* Cibler UNIQUEMENT le header du contenu */
+        .container > header {
             text-align: center;
             margin-bottom: 60px;
             padding-bottom: 30px;
