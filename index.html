@@ -532,6 +532,27 @@
             font-family: 'Tahoma', Arial, sans-serif;
         }
 
+        .hero-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: #c41e3a;
+            border: 2px solid #c9a961;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
+        }
+
         /* CENTRE : Logo LUZ + Contenu - parfaitement centré */
         .hero-center {
             background: #000000;
@@ -969,6 +990,7 @@
             <video class="hero-video-left" autoplay loop muted playsinline>
                 <source src="videos/gil_through_time_FINAL_v3.mp4" type="video/mp4">
             </video>
+            <a href="videos.html" class="hero-button">Voir les vidéos</a>
         </div>
 
         <!-- CENTRE : Logo LUZ + Contenu principal -->
@@ -1003,6 +1025,7 @@
                 <div class="gallery-image" style="background-image: url('images/yYciLLHejB2PoV7tFwVK--1--zv9u4.jpg');" loading="lazy"></div>
                 <div class="gallery-image" style="background-image: url('images/qgC6AhTIUyy9keBwruZp--1--lkevn.jpg');" loading="lazy"></div>
             </div>
+            <a href="https://creator.nightcafe.studio/u/gilsawas" target="_blank" class="hero-button">40 000 créations sur NightCafe</a>
         </div>
 
         <!-- Scroll Indicator -->
