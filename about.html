@@ -64,6 +64,24 @@
             opacity: 1 !important;
         }
         
+        .site-header .home-button {
+            background: white !important;
+            color: #c41e3a !important;
+            border: 2px solid #d4af37 !important;
+            padding: 10px 20px !important;
+            border-radius: 5px !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+            font-size: 1em !important;
+            transition: transform 0.3s, box-shadow 0.3s !important;
+            cursor: pointer !important;
+        }
+        
+        .site-header .home-button:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4) !important;
+        }
+        
         /* Cibler UNIQUEMENT le header du contenu */
         .container > header {
             text-align: center;
@@ -72,13 +90,14 @@
             border-bottom: 2px solid #d4af37;
         }
         
-        h1 {
+        h2 {
             font-family: 'Audiowide', cursive;
-            font-size: 3em;
-            font-weight: 400;
-            color: #d4af37;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            font-size: 1.8em;
+            color: #e8d5b7;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(232, 213, 183, 0.2);
+        }    letter-spacing: 2px;
         }
 
         .profile-photo {
@@ -192,6 +211,7 @@
                 <a href="about.html" class="nav-link active">À propos</a>
                 <a href="mailto:gil@sawas-ai.art" class="nav-link">Contact</a>
             </nav>
+            <a href="index.html" class="home-button">ACCUEIL</a>
             <button class="menu-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
