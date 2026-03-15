@@ -533,24 +533,28 @@
         }
 
         .hero-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: white;
-            color: #c41e3a;
-            border: 2px solid #c9a961;
-            border-radius: 5px;
-            font-weight: bold;
+            display: block;
+            margin-top: 25px;
+            padding: 10px 0;
+            background: transparent;
+            color: #c9a961;
+            border: none;
+            border-bottom: 2px solid #c9a961;
+            font-family: 'Audiowide', cursive;
+            font-weight: normal;
             text-decoration: none;
-            font-size: 0.95em;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
             cursor: pointer;
             text-align: center;
+            text-transform: uppercase;
         }
 
         .hero-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
+            color: #ffffff;
+            border-bottom-color: #ffffff;
+            text-shadow: 0 0 20px rgba(201, 169, 97, 0.6);
         }
 
         /* CENTRE : Logo LUZ + Contenu - parfaitement centré */
@@ -990,7 +994,9 @@
             <video class="hero-video-left" autoplay loop muted playsinline>
                 <source src="videos/gil_through_time_FINAL_v3.mp4" type="video/mp4">
             </video>
-            <a href="videos.html" class="hero-button">Voir les vidéos</a>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="videos.html" class="hero-button">Voir les vidéos</a>
+            </div>
         </div>
 
         <!-- CENTRE : Logo LUZ + Contenu principal -->
@@ -1025,7 +1031,9 @@
                 <div class="gallery-image" style="background-image: url('images/yYciLLHejB2PoV7tFwVK--1--zv9u4.jpg');" loading="lazy"></div>
                 <div class="gallery-image" style="background-image: url('images/qgC6AhTIUyy9keBwruZp--1--lkevn.jpg');" loading="lazy"></div>
             </div>
-            <a href="https://creator.nightcafe.studio/u/gilsawas" target="_blank" class="hero-button">40 000 créations sur NightCafe</a>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://creator.nightcafe.studio/u/gilsawas" target="_blank" class="hero-button">40 000 créations sur NightCafe</a>
+            </div>
         </div>
 
         <!-- Scroll Indicator -->
