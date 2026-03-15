@@ -23,7 +23,7 @@
     --space-3xl: 144px;
 
     /* Couleurs principales */
-    --gold: #d4af37;
+    --gold: #c9a961;
     --gold-light: #F4E4C1;
     --gold-dark: #B8941E;
     --red-deep: #8B0000;
@@ -168,7 +168,7 @@ a:hover {
             position: absolute;
             width: 12px;
             height: 12px;
-            background: radial-gradient(circle at 30% 30%, #f4e4c1, #d4af37);
+            background: radial-gradient(circle at 30% 30%, #f4e4c1, #c9a961);
             border-radius: 50%;
             box-shadow: 0 2px 8px rgba(212, 175, 55, 0.6), inset -1px -1px 2px rgba(0, 0, 0, 0.5);
         }
