@@ -764,14 +764,27 @@
             setupFilters();
         }
         
+        // Shuffle function (Fisher-Yates algorithm)
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+        
         // Render gallery
         function renderGallery() {
             const gallery = document.getElementById('gallery');
             gallery.innerHTML = '';
             
-            const filteredData = currentCategory === 'all' 
+            let filteredData = currentCategory === 'all' 
                 ? galleryData 
                 : galleryData.filter(item => item.category === currentCategory);
+            
+            // Shuffle the filtered data
+            filteredData = shuffleArray(filteredData);
             
             filteredData.forEach((item, index) => {
                 const div = document.createElement('div');
