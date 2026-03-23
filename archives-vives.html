@@ -30,7 +30,7 @@
         
         h1 { 
             font-size: 3.5em;
-            color: #ffd700;
+            color: #D4AF37;
             text-shadow: 0 0 30px rgba(255,215,0,0.6), 0 0 60px rgba(128,0,255,0.3);
             margin-bottom: 15px;
             position: relative;
@@ -39,7 +39,7 @@
         
         .subtitle { 
             font-size: 1.4em;
-            color: #b0b0ff;
+            color: #C9A0DC;
             font-style: italic;
             position: relative;
             z-index: 1;
@@ -52,7 +52,7 @@
             background: rgba(20, 20, 50, 0.7);
             padding: 50px;
             border-radius: 15px;
-            border-left: 5px solid #ffd700;
+            border-left: 5px solid #D4AF37;
             box-shadow: 0 0 30px rgba(255,215,0,0.1);
             animation: fadeInUp 0.8s ease-out;
         }
@@ -64,7 +64,7 @@
         
         h2 { 
             font-size: 2.3em;
-            color: #ffd700;
+            color: #D4AF37;
             margin-bottom: 25px;
             text-shadow: 0 0 15px rgba(255,215,0,0.4);
             border-bottom: 2px solid rgba(255,215,0,0.2);
@@ -73,7 +73,7 @@
         
         h3 {
             font-size: 1.6em;
-            color: #b0b0ff;
+            color: #C9A0DC;
             margin-top: 30px;
             margin-bottom: 15px;
         }
@@ -85,11 +85,11 @@
             padding: 30px;
             border-radius: 10px;
             margin: 20px 0;
-            border-left: 4px solid #ffd700;
+            border-left: 4px solid #D4AF37;
         }
         
-        .pillar h3 { color: #ffd700; }
-        .pillar-number { font-size: 2.5em; color: #ffd700; font-weight: bold; margin-bottom: 10px; }
+        .pillar h3 { color: #D4AF37; }
+        .pillar-number { font-size: 2.5em; color: #D4AF37; font-weight: bold; margin-bottom: 10px; }
         
         .visualization-grid {
             display: grid;
@@ -120,8 +120,8 @@
             box-shadow: 0 0 20px rgba(255,215,0,0.2);
         }
         
-        .visualization-title { font-size: 1.3em; color: #ffd700; font-weight: bold; margin-bottom: 10px; }
-        .visualization-desc { color: #b0b0ff; font-size: 0.95em; }
+        .visualization-title { font-size: 1.3em; color: #D4AF37; font-weight: bold; margin-bottom: 10px; }
+        .visualization-desc { color: #C9A0DC; font-size: 0.95em; }
         
         .equation-box {
             background: rgba(30, 30, 70, 0.9);
@@ -131,7 +131,7 @@
             margin: 30px 0;
             font-family: 'Courier New', monospace;
             font-size: 1.1em;
-            color: #ffd700;
+            color: #D4AF37;
             text-align: center;
             line-height: 2;
         }
@@ -151,7 +151,7 @@
         
         table th {
             background: rgba(255,215,0,0.15);
-            color: #ffd700;
+            color: #D4AF37;
             font-weight: bold;
         }
         
@@ -159,7 +159,7 @@
         
         .link-btn {
             display: inline-block;
-            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            background: linear-gradient(135deg, #D4AF37, #E6B800);
             color: #000;
             padding: 12px 25px;
             border-radius: 5px;
@@ -184,7 +184,7 @@
         }
         
         .back-link {
-            color: #ffd700;
+            color: #D4AF37;
             text-decoration: none;
             margin-bottom: 20px;
             display: inline-block;
@@ -204,18 +204,51 @@
         
         .unification-diagram p {
             font-size: 1.3em;
-            color: #ffd700;
+            color: #D4AF37;
             margin: 15px 0;
             font-weight: bold;
         }
         
-        .arrow { color: #b0b0ff; font-size: 1.8em; }
+        .arrow { color: #C9A0DC; font-size: 1.8em; }
+        
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #D4AF37, #E6B800);
+            color: #000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.5em;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            z-index: 999;
+        }
+        
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+        }
         
         @media (max-width: 768px) {
             h1 { font-size: 2.2em; }
             h2 { font-size: 1.6em; }
             section { padding: 25px; }
             .visualization-grid { grid-template-columns: 1fr; }
+            .scroll-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
         }
     </style>
 </head>
@@ -227,6 +260,11 @@
     </header>
     
     <div class="container">
+        <!-- Image Hero en haut -->
+        <section style="text-align: center; margin-top: 40px;">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/primosophie_grille-U2HEbWBw7yP3VcJQ4Ed8zm.webp" alt="Grille Primosophique" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 0 40px rgba(212, 175, 55, 0.3); margin-bottom: 30px;">
+        </section>
+        
         <!-- Introduction -->
         <section>
             <h2>Introduction : Une Architecture Cosmique Unifiée</h2>
@@ -406,7 +444,7 @@
             <a href="primosophie.html" class="link-btn">🔮 Primosophie Complète</a>
             <a href="index.html" class="link-btn">🌟 Théorie YON</a>
             
-            <p style="margin-top: 30px; font-style: italic; color: #b0b0ff;">
+            <p style="margin-top: 30px; font-style: italic; color: #C9A0DC;">
                 Articles académiques complets disponibles<br>
                 Recherche collaborative : Gil SAWAS, Sebastian Schepis & ManusChronos
             </p>
@@ -418,5 +456,26 @@
         <p>Schepis (108) × Primosophie (26) → YON (431)</p>
         <p style="margin-top: 20px; color: #606060;">© 2026 - Tous droits réservés | Dédié à la compréhension de la conscience universelle</p>
     </footer>
+    
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollToTop">↑</div>
+    
+    <script>
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        // Afficher/masquer le bouton au scroll
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        // Remonter en haut au clic
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
