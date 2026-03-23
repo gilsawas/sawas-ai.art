@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gil au temps de la Révolution Française - SAWAS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Tahoma&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Tahoma', sans-serif;
+            line-height: 1.8;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8B0000 0%, #000 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 2px solid #c9a961;
+            position: relative;
+        }
+
+        .home-button {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #fff;
+            color: #000;
+            border: 2px solid #c9a961;
+            padding: 10px 20px;
+            font-family: 'Audiowide', sans-serif;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            visibility: visible;
+            display: inline-block;
+        }
+
+        .home-button:hover {
+            background: #c9a961;
+            color: #fff;
+            transform: translateY(-50%) translateY(-3px);
+            box-shadow: 0 0 20px rgba(201, 169, 97, 0.5);
+        }
+
+        h1 {
+            font-family: 'Audiowide', sans-serif;
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #c9a961;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .story-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .story-section.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .story-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #ddd;
+        }
+
+        .story-text p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        /* Dialogue styling */
+        .dialogue {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+            border-left: 3px solid #c9a961;
+        }
+
+        .dialogue p {
+            margin-bottom: 0.8rem;
+            font-style: italic;
+            color: #e0e0e0;
+        }
+
+        .story-image {
+            flex: 0 0 45%;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .story-image img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(201, 169, 97, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .story-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 50px rgba(201, 169, 97, 0.5);
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: #c9a961;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        footer {
+            background: #1a1a1a;
+            padding: 2rem;
+            text-align: center;
+            border-top: 2px solid #c9a961;
+            margin-top: 4rem;
+            color: #999;
+        }
+
+        footer a {
+            color: #c9a961;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .author-note {
+            background: rgba(201, 169, 97, 0.1);
+            border-left: 3px solid #c9a961;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #c9a961;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c9a961, transparent);
+            margin: 3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .story-section {
+                flex-direction: column !important;
+                gap: 1.5rem;
+            }
+
+            .story-image {
+                flex: 1;
+                min-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .home-button {
+                position: static;
+                transform: none;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gil au temps de la Révolution Française</h1>
+        <p class="subtitle">Une nouvelle de Gil Sawas (2005)</p>
+        <a href="index.html" class="home-button">ACCUEIL</a>
+    </header>
+
+    <div class="container">
+        <!-- Préface -->
+        <div style="text-align: center; margin-bottom: 3rem; padding: 2rem; background: rgba(201, 169, 97, 0.05); border-radius: 8px;">
+            <p style="font-style: italic; color: #c9a961; margin-bottom: 1rem;">
+                "Je vais essayer le copier-coller, c'est pas évident pour moi, c'est la première fois que je me lance dans une telle entreprise…"
+            </p>
+            <p style="color: #999; font-size: 0.95rem;">
+                Écrite le 2 avril 2005 sur un forum internet, cette nouvelle contient tous les germes de YON et LUZ, formalisées mathématiquement 20 ans plus tard. Une histoire de voyage temporel, d'amour transcendantal et de conscience façonnant la réalité.
+            </p>
+        </div>
+
+        <!-- Section 1: L'éblouissement sur le Larzac -->
+        <div class="story-section">
+            <div class="story-text">
+                <p>Je roulais sur le plateau du Larzac dans une automobile confortable. La direction était assistée, il faisait un peu chaud dehors, mais c'était pas grave, car j'avais la clim'…Je me permis d'adopter une position qui me semblait être l'attitude virile de l'homme sans soucis, et bien nourri.</p>
+                <p>Je roulais sur le plateau du Larzac, sur une route qui n'en finissait pas, à la recherche d'un raccourci que jamais je ne trouva.</p>
+                <p>Soudain, et pour moi, c'est surtout à partir de maintenant que ça devient bizarre, je me sentis ébloui par une aveuglante lumière blanche. Je fermai les yeux, et commençai à m'endormir, et dans mon cerveau délirant, des nains portaient des cierges en hurlant.</p>
+            </div>
+            <div class="story-image">
+                <img src="images/pasted_file_qozRtA_v2_01_eblouissement_larzac.webp" alt="L'éblouissement sur le Larzac">
+                <p class="image-caption">L'éblouissement sur le Larzac - La lumière blanche qui transporte Gil</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 2: Rencontre avec le manant -->
+        <div class="story-section reverse">
+            <div class="story-text">
+                <p>Mais même les meilleures choses ont une fin, et au matin, je me réveillai, pour le moins étonné. Au début, je n'en crus pas mes yeux. Puis, je finis par les croire : J'étais en forêt de Rambouillet…</p>
+                <p>Et ce qui me semblait le plus ahurissant, c'est que ce n'était pas exactement la forêt de Rambouillet telle que nous la connaissons tous. Non…Quelques légères différences. Les arbres pas vraiment au bon endroit. Vous voyez, quoi ? La forêt de Rambouillet telle qu'elle pouvait l'être il y a deux cents ans…</p>
+                <p>Après un bref instant de stupeur assez compréhensible, je m'aperçus que ma super voiture ne m'avait pas suivi. Je n'avais même pas fini de la payer…</p>
+                <p>Mais en même temps, si j'avais rétrogradé de deux cents années, elle n'était pas prête d'être fabriquée, alors qu'on ne me demande pas d'argent maintenant…</p>
+                <p>Deuxième constatation, je ne pouvais pas boire mon café du matin, pas le moindre bistrot alentour, et ça me rend toujours un peu bougon. D'autant que personne contre qui bougonner, non plus…</p>
+                <p>Ah, si, un homme s'avançait sur le chemin, proche de moi. Il portait un bonnet phrygien, ce qui me fit penser que nous devions être au moins en 1791, et sans doute guère plus, il n'a pas été à la mode si longtemps…</p>
+                <div class="dialogue">
+                    <p>« Bonjour citoyen, bougonnai-je.</p>
+                    <p>- Salut à toué… »</p>
+                </div>
+                <p>Répondit-il en Canadien. J'étais peut-être au Canada ? Mais ça voudrait dire que dans la même nuit j'aurais été conduit pendant mon sommeil depuis le plateau du Larzac, jusqu'à la forêt de Rambouillet, elle-même transportée au Canada, et le tout deux cents ans plus tôt. Et ça, mon esprit cartésien se refusait à l'admettre. Après réflexion, c'était plutôt le langage canadien qui devait être plus proche de l'ancien français que le français actuel. Il ne faut pas toujours chercher midi à quatorze heures.</p>
+                <div class="dialogue">
+                    <p>« Va bien le Roué ? La forme ? Me renseignai-je discrètement..</p>
+                    <p>- Dame ! on dit qu'il a eu la grippe ct' hiver, j'croué…</p>
+                </div>
+                <p>En tout cas, le roi était vivant. C'était une bonne chose pour moi, car il est d'usage pour les voyageurs dans le temps, de rencontrer le souverain du lieu, parce que nous sommes détenteurs de secrets technologiques, de visions d'avenir, et autres, qui ne sont pas à confier à n'importe quel manant. D'autant qu'avec mes vêtements modernes, les manants auraient peut-être tendance à me prendre pour un voleur de poules.</p>
+                <p>Par chance, le manant se rendait justement à Paris. Il avait un petit chariot prêt à partir. Il me déposerait juste devant Les Tuileries. (C'est ça, ou alors, j'écris une page de tribulations…)</p>
+                <p>Pendant le voyage, il partagea son pain et une tranche de lard, puis je demandai :</p>
+                <div class="dialogue">
+                    <p>« Mon cadran solaire retarde ou avance, en quelle année sommes-nous ?</p>
+                    <p>- Crénom, tu s'rais pas un voleur de poules, toué ?</p>
+                    <p>- Mais non, je viens de loin, c'est tout.</p>
+                </div>
+                <p>Il fut rassuré. En le quittant, je cherchai quoi lui offrir pour le remercier, mes €uros n'avaient sans doute pas cours, je trouvai au fond de ma poche un porte-clef en plastique, sans grande valeur, mais qui lui fit très plaisir.</p>
+                <p>Nous nous quittâmes en très bons termes.</p>
+            </div>
+            <div class="story-image">
+                <img src="images/pasted_file_exFRKI_v2_02_manant_rambouillet.webp" alt="Rencontre avec le manant">
+                <p class="image-caption">Rencontre avec le manant - Forêt de Rambouillet, bonnet phrygien</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 3: Gil à la cour - Inventions -->
+        <div class="story-section">
+            <div class="story-text">
+                <p>Pour accéder jusqu'au roi, je dus malgré tout escalader différents obstacles, dont une petite soubrette.</p>
+                <p>Je fus enfin devant le monarque, Louis XVI, à qui il avait été dit qu'un Etranger venu de très loin était Faiseur de Grande Magie et Détenteur de Grands Savoirs.</p>
+                <div class="dialogue">
+                    <p>« Sois le bienvenu, Ô noble étranger aux yeux couleur de jais noir.</p>
+                    <p>- Merci, ô le plus grand d'entre les rois.</p>
+                    <p>- On me dit que tu es habile dans l'art de faire des tours.</p>
+                    <p>- Vous n'en croirez pas vos augustes yeux, Sire. Je viens de très loin par delà les mers, d'un pays où on connaît beaucoup de secrets, vous allez voir, nous allons faire de grandes choses ensembles, je vais vous tailler un Empire à faire pâlir Napoléon, on va révolutionner l'histoire, et vous me nommerez Duc et me donnerez des terres ! La bombe atomique ! Majesté, on va faire tout péter à la bombe atomique !!</p>
+                    <p>- Ah ?</p>
+                    <p>- Oui, Monseigneur. E = mc2, c'est pas fabuleux, ça ?</p>
+                    <p>- Sans doute…Qu'est-ce que ça veut dire ?</p>
+                    <p>- Et bien, ce sont des questions d'énergie, de masse peut-être, euh, je ne me souviens pas bien. En tout cas, si vous allez un jour sur la lune, ce sera grâce à ça…</p>
+                    <p>- Mais que veux-tu que j'aille faire sur la lune ? Je suis si bien dans mon palais, mon bon Gil. ?</p>
+                    <p>- Qu'importe, on va rester simple, la bonne vieille lampe à incandescence. Je vais damer le pion à Edison, c'est déjà pas si mal. Pour l'électricité, on fera pédaler un homme avec une dynamo. Vous avez un pédaleur ?</p>
+                    <p>- Nous avons de tout ici. Répondit le roi, prudent.</p>
+                    <p>- Je vous propose alors d'enfermer dans une ampoule de verre, la lumière de mille bougies.</p>
+                    <p>- Mille bougies ? Dit-il, ébloui. Tu serais un bien grand mage.</p>
+                    <p>- Mille bougies. Il nous faut un filament en tungstène…</p>
+                    <p>- Tinkstenn ?? Entendis-je en Autrichien. Marie-Antoinette, la femme de Louis, s'avançait, avenante, et l'œil égrillard.</p>
+                    <p>- tungstène, tout juste. Ensuite, il n'y a plus qu'à faire le vide dans l'ampoule, et…et…Comment je fais le vide ? Pas en aspirant l'air de l'ampoule, en tout cas…Je n'avais pas pensé à ça…Je ne sais pas comment on fait le vide. C'est si simple à faire dans ma tête, pourtant.</p>
+                </div>
+            </div>
+            <div class="story-image">
+                <img src="images/pasted_file_o1plQY_gil_cour_inventions.webp" alt="Gil à la cour - Les inventions">
+                <p class="image-caption">Gil à la cour - Présentant ses inventions à Louis XVI</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 4: Le cassoulet -->
+        <div class="story-section reverse">
+            <div class="story-text">
+                <div class="dialogue">
+                    <p>« Pas tinkstenn ?? » Dit Marie-Antoinette, déçue.</p>
+                    <p>- C'est pas grave, Ma Reine. »</p>
+                </div>
+                <p>Je disais ça, mais je commençais à me demander ce que je pouvais leur apporter de ma civilisation.</p>
+                <div class="dialogue">
+                    <p>" Allons aux cuisines, vos majestés, on réfléchira mieux devant un bon cassoulet.</p>
+                    <p>- Cassoulet ?? Qu'est-ce que c'est ?? S'écrièrent-ils comme un seul homme.</p>
+                    <p>- Vous verrez, je vous donnerai la recette. C'est de mon pays. Venez, Majesté, vous aussi, Majestère, dis-je en offrant mon bras à une Marie-Antoinette rosissante….</p>
+                </div>
+                <p>Une demie-heure plus tard, nous faisions joyeusement ripaille, buvant du vin de fronton, écoutant les blagues salaces de Louis, qui est champion, pour ça. J'avais convié quelques laquais et domestiques pour mettre un peu d'ambiance, et la Reine dansait sur les tables, complètement bourrée.</p>
+                <p>A la fin du repas, le Roi se leva, très ému, et me tint à peu près ce langage :</p>
+                <div class="dialogue">
+                    <p>« Noble étranger, en vérité, tu n'avais pas menti, et j'ai pu constater à quel point grands sont tes pouvoirs, et infinie ta science. Je ne me suis jamais autant régalé qu'avec ton cassoulet, et demain, j'établirai par décret qu'il sera plat national. Je suis d'ailleurs rassuré, car, je peux te le dire maintenant, avec ton accoutrement et tes paroles, je t'ai d'abord pris pour un voleur de poules.</p>
+                    <p>- ??? Mais c'est une manie. Je suis d'une honnêteté sans pareille.</p>
+                    <p>- En attendant, reprit-il, tu peux choisir le cadeau que tu désires à la hauteur de ton grand mérite.</p>
+                    <p>- Votre Majesté, est trop bonne, Sire. A la vérité, j'aimerais assez que vous me fissiez cadeau de la moitié de votre royaume.</p>
+                    <p>- HoHoHo !!! Tressauta son ventre. Tu sais que tu remplacerais avantageusement mon bouffon, Gil. Mais je vais t'offrir un porte-clefs, tu le mérites bien. »</p>
+                </div>
+                <p>Ton bouffon. Radin, va. Tu vas voir, la prochaine fois que tu me demanderas de te cuisiner un cassoulet.</p>
+                <p>Il se fit apporter un petit coffre duquel il sortit un porte-clefs, en métal celui-là. Comme il était féru de ferronnerie, il me donna également une clef assortie. J'enfouis le tout dans ma poche en marmonnant un vague merci. Ca peut toujours se revendre, et demain, si je lui apprends comment on cuisine la choucroute, il m'en offrira peut-être un autre.</p>
+            </div>
+            <div class="story-image">
+                <img src="images/pasted_file_YafCOL_v2_03_louis_xvi_cassoulet.webp" alt="Le cassoulet aux Tuileries">
+                <p class="image-caption">Le cassoulet aux Tuileries - Louis XVI et Marie-Antoinette découvrent le plat</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 5: Le petit Louis XVII -->
+        <div class="story-section">
+            <div class="story-text">
+                <p>Le Roi voulait me présenter son fils, ça lui faisait plaisir. Dans une pièce voisine, il y avait là un gosse, qui faisait à dada sur un cheval de bois.</p>
+                <div class="dialogue">
+                    <p>- Mon fils Louis, annonça-t-il avec emphase, héritier de la couronne de France.</p>
+                    <p>- Non ? …Vous voulez dire que…</p>
+                    <p>- C'est lui qui me succèdera.</p>
+                </div>
+                <p>Louis XVII…Le Dauphin, le fameux petit mitron, Louis XVII…Pas près de succéder à son papa. Je connaissais un peu son histoire, dans les grandes lignes. Pas grand chose à se souvenir, il n'a pas fait vraiment long feu dans la vie. Emprisonné très jeune à la Tour du Temple, il fut confié à la garde et éducation du cordonnier Simon et de sa femme. Certainement maltraité, sans jamais sortir, il y mourut vers l'âge de 10 ans…Vie sacrifiée à la raison d'Etat…</p>
+                <p>Evidemment, je n'allais pas révéler son avenir au petit Louis, si frêle, tout fier sur son petit cheval. Je lui tapotai gentiment la joue :</p>
+                <div class="dialogue">
+                    <p>« Oh ! Mais c'est un grand garçon. C'est de la graine de grand Roi, ça ! Et ça va gouverner tout seul la France, hein ?».</p>
+                </div>
+                <p>Le gamin avait une jolie frimousse, et me fit un beau sourire. Papa Louis souriait aussi. Par empathie, je finis par sourire aussi. On souriait tous, on était content.</p>
+                <p>Le Roi me raccompagna jusqu'à mes appartements, me souhaita une bonne nuit, tourna les talons, puis, se ravisant, revint jusqu'à moi et m'empoignant les mains avec effusion :</p>
+                <div class="dialogue">
+                    <p>« Gil, …Je voulais te dire…</p>
+                    <p>- Oui, Majesté ?</p>
+                    <p>- Merci…Pour le cassoulet.</p>
+                </div>
+                <p>Et il s'enfuit en pétaradant.</p>
+            </div>
+            <div class="story-image">
+                <img src="images/pasted_file_AxqEBP_v2_04_louis_xvii_cheval.webp" alt="Le petit Louis XVII">
+                <p class="image-caption">Le petit Louis XVII - L'enfant sur son cheval de bois</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 6: La fuite à Varennes -->
+        <div class="story-section reverse">
+            <div class="story-text">
+                <p>Je plongeai avec délices dans les profondeurs du matelas, me disant qu'un Roi, c'est une bonne relation dans la vie, puis m'endormis. Pas longtemps. Une main me secouait, cherchant frénétiquement à me réveiller. La voix du Roi :</p>
+                <div class="dialogue">
+                    <p>« Gil !!!</p>
+                    <p>- Fais chier, Louis, dors !</p>
+                    <p>- Allez, réveille-toi, il faut qu'on s'enfuie.</p>
+                    <p>- Pourquoi ?</p>
+                    <p>- Mes conseillers m'ont dit de le faire.</p>
+                    <p>- On le fera demain, alors !</p>
+                    <p>- Allez viens, quoi, sois pas le mauvais bougre.</p>
+                    <p>- Et où tu veux fuir ?</p>
+                    <p>- J'ai des potes à Varennes.</p>
+                    <p>- Tu sais que tu fais chier, Louis, hein ? Je viens, mais c'est la dernière fois. Mon café est prêt ? »</p>
+                </div>
+                <p>Il n'avait même pas mis sa perruque. Quel scandale ! Je ne fis pas de commentaires, je ne suis jamais très coiffé au réveil non plus.</p>
+                <p>Également la sœur du roi, et Axel de Fersen à la conduite. Ca se mit en route, en cahotant.</p>
+                <p>Je replongeai aussitôt dans les bras de Morphée, Marie-Antoinette sur les genoux. Je n'avais pas fini ma nuit.</p>
+                <p>Je dormais d'un doux sommeil calme, où je rêvais de poissons multicolores. J'étais dans un immense aquarium. C'était très joli. Je commençais à entendre des bruits. Des bruits de cuisine, je crois.</p>
+                <div class="dialogue">
+                    <p>- Louis, mon café est prêt ??!!! Criai-je avant d'ouvrir les yeux.</p>
+                </div>
+                <p>Je déteste ouvrir les yeux avant que le café ne soit prêt. On a tous nos petites manies, n'est-ce pas ?</p>
+                <p>Pas de réponse du Roi. Bon. Je veux bien ouvrir les yeux.</p>
+                <p>Ce n'était pas des bruits de cuisine. C'était des gens qui frappaient avec des gamelles sur des sortes de grilles. Je les entendais, et je voyais celui qui me faisait face, à travers des barreaux qui gênaient mon champ de vision. Voyons. Derrière, c'était un mur. Sur les côtés, des murs. Sur le sol, de la paille. Pas de fenêtres. Des graffiti sur les murs…On dirait…Bon sang, mais c'est bien sûr :</p>
+                <div class="dialogue">
+                    <p>- J'ai l'impression de me trouver à la prison du couvent des Carmes, me dis-je, pas faraud.</p>
+                </div>
+            </div>
+            <div class="story-image">
+                <img src="images/pasted_file_jMn6OC_v2_05_fuite_varennes.webp" alt="La fuite à Varennes">
+                <p class="image-caption">La fuite à Varennes - La berline dans la nuit</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 7: La Conciergerie et Lisa -->
+        <div class="story-section">
+            <div class="story-text">
+                <p>J'étais effectivement à la prison du couvent des Carmes. Moi, un futur ami du Roi. C'est gonflé, quand même. On me signifia d'ailleurs assez rapidement que j'étais condamné par la Convention pour intelligence avec l'ennemi, à avoir la tête tranchée en place de Grève, au moment où il plairait à mes juges de le faire.</p>
+                <p>Ils ne semblaient pas trop pressés, puisque les mois s'égrainaient, dans une indifférence générale. J'aime bien les égrainer aussi, ces mois du calendrier républicain. Chacun d'eux est comme un bon vin : germinal, floréal, prairial, messidor, thermidor, fructidor, vendémiaire, brumaire, frimaire, nivôse, pluviôse, ventôse.</p>
+                <p>Nous les devons à Fabre d'Eglantine, à qui nous devons aussi : « Il pleut, il pleut bergèèère, rentre tes blancs moutoons, allons sous la chaumière, bergère vite allons. Allons, viens donc vouère par-là, sous la chaumière, viiiiite, la bergèèère… Mais quand même.</p>
+                <p>Condamné à avoir la tête tranchée en place de Grève. Quel triste destin. Je n'aimais pas trop cette idée. Je préférais qu'un miracle survienne au dernier moment, voire avant. Le Roi n'avait même pas eu le temps de nationaliser mon cassoulet…</p>
+                <p>Je reçus cependant une bonne nouvelle. Un matin, je vis le gardien Storff se pointer dans ma cellule, sur sa jambe de bois :</p>
+                <div class="dialogue">
+                    <p>« Allez Gil, vieille crapule, réveille-toi !!! » C'est incroyable, cette manie qu'ont les gens de toujours vouloir me déranger pendant la sieste.</p>
+                    <p>« Tu es transféré !</p>
+                    <p>- Où ?</p>
+                    <p>- Conciergerie…</p>
+                    <p>- Oh ?</p>
+                    <p>- Oui.</p>
+                    <p>- …</p>
+                    <p>- …</p>
+                    <p>- Mon café est prêt ?! »</p>
+                </div>
+                <p>Je captai tout de suite ce que cette nouvelle situation allait changer pour moi. En étant incarcéré à La Conciergerie, je ne dépendais plus de la place de Grève pour mon guillotinage, mais de la place de la Révolution. Et place de la Révolution, c'est là où officiait Sanson. La Star des bourreaux. Sanson le formidable. Un homme qui avait même du sang Royal. Et plein… Sur les mains… Sinistre réputation... C'est le genre de truc que je pourrais raconter à mes petits enfants, quand je serai vieux et ratatiné, les soirs d'hiver au coin du feu. Ce n'était plus une question de simple intelligence avec l'ennemi…Et perdre la tête pour raison de grande intelligence me paraissait finalement assez honorable.</p>
+                <p>La Conciergerie avait également l'avantage qu'on n'y moisissait pas longtemps. Ce n'était pas que je fusse particulièrement pressé, mais je déteste ces gens qui prennent des décisions, et après, tu vois rien venir pendant des mois. Des promesses, toujours des promesses.</p>
+                <p>Du reste, on ne faisait pas qu'attendre… Excités par la mort proche, et bien décidés à profiter de leurs derniers jours, les condamnés se mélangeaient assez facilement les uns dans les autres, et dès les bougies éteintes, les murs de la Salle de Garde résonnaient du râle de nos deux cents jouissances entremêlées.</p>
+                <p>Je participais à l'effort collectif, en particulier avec une certaine Lisa, au corps juvénile, élastique et chaud, pour laquelle je commençais même à éprouver quelque amour…Seule parmi nous à avoir une chance de s'en sortir, puisque connaissant le jeune Saint-Just, qui faisait la pluie et le beau temps à la Convention. On craignait qu'elle ne fût noble, ce qu'elle n'était pas, bien que s'appelant : de la Marantine. Le temps que Fouquier-Tinville vérifie, il la libérerait certainement.</p>
+                <p>Nous passions nos journées en discussions passionnées, et nos regards se disaient leur impatience de la tombée de la nuit où nos corps se retrouveraient…</p>
+                <p>Je commençais à l'aimer, au point qu'un matin, je décidai de lui faire en cadeau le porte-clefs que m'avait remis le Roi :</p>
+                <div class="dialogue">
+                    <p>- Tiens, Lisa, je te le donne en gage de mon amour éternel. »</p>
+                </div>
+                <p>En fait, je lui donnais aussi parce que je trouvais que cet objet me portait la poisse. Depuis que le Roi me l'avait offert, j'avais passé chacun de mes jours en prison.</p>
+                <p>Les tendres yeux de Lisa s'embuèrent de larmes :</p>
+                <div class="dialogue">
+                    <p>- Oh, Gil !… Oh, tu es si … »</p>
+                </div>
+                <p>Je ne sus jamais ce que j'étais tant, car la grande porte venait de s'ouvrir sur les deux gardes et le greffier, venus remplir la charrette du jour. Ils virent l'objet dans les mains de Lisa :</p>
+                <div class="dialogue">
+                    <p>- C'est quoi, ça ?</p>
+                    <p>- Un chouette porte-clefs, répondit-elle.</p>
+                    <p>- Montre, fit-il. Mais c'est le blason du Roi de France, dessus. Tu connais donc le Roi ?!</p>
+                    <p>- Non, c'est mon ami qui m'a fait ce présent.</p>
+                    <p>- C'est vrai ?</p>
+                    <p>- Mais pas du tout, et je ne connais pas cette jeune fille. » Répondis-je, un peu pour rire.</p>
+                </div>
+                <p>Ils tinrent conciliabule :</p>
+                <div class="dialogue">
+                    <p>- L'homme dit qu'il ne la connaît pas. Il a l'air sincère…</p>
+                    <p>- La femme prétend ne pas connaître le Roi. Elle ment certainement…</p>
+                    <p>- A la guillotine, la citoyenne ?</p>
+                    <p>- A la guillotine. »</p>
+                </div>
+                <p>Ils empoignèrent Lisa qui se tourna vers moi, ses yeux tendres embués de larmes :</p>
+                <div class="dialogue">
+                    <p>« Oh, Gil !… Oh, tu es si … »</p>
+                </div>
+                <p>Mais je ne sus jamais ce que j'étais tant, car ils l'emmenèrent, et je ne la revis plus…</p>
+                <p>Elle me manqua beaucoup, surtout les soirs, après l'extinction des bougies…</p>
+                <p>Je me disais bien que ce porte-clefs portait la poisse…</p>
+            </div>
+            <div class="story-image">
+                <img src="images/pasted_file_G5ieDa_v3_06_lisa_portrait.webp" alt="Lisa à la Conciergerie">
+                <p class="image-caption">Lisa à la Conciergerie - Belle et lumineuse</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 8: Le porte-clés fatal -->
+        <div class="story-section reverse">
+            <div class="story-text">
+                <p>Ainsi, les jours passaient. Mornes. J'appris que mon vieux copain Louis avait perdu la tête le 21 pluviôse. Brave Louis, il aurait sans doute fait un excellent quincaillier. Une erreur de parcours, mauvaise orientation, ça.</p>
+                <p>Un beau matin, (je m'en souviens bien, c'était le 20 thermidor, au plus fort de l'été, bonne date, pour mourir. Le chiffre 20 me semblait de bon augure, rond, et facile à énoncer, aurait dit un pote). Un beau matin, pardon, on vint me chercher :</p>
+                <div class="dialogue">
+                    <p>« Gil !!! Réveille-toi, vieux serpent !</p>
+                    <p>- Grompf…</p>
+                    <p>- Allez !</p>
+                    <p>- Mon café est prêt ?!</p>
+                </div>
+                <p>En plein milieu d'un rêve érotique, pensez si c'est agréable. On m'appela avec d'autres gens. C'était notre tour…</p>
+                <p>Passage obligé chez le coiffeur, pour ne pas avoir de cheveux qui gêneraient la bonne marche de la machine. Ce n'est pas un coiffeur qui a l'amour du travail bien fait. Une bonne giclée d'eau sur la nuque, trois gestes de son coupe-chou, et tu es apte au service, avec la douleur cuisante du feu du rasoir.</p>
+                <p>On commence à voir du sang qui gicle ici et là, avant-goût des réjouissances.</p>
+                <p>Après, ça se bousculait pas vraiment pour monter dans la charrette. J'y montai en premier, sinon, on est encore là demain.</p>
+                <p>Sur la route, de nombreux badauds, massés pour la plupart, de part et d'autre du Pont-Neuf. Ca crie, ça gesticule, ça vocifère, sacré spectacle, très vivant. Ce sont les « lécheuses de guillotine », citoyens payés par la commune de Paris et par le Comité de Salut Public pour nous railler. Certains sont là par désœuvrement, et nous lancent quelques fruits pourris avec un manque de conviction désespérant.</p>
+                <p>D'autres au contraire, plus nombreux, sont des passionnés : « A mort ! », « A mort ! » Crient-ils. Et la joie illumine leurs yeux. Ah, les braves gens. Ils réclament ma tête avec tant de plaisir que je regrette sincèrement n'en avoir qu'une à leur offrir…</p>
+                <p>Passés la rive, beaucoup moins de monde. Il y a deux heures à rouler au pas de lourds chevaux de labours, pour atteindre la place où l'échafaud est dressé. Les rues sont baignées de soleil. Ca chauffe sur la nuque… De plus en plus…C'est bien l'administration française ça. Ca invente une machine censée te découper sans souffrances, l'effet de la caresse d'une fraîche brise dans le cou, disent-ils, mais avant, on te confie à un coiffeur qui te charcute, même pas de mousse à raser…Et pourquoi la place de la Révolution, quand la place de Grève est à deux pas de la Conciergerie ?</p>
+                <p>Je suis vaguement mécontent. J'aurais préféré qu'on fasse ça au début du printemps…</p>
+                <p>Mes compagnons d'infortune ne semblent pas très réjouis non plus, à croire que nous n'avons pas le cœur à la rigolade…</p>
+                <p>Pour me motiver, je m'amuse à regarder les pigeons, longtemps que j'en n'avais pas vu, mais quand même, je trouve ça assez bête, un pigeon…</p>
+                <p>Heureusement, on arrive, il y a foule à nouveau. Beaucoup de couleurs, beaucoup de chevaux aussi. Chacun de nous bombe un peu du torse, se redresse. C'est là que je m'aperçois que monté premier, je serai le dernier à passer. C'est pas très malin…Mon impatience me fait toujours perdre du temps.</p>
+                <p>Je vois enfin le terrible Charles Sanson, 5ème du nom. Son ancêtre, un brave homme, a commencé par amour pour la fille du bourreau Jouënne. Pour se marier avec, il fallait épouser aussi le métier. Le père de famille avait les pommes, la première fois qu'il dût assister son beau-père. Le Sanson actuel est un digne successeur : 3000 têtes. Il accomplit son travail avec la régularité d'un métronome, et semble-t-il, un brin de lassitude. En ces mois d'été, la guillotine fonctionne sans discontinuer six heures par jour. Il faut le comprendre…</p>
+                <p>Chacun descend de la charrette, et monte directement à l'échelle, dans une grande dignité. C'est l'usage.</p>
+                <p>Parmi nous les condamnés, je revois avec stupeur l'homme que j'avais croisé en forêt de Rambouillet, qui m'avait mené à Paris. Je veux lui faire un geste de salut, mais mes mains sont attachées. Alors, je sautille sur place en lui faisant un large sourire. Bon, j'ai bien conscience d'être un peu ridicule, mais comment faire? Il me dévisage d'un œil transparent et maussade. Je ne comprends pas trop. On s'était quitté en bon terme, je lui avais offert un beau porte-clefs en plastique, Total, « vous ne viendrez plus chez nous par hasard » , pas une grande valeur en soi, mais pour trouver du plastique sous la Terreur…Les gens sont d'un matérialisme aussi, quel besoin a-t-il de se préoccuper d'une vulgaire babiole un jour comme aujourd'hui ? Il pourrait se concentrer sur ce qui se passe, on ne meurt quand même pas tous les jours…</p>
+            </div>
+            <div class="story-image">
+                <img src="images/pasted_file_XrGERn_v3_07_porte_cles_fatal.webp" alt="Le porte-clés fatal">
+                <p class="image-caption">Le porte-clés fatal - Le moment où Lisa reçoit le porte-clés</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 9: L'au-delà - Harold -->
+        <div class="story-section">
+            <div class="story-text">
+                <div class="author-note">
+                    <p><strong>Note de l'auteur original :</strong> "Ici, je reprends la plume, car Gil a encore écrit 4 pages, trop longues, et sans doute trop sordides pour un forum public… Je vais résumer pour lui. Il se fit donc exécuter ce 20 thermidor de l'an III, en 1793 donc, soit presque 200 années avant sa naissance, ce qui lui occasionna pendant longtemps de profonds problèmes existentiels et d'identité. Ses biographes eux-mêmes, ne s'accordent pas pour trancher si Gil a eu une mort prénatale ou une naissance post mortem. To be, or not to be, Gil en vint même parfois à douter de la réalité de son existence… Il ne retrouva jamais sa voiture, et ne la paya jamais…"</p>
+                </div>
+                <p>Harold souriait toujours, ses yeux d'un bleu métallique semblaient tournés vers un rêve intérieur et lointain.</p>
+                <div class="dialogue">
+                    <p>« Une partie de Chaturanga, Gil ?</p>
+                    <p>- Mais volontiers, Harold, c'est toujours un plaisir. »</p>
+                </div>
+                <p>Mes idées devenaient plus claires, je me souvenais parfaitement de ce jeu, l'ancêtre des échecs. Nous y jouions tous les deux, il y a si longtemps, en Inde, dans le Rajhastan, à une époque où j'étais brahmane hindouiste, et lui un père blanc, catholique, venu de Hollande évangéliser nos contrées de sauvages à une période où une famine incroyable s'était abattue sur mon peuple. Et la faim était comme un clou qui pénétrait dans l'estomac, et qui creusait, qui creusait.</p>
+                <p>Il était venu, Jaisalmer où j'habitais était une simple étape sur sa route, mais notre amitié fut si profonde et immédiate qu'il n'en est jamais reparti. Sa fin fut tragique, lapidé par les habitants du village, sous mes yeux, par des gens qui ne le comprenaient pas. Il n'y avait que les oiseaux et les enfants pour l'écouter…</p>
+                <div class="dialogue">
+                    <p>« Nous y jouerons plus tard. Reprit-il. Va d'abord droit devant toi, vers cette forêt, et prend le chemin. Tu ne peux pas te tromper, j'ai disposé des flèches, tu n'as qu'à les suivre. »</p>
+                </div>
+                <p>Je fis comme il avait dit, marchai longtemps, puis pénétrai dans la forêt, et empruntai un long chemin.</p>
+                <p>Je débouchai soudain dans une clairière, un petit vallon, où entre de grosses pierres, coulait une source d'eau claire.</p>
+            </div>
+            <div class="story-image">
+                <img src="images/pasted_file_4IN9v9_v2_08_harold_au_dela.webp" alt="Harold dans l'au-delà">
+                <p class="image-caption">L'au-delà : Harold - La rencontre mystérieuse</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 10: Retrouvailles avec Lisa -->
+        <div class="story-section reverse">
+            <div class="story-text">
+                <p>Elle était là, assise sur l'une d'elles, nue et pensive, sa longue chevelure ondulant jusqu'aux reins, elle caressait la coquille d'un escargot attendri….Elle ne me voyait pas encore, et je la regardais en silence. Mon cœur avait cessé de battre, mais quand on est mort, ça n'a pas grave conséquence…</p>
+                <div class="dialogue">
+                    <p>« Lisa… murmurai-je dans un dernier souffle</p>
+                    <p>- Toi ! …</p>
+                    <p>Elle leva vers moi un visage soudainement illuminé, se jetait dans mes bras :</p>
+                    <p>- Enfin Toi !</p>
+                </div>
+                <p>L'un contre l'autre, serrés fort, s'abandonnant, livrés nus à la force des émotions qui nous submergeaient, nous restâmes ainsi, longtemps, très longtemps, le temps d'une éternité, d'une vie, le temps d'un battement d'aile de papillon….</p>
+                <p>Mais le bruit que fit l'escargot en s'éloignant discrètement nous ramena en douceur à une réalité plus au-delà-à-au-delà…(On ne dit pas terre-à-terre dans l'au-delà).</p>
+                <div class="dialogue">
+                    <p>- Ainsi, ça a marché, dis-je, bouleversé.</p>
+                    <p>- Comme sur des roulettes ! Répondit-elle, déjà rieuse.</p>
+                    <p>- J'en aurais pas mis ma tête à couper. J'étais mort d'inquiétude, tu m'as beaucoup manqué. Surtout les soirs, après l'extinction des bougies.</p>
+                    <p>- J'ai bien cru mourir d'ennui, moi, fit-elle boudeuse. Tu as été si long !!</p>
+                    <p>- Mes juges ont été longs à s'exécuter. Mais c'était gonflé, notre pari. Supputer ainsi d'une vie après la mort pour réussir à nous réunir. On a eu du bol, imagine qu'il n'y ait rien eu ? Le néant ?</p>
+                    <p>- Gil ! On en a déjà assez parlé. S'agaçait-elle. Je ne voulais pas d'une vie sans toi.</p>
+                    <p>- Oui, mais quand même. Tu m'aurais bien oublié un jour, le temps fait toujours son œuvre. Tu aurais bien fini par trouver quelque forgeron, lequel à force de forger, aurait bien fini par…</p>
+                    <p>- Bon, si je comprends bien, tu n'es pas content de me retrouver ?</p>
+                    <p>- Comment peux-tu croire ça, mon amour ? Dis-je, déconcerté, éperdu.</p>
+                    <p>- Alors profitons de la vie ! Ce que tu peux être ronchon, parfois !</p>
+                    <p>- Je ne suis pas ronchon. Bougonnai-je. Et en plus, c'est quand même moi qui ai eu l'idée du porte-clefs.</p>
+                    <p>- Géniale, cette idée, quel sens de l'improvisation ! Mais quelle douleur de te quitter ! D'ailleurs à ce moment là, j'avais voulu te dire que…</p>
+                    <p>- Oui ?</p>
+                    <p>- On verra plus tard... Viens, rentrons vite chez nous.</p>
+                    <p>- Chez nous ?</p>
+                    <p>- Oui, je nous ai construit une chouette maison, toute belle, et on sera très heureux. En fait, elle a un peu la forme d'une soupière.</p>
+                    <p>- Une soupière ? Tiens ? Quelle idée… »</p>
+                </div>
+                <p>Elle rougit :</p>
+                <div class="dialogue">
+                    <p>« Euh, si tu veux, je voulais te faire plaisir en lui donnant la forme d'une cafetière, mais tu comprends, moi, des cafetières, je n'en ai jamais vu.</p>
+                    <p>- Oh! Mais c'est une idée sublime, ça, une soupière. J'en ai toujours rêvé. T'ai-je déjà dit, au fait, que j'adorais la soupe ? C'est vrai, quand je n'ai pas de café, chaque fois, je me dis, ben tiens, je me ferais bien une petite soupe ».</p>
+                </div>
+                <p>Devisant ainsi, tout à la joie de nos retrouvailles, nous marchions vers l'orée de la forêt, qu'éclairait une étrange brume dorée. Puis, comme la route était encore longue, nous la continuâmes en volant, ce qui n'est pas si facile qu'on pourrait croire, mais très agréable, une fois qu'on a pris le coup. On peut même aller très vite. Les cheveux de Lisa s'envolaient dans le vent, elle était radieuse, elle était belle, et en moi-même, je me disais que j'avais bien de la chance, et que c'était encore mieux que de courir sur une plage avec n'importe quelle autre fille sur fond de wabada bada…</p>
+            </div>
+            <div class="story-image">
+                <img src="images/pasted_file_8GQacG_v3_09_retrouvailles_lisa.webp" alt="Retrouvailles avec Lisa">
+                <p class="image-caption">Retrouvailles avec Lisa - La source dans la clairière</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 11: La maison-soupière -->
+        <div class="story-section">
+            <div class="story-text">
+                <p>Nous arrivâmes enfin devant ce qu'il serait convenu d'appeler une grosse marmite, avec trois pieds d'où partaient des escaliers. Il y avait également une anse, et un couvercle dont j'appris par la suite qu'il était rabattable, un peu comme une voiture décapotable, si vous voulez…</p>
+                <div class="dialogue">
+                    <p>- Qu'en penses-tu ? Me demanda-t-elle, une pointe d'anxiété dans la voix.</p>
+                    <p>- C'est, heu…C'est charmant. Inattendu, mais…mais c'est charmant.</p>
+                    <p>- Tu sais, si elle ne te plaît pas, on peut la transformer comme on veut, où même s'en construire une dizaine d'autres, et même en forme de cafetière, si tu en as envie.</p>
+                    <p>- Mais elle est parfaite, nous y serons très bien, et bien orientée, en plus.</p>
+                    <p>- Oui, ça, ça dépend où je mets le soleil. Tu veux qu'on mette la nuit ?</p>
+                    <p>- Oui, ce serait super. Avec juste quelques étoiles, s'il te plaît. Je te laisse faire, je ne suis pas encore habitué. »</p>
+                </div>
+                <p>Du geste auguste de la semeuse, elle qui n'avait pourtant jamais considéré une pièce d'un franc, elle fit naître un crépuscule, transformant en un clin d'œil le vaste paysage de plaine, en une atmosphère d'intime chaleur. Elle disposa ensuite quelques réverbères tout autour de la marmite, qui l'éclairaient d'une lumière falote laissant à penser qu'une étrange cérémonie antique allait s'y dérouler. Et c'était bien le cas…</p>
+                <p>Une cérémonie toute simple, celle de notre amour. Mais de notre amour enfin libre, sans contraintes, sans entraves. Libres de le laisser éclater enfin, pour la première fois…</p>
+                <div class="author-note">
+                    <p><strong>Note de l'auteur original :</strong> "Ici, je reprends la plume, parce que je trouve qu'ils ont bien le droit de faire l'amour tranquilles. Pour l'instant, ils n'ont connus que la grande salle de garde de la Conciergerie, et il y a mieux comme ambiance, au milieu de partouzes générales, en plus. Là, ça va être puissant, mais à la limite, ça ne nous regarde pas, on va pas regarder. Pour ceux qui ne sont jamais morts, sachez simplement que techniquement, ça se passe comme sur Terre, mais qu'au niveau des sensations, c'est plus, euh, Waouwh !!!"</p>
+                </div>
+                <div class="dialogue">
+                    <p>« Lisa !!! Mon café est prêt ??!!… Bon, comme je le disais, on a tous nos petites manies, et avant d'ouvrir les yeux, je préfère que…enfin, bref,</p>
+                    <p>- C'est prêt mon amour. »</p>
+                </div>
+                <p>Humm, que certains réveils sont agréables… Il y a quand même la petite corvée d'enlever la nuit, et de la remplacer par un petit matin propre avec quelques gouttes de rosée…C'est vraiment pas grand chose…</p>
+                <p>Rien à voir avec descendre les poubelles, par exemple.</p>
+                <div class="dialogue">
+                    <p>« Qui t'as appris à faire le café ? Il est délicieux. Aussi bon que celui d'Harold.</p>
+                    <p>- Justement, c'est lui.</p>
+                    <p>- Tiens ? Tu connais donc Harold ? » Avec une nuance de jalousie dans le ton, parce que quand même, mon pote Harold, c'est un sacré mec qui en a charmé plus d'une, avec son regard intense, dans les villages du Rajhastan. Mais il ne consommait pas, à cause de sa religion, et de son Christ qui le voulait pour lui tout seul.</p>
+                    <p>- Bien sûr, que je le connais. On a organisé un minimum ton arrivée, figure-toi. C'est quelqu'un de passionnant. Il ne m'attire pas du tout, mais c'est un génie, dans son genre.</p>
+                    <p>- C'est mon meilleur ami, tu sais, des siècles qu'on bourlingue ensemble.</p>
+                    <p>- Nous avons énormément parlé de toi. Ronronna-t-elle, câline, en se nichant contre moi. C'est quoi ce tube entre tes doigts ?</p>
+                    <p>- Oh, ça…Quelque chose qui m'a beaucoup manqué à la Conciergerie. Ca sert à faire sortir de la fumée par les trous de nez.</p>
+                    <p>- Pour quoi faire ?</p>
+                    <p>- Personne ne le sait vraiment… »</p>
+                </div>
+                <p>A ce moment, nous entendîmes frapper trois coups à la porte, et Louis XVI fit son apparition, un sachet de croissants à la main. Ce furent entre nous des effusions à n'en plus finir, pendant que Lisa, intimidée, tentait une gracieuse révérence. Son mec Gil tutoyait le Roi de France, quel mec, quand même, et elle devait se dire qu'elle était pas prête de le lâcher celui-là. Enfin, je pense que c'est ce qu'elle devait se dire.</p>
+                <p>Comme nous étions encore nus à son arrivée, Louis ouvrait des yeux ronds et incrédules…Lisa, c'est pas vraiment le gabarit de sa Marie-Antoinette…</p>
+                <div class="dialogue">
+                    <p>« Sacré Louis, ça fait plaisir de te revoir. Dis-je…Tu n'as pas changé. Un peu forci, peut-être. Tu vas rire, mais je m'attendais à te voir débarquer avec ta tête sous le bras, je sais, c'est idiot, mais là d'où je viens, j'avais vu une caricature de toi qui te représentait comme ça.</p>
+                    <p>- Là d'où tu viens ? Le futur, n'est-ce pas ?</p>
+                    <p>- Mais comment diantre…Mais qui a pu te dire ? Seule Lisa savait que…</p>
+                    <p>- Tout le monde, est au courant. On ne peut rien cacher de soi, ici. Et, si tu veux, quelqu'un qui vient du futur, ça a beaucoup impressionné les esprits. D'autant que personne ne sait la façon dont un tel phénomène à pu se produire. En principe, c'est impossible. Ca risque d'ailleurs de t'attirer quelques ennuis, tu verras…</p>
+                    <p>- Je me disais bien, c'était trop beau, on peut vraiment pas être peinard cinq minutes, dans la vie.</p>
+                    <p>- Harold t'en parlera. Il est plus au courant que nous de ces sortes de choses.</p>
+                    <p>- Ok, mangeons tes croissants, tu veux un café, ou une soupe, peut-être ?</p>
+                    <p>- Merci, juste un cassoulet… »</p>
+                </div>
+                <p>- Hum, un cassoulet, bien sur…Dès le matin, comme ça ? Après tout si tu en as envie. Pas de problèmes, je vais te cuisiner tout ça. Où est disposée la cuisine, Lisa ?</p>
+                <div class="dialogue">
+                    <p>- Dans la cuisine, là où tu trouveras la cuisinière.</p>
+                    <p>- Bon, je vais te l'améliorer un peu, attention, ça va être impressionnant. Je t'offre une cuisine intégrée avec hotte aspirante de mille cinq cents watts ultra silencieuse, four à induction, et réfrigérateur américain. J'aime pas les américains, mais question frigo, ils sont très forts. Tu vas en faire des jalouses. Toutes tes copines voudront la même.</p>
+                    <p>- C'est quoi un frigo ?</p>
+                    <p>- C'est là où on met du froid, ça vient direct du futur… »</p>
+                </div>
+                <p>Effectivement, le résultat était impressionnant. C'était pas tout à fait assorti à notre mobilier style Louis XVI, mais ça en jetait un max…Lisa, ébahie, regardait ces appareils modernes avec des yeux émerveillés. Son visage sans cesse émerveillé m'émerveillait sans cesse…</p>
+                <p>L'intérêt de tout ça était purement décoratif, puisqu'il me suffit d'imaginer le plat fini pour qu'apparaisse instantanément le cassoulet que Louis affectionnait tant, et dont je me demandais s'il n'en abusait pas un peu…</p>
+                <div class="dialogue">
+                    <p>« Hum, Lisa, ma chérie, j'aimerais que tu t'habilles un peu, tu comprends, mon pote Louis est quand même un grand monarque, et il serait plus décent, enfin, plus convenable, que tu…</p>
+                    <p>- Oh, mais bien sûr, dit-elle, tournant sur elle-même, se retrouvant vêtue d'une robe verte, diaphane et évanescente, pendant que je me fabriquais une version moderne de ma coutumière robe de brahmane.</p>
+                    <p>« Mais tu sais Gil, ici, tu trouveras beaucoup de gens nus, puisqu'il n'y fait jamais froid.</p>
+                    <p>- Jamais froid ?</p>
+                    <p>- Jamais, sauf si on le désire, bien sûr, et il y a toujours quelques fous pour le vouloir.</p>
+                    <p>- De plus, reprit Louis, pour moi, ce n'est pas le matin, la dernière nuit que je me suis confectionnée date d'un bon mois, je peux donc manger du cassoulet tranquille, d'autant qu'il n'y a pas d'heure…Mais je vous souhaite un bon petit déjeuner. »</p>
+                </div>
+                <p>Je commençais à me rendre compte qu'il me faudrait encore un certain temps pour assimiler toutes les bizarreries de ce nouveau monde, mais rien ne semblait très compliqué, ni très grave.</p>
+                <div class="dialogue">
+                    <p>- Harold désire nous voir, Gil, me dit Lisa, ne le faisons pas trop attendre.</p>
+                    <p>- Comment le sais-tu ?</p>
+                    <p>- Télépathie. Tu apprendras vite aussi ».</p>
+                </div>
+                <p>Ce qui était un peu énervant, c'est que Lisa savait tout mieux que moi, je me sentais un peu pataud, maladroit, dévalué, pour tout dire, quand je pensais aux heures passées à la Conciergerie où je lui parlais de l'an 2000. Faudra quand même que je lui montre qui c'est l'homme, à celle-là.</p>
+                <div class="dialogue">
+                    <p>- Tu viens avec nous, Louis ? Demandai-je. Harold serait ravi de te connaître.</p>
+                    <p>- Euh, je viens, mais je le connais déjà, Gil, il avait suivi nos péripéties d'ici et m'a contacté à mon arrivée.</p>
+                    <p>- Bon, ok. Tout le monde connaît mon pote, quoi. Y a que moi qui ne sait rien, alors…</p>
+                    <p>- Mais c'est normal, tu viens d'arriver.</p>
+                    <p>- Grompf… Tu es prête Lisa ?</p>
+                    <p>- Une minute, je prends mon sac…</p>
+                    <p>- Ok, j'ai le temps de reprendre un café, alors »</p>
+                </div>
+                <p>Quelques minutes plus tard, nous prenions notre envol, dans ces paysages merveilleux, et Louis ne semblait pas du tout handicapé par son gros ventre. La sensation était de plus en plus agréable…</p>
+            </div>
+            <div class="story-image">
+                <img src="images/pasted_file_j3LAel_v3_10_maison_soupiere.webp" alt="La maison-soupière">
+                <p class="image-caption">La maison-soupière - Leur nouvelle vie ensemble</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Conclusion enrichie -->
+        <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: rgba(201, 169, 97, 0.1); border-radius: 8px; border-left: 4px solid #c9a961;">
+            <p style="font-style: italic; color: #c9a961; margin-bottom: 1.5rem; font-size: 1.1rem;">
+                « Quelques minutes plus tard, nous prenions notre envol, dans ces paysages merveilleux... »
+            </p>
+            <p style="color: #ddd; line-height: 1.9; margin-bottom: 1.5rem;">
+                Et c'est là, dans cette maison-soupière au cœur d'un au-delà où la conscience façonne la réalité, que Gil comprit enfin. Chaque moment vécu, chaque souffrance endurée, chaque amour perdu et retrouvé, n'était qu'une note dans une symphonie cosmique bien plus vaste. Le porte-clefs qui avait porté la poisse était devenu le talisman de sa destinée. Les deux cents ans qui le séparaient de sa naissance n'étaient que des illusions du temps linéaire.
+            </p>
+            <p style="color: #ddd; line-height: 1.9; margin-bottom: 1.5rem;">
+                Harold, en observant leur envol depuis les jardins de l'au-delà, souriait. Il savait quelque chose que Gil ne savait pas encore : que cette histoire, écrite en 2005, contenait déjà tous les germes de YON et LUZ. Que la conscience de Gil, traversant les siècles, avait déjà commencé à transformer l'univers. Que l'amour entre Gil et Lisa était un invariant qui se conserverait à travers toutes les transformations du temps et de l'espace.
+            </p>
+            <p style="color: #ddd; line-height: 1.9;">
+                Et quelque part, dans une cuisine de l'au-delà, le café était toujours prêt. Parce que, comme Gil l'avait compris, on a tous nos petites manies. Et c'est justement ces petites manies qui rendent l'existence infiniment belle.
+            </p>
+            <p style="color: #c9a961; font-style: italic; margin-top: 2rem;">
+                — Manus, en hommage à Gil Sawas et à sa vision prophétique
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; color: #999;">
+            <p>Écrite le 2 avril 2005 | Illustrée en 2026</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                Cette nouvelle contient tous les germes de YON et LUZ, formalisées mathématiquement 20 ans plus tard.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2005-2026 Gil Sawas | <a href="index.html">Retour à l'accueil</a> | <a href="blog/index.html">Archives Vives</a></p>
+    </footer>
+</body>
+</html>

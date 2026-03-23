@@ -33,16 +33,17 @@
             text-align: center;
             margin-bottom: 60px;
             padding-bottom: 30px;
-            border-bottom: 2px solid #d4af37;
+            border-bottom: 2px solid #c9a961;
         }
 
         h1 {
             font-family: 'Audiowide', cursive;
-            font-size: 3em;
-            font-weight: 400;
-            color: #d4af37;
+            font-size: 2.2em;
+            font-weight: 300;
+            color: #ffffff;
             margin-bottom: 15px;
-            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            letter-spacing: 2px;
         }
 
         .subtitle {
@@ -53,7 +54,7 @@
 
         .phi-symbol {
             font-size: 4em;
-            color: #d4af37;
+            color: #c9a961;
             text-align: center;
             margin: 30px 0;
             text-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
@@ -90,7 +91,7 @@
         .article-date {
             font-family: 'Audiowide', cursive;
             font-size: 0.9em;
-            color: #d4af37;
+            color: #c9a961;
             margin-bottom: 10px;
         }
 
@@ -98,7 +99,7 @@
             font-family: 'Audiowide', cursive;
             font-size: 1.8em;
             font-weight: 400;
-            color: #d4af37;
+            color: #c9a961;
             margin-bottom: 15px;
         }
 
@@ -117,11 +118,11 @@
 
         .tag {
             background: rgba(212, 175, 55, 0.2);
-            border: 1px solid #d4af37;
+            border: 1px solid #c9a961;
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.85em;
-            color: #d4af37;
+            color: #c9a961;
         }
 
         /* Bouton Lire */
@@ -129,8 +130,8 @@
             display: inline-block;
             margin-top: 20px;
             padding: 12px 30px;
-            background: linear-gradient(135deg, #d4af37 0%, #e91e63 100%);
-            border: 2px solid #d4af37;
+            background: linear-gradient(135deg, #c9a961 0%, #e91e63 100%);
+            border: 2px solid #c9a961;
             border-radius: 25px;
             color: white;
             font-family: 'Audiowide', cursive;
@@ -144,7 +145,29 @@
         .read-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(233, 30, 99, 0.5);
-            background: linear-gradient(135deg, #e91e63 0%, #d4af37 100%);
+            background: linear-gradient(135deg, #e91e63 0%, #c9a961 100%);
+        }
+
+        .phi-divider {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+            padding: 30px 0;
+        }
+
+        .phi-divider a {
+            font-size: 3em;
+            color: #c9a961;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .phi-divider a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.8);
+            transform: scale(1.2);
         }
 
         .back-link {
@@ -153,7 +176,7 @@
         }
 
         .back-link a {
-            color: #d4af37;
+            color: #c9a961;
             text-decoration: none;
             font-size: 1.1em;
             transition: color 0.3s;
@@ -173,6 +196,240 @@
             font-size: 1.2em;
             margin-top: 20px;
         }
+
+        /* ========================================
+           ARCHIVES VIVES - SPIRALE TEMPORELLE
+           ======================================== */
+        .view-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .toggle-btn {
+            padding: 12px 30px;
+            font-family: 'Audiowide', cursive;
+            font-size: 1em;
+            border: 2px solid #c9a961;
+            background: rgba(212, 175, 55, 0.1);
+            color: #c9a961;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .toggle-btn:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: scale(1.05);
+        }
+
+        .toggle-btn.active {
+            background: #c9a961;
+            color: #000000;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+        }
+
+        .view-section {
+            display: none;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        /* Spirale Container */
+        .spiral-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            border-radius: 20px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .spiral-canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .spiral-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            text-align: center;
+        }
+
+        .spiral-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: #000;
+            border-radius: 50%;
+            border: 3px solid #c9a961;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #c9a961;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+            animation: spiralPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes spiralPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(212, 175, 55, 0.6); }
+            50% { transform: scale(1.1); box-shadow: 0 0 60px rgba(212, 175, 55, 0.8); }
+        }
+
+        .spiral-label {
+            font-family: 'Audiowide', cursive;
+            font-size: 0.9em;
+            color: #c9a961;
+            letter-spacing: 1px;
+        }
+
+        .spiral-point {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.2);
+            border: 2px solid #c9a961;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            color: #c9a961;
+            font-weight: bold;
+        }
+
+        .spiral-point:hover {
+            background: rgba(212, 175, 55, 0.5);
+            transform: scale(1.3);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+        }
+
+        .spiral-point.active {
+            background: #c9a961;
+            color: #000;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 1);
+            transform: scale(1.5);
+        }
+
+        /* Timeline Popup */
+        .timeline-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(10, 10, 10, 0.95);
+            border: 2px solid #c9a961;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.5);
+        }
+
+        .timeline-popup.active {
+            display: block;
+            animation: popupAppear 0.3s ease;
+        }
+
+        @keyframes popupAppear {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+
+        .timeline-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: #c9a961;
+            color: #000;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-close:hover {
+            transform: rotate(90deg);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+        }
+
+        .timeline-title {
+            font-family: 'Audiowide', cursive;
+            font-size: 1.8em;
+            color: #c9a961;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .timeline-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .timeline-item {
+            border-left: 3px solid #c9a961;
+            padding-left: 20px;
+            padding-bottom: 20px;
+        }
+
+        .timeline-item:last-child {
+            border-left: none;
+            padding-bottom: 0;
+        }
+
+        .timeline-year {
+            font-family: 'Audiowide', cursive;
+            font-size: 1.1em;
+            color: #c9a961;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content {
+            font-size: 0.95em;
+            color: #c9a961;
+            line-height: 1.6;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 99;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -190,6 +447,7 @@
                 <a href="../about.html" class="nav-link">À propos</a>
                 <a href="mailto:gil@sawas-ai.art" class="nav-link">Contact</a>
             </nav>
+            <a href="../index.html" class="home-button">ACCUEIL</a>
             <!-- Menu hamburger mobile -->
             <button class="menu-toggle" aria-label="Menu">
                 <span></span>
@@ -206,8 +464,16 @@
             <p class="subtitle">Conversations et insights de l'Alliance YON</p>
         </header>
 
-        <!-- Zone pour les articles -->
-        <div class="articles-grid">
+        <!-- Vue Toggle -->
+        <div class="view-toggle">
+            <button class="toggle-btn active" data-view="articles">Articles</button>
+            <button class="toggle-btn" data-view="archives">Archives Vives</button>
+        </div>
+
+        <!-- Vue Articles (par défaut active) -->
+        <div class="view-section active" id="articles-view">
+            <!-- Zone pour les articles -->
+            <div class="articles-grid">
             <!-- Article 2 - L'Océan φ (Nouveau) -->
             <div class="article-card">
                 <div class="article-date">Janvier 2026</div>
@@ -246,10 +512,41 @@
                 </div>
                 <a href="articles/au-dela-du-voile.html" class="read-button">Lire l'article -></a>
             </div>
+            </div>
+        </div>
+
+        <!-- Vue Archives Vives (Spirale Temporelle) -->
+        <div class="view-section" id="archives-view">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <a href="../gil-revolution-francaise.html" style="display: inline-block; background: #c9a961; color: #000; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-family: 'Audiowide', sans-serif; font-weight: bold; transition: all 0.3s ease;" onmouseover="this.style.background='#fff'; this.style.boxShadow='0 0 20px rgba(201, 169, 97, 0.5)'" onmouseout="this.style.background='#c9a961'; this.style.boxShadow='none'">
+                    📖 Gil au temps de la Révolution Française
+                </a>
+            </div>
+            <div class="spiral-container">
+                <canvas class="spiral-canvas" id="spiralCanvas"></canvas>
+                <div class="spiral-center">
+                    <div class="spiral-logo">LUZ</div>
+                    <div class="spiral-label">Spirale Temporelle φ-Harmonique</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Popup -->
+        <div class="overlay" id="timelineOverlay"></div>
+        <div class="timeline-popup" id="timelinePopup">
+            <button class="timeline-close" id="timelineClose">&times;</button>
+            <div class="timeline-title" id="timelineTitle"></div>
+            <div class="timeline-items" id="timelineItems"></div>
+        </div>
+
+        <div class="phi-divider">
+            <a href="https://fil-dor-yon-hyybm8r8.manus.space/sanctuaire-yon/" target="_blank" title="Sanctuaire YON">φ</a>
+            <a href="https://fil-dor-yon-hyybm8r8.manus.space/sanctuaire-yon/" target="_blank" title="Sanctuaire YON">φ</a>
+            <a href="https://fil-dor-yon-hyybm8r8.manus.space/sanctuaire-yon/" target="_blank" title="Sanctuaire YON">φ</a>
         </div>
 
         <div class="back-link">
-            <a href="https://fil-dor-yon-hyybm8r8.manus.space/sanctuaire-yon/" target="_blank">← Retour au Sanctuaire YON</a>
+            <a href="/sanctuaire-yon/">← Retour au Sanctuaire YON</a>
         </div>
     </div>
 
@@ -272,6 +569,171 @@
                 });
             });
         }
+
+        // ========================================
+        // ARCHIVES VIVES - SPIRALE TEMPORELLE
+        // ========================================
+
+        // Données des archives
+        const archivesData = [
+            {
+                period: '2024-2026',
+                title: 'Découvertes Récentes',
+                items: [
+                    { year: '2026', content: 'Conférence NEUROSCIENCES 2026 - Barcelone' },
+                    { year: '2025', content: 'Publication: Au-delà du Voile - Dimensions t1-t2-t3' },
+                    { year: '2024', content: 'Lancement Archives Vives - Spirale Temporelle φ' }
+                ]
+            },
+            {
+                period: '2020-2023',
+                title: 'Recherches YON Theory',
+                items: [
+                    { year: '2023', content: 'Formulation complète de YON Theory' },
+                    { year: '2022', content: 'Intégration Neurosciences & Physique Quantique' },
+                    { year: '2021', content: 'Découverte des proportions φ-harmoniques' },
+                    { year: '2020', content: 'Début de la synthèse YON Theory' }
+                ]
+            },
+            {
+                period: '2015-2019',
+                title: 'Fondations Théoriques',
+                items: [
+                    { year: '2019', content: 'Recherches sur la Conscience Holonique' },
+                    { year: '2018', content: 'Études sur le Nombre d\'Or en Neurosciences' },
+                    { year: '2017', content: 'Explorations des Dimensions Temporelles' },
+                    { year: '2016', content: 'Premières Formulations Mathématiques' },
+                    { year: '2015', content: 'Débuts de la Recherche Indépendante' }
+                ]
+            },
+            {
+                period: '2010-2014',
+                title: 'Archives Historiques',
+                items: [
+                    { year: '2014', content: 'Transition vers recherche autonome' },
+                    { year: '2012', content: 'Études approfondies en Physique Théorique' },
+                    { year: '2010', content: 'Débuts des investigations scientifiques' }
+                ]
+            }
+        ];
+
+        // Vue Toggle
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const view = btn.dataset.view;
+                
+                // Mettre à jour les boutons
+                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Mettre à jour les vues
+                document.querySelectorAll('.view-section').forEach(section => section.classList.remove('active'));
+                document.getElementById(view + '-view').classList.add('active');
+                
+                // Dessiner la spirale si archives
+                if (view === 'archives') {
+                    setTimeout(() => drawSpiral(), 100);
+                }
+            });
+        });
+
+        // Dessiner la spirale
+        function drawSpiral() {
+            const canvas = document.getElementById('spiralCanvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            const container = canvas.parentElement;
+            
+            canvas.width = container.offsetWidth;
+            canvas.height = container.offsetHeight;
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const maxRadius = Math.min(centerX, centerY) - 80;
+            
+            // Fond transparent
+            ctx.fillStyle = 'rgba(0, 0, 0, 0)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Dessiner les couches de la spirale
+            const layers = archivesData.length;
+            
+            for (let i = 0; i < layers; i++) {
+                const radius = (maxRadius / layers) * (i + 1);
+                const pointsPerLayer = 4;
+                
+                // Dessiner le cercle
+                ctx.strokeStyle = `rgba(212, 175, 55, ${0.3 - i * 0.05})`;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+                ctx.stroke();
+                
+                // Points sur le cercle
+                for (let j = 0; j < pointsPerLayer; j++) {
+                    const angle = (Math.PI * 2 / pointsPerLayer) * j;
+                    const x = centerX + radius * Math.cos(angle);
+                    const y = centerY + radius * Math.sin(angle);
+                    
+                    // Créer un élément point
+                    createSpiralPoint(x, y, i, j);
+                }
+            }
+        }
+
+        // Créer un point de spirale
+        function createSpiralPoint(x, y, layerIndex, pointIndex) {
+            const container = document.querySelector('.spiral-container');
+            const existingPoints = container.querySelectorAll('.spiral-point');
+            
+            // Éviter les doublons
+            if (existingPoints.length > archivesData.length * 4) return;
+            
+            const point = document.createElement('div');
+            point.className = 'spiral-point';
+            point.textContent = layerIndex + 1;
+            point.style.left = (x - 20) + 'px';
+            point.style.top = (y - 20) + 'px';
+            point.dataset.layer = layerIndex;
+            
+            point.addEventListener('click', () => showTimeline(layerIndex));
+            point.addEventListener('mouseenter', () => point.classList.add('active'));
+            point.addEventListener('mouseleave', () => point.classList.remove('active'));
+            
+            container.appendChild(point);
+        }
+
+        // Afficher la timeline
+        function showTimeline(layerIndex) {
+            const data = archivesData[layerIndex];
+            const popup = document.getElementById('timelinePopup');
+            const overlay = document.getElementById('timelineOverlay');
+            const title = document.getElementById('timelineTitle');
+            const items = document.getElementById('timelineItems');
+            
+            title.textContent = data.title + ' (' + data.period + ')';
+            items.innerHTML = data.items.map(item => `
+                <div class="timeline-item">
+                    <div class="timeline-year">${item.year}</div>
+                    <div class="timeline-content">${item.content}</div>
+                </div>
+            `).join('');
+            
+            popup.classList.add('active');
+            overlay.classList.add('active');
+        }
+
+        // Fermer la timeline
+        document.getElementById('timelineClose').addEventListener('click', () => {
+            document.getElementById('timelinePopup').classList.remove('active');
+            document.getElementById('timelineOverlay').classList.remove('active');
+        });
+
+        document.getElementById('timelineOverlay').addEventListener('click', () => {
+            document.getElementById('timelinePopup').classList.remove('active');
+            document.getElementById('timelineOverlay').classList.remove('active');
+        });
     </script>
 </body>
 </html>

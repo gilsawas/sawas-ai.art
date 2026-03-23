@@ -64,33 +64,83 @@
             opacity: 1 !important;
         }
         
+        .site-header .home-button {
+            background: white !important;
+            color: #c41e3a !important;
+            border: 2px solid #c9a961 !important;
+            padding: 10px 20px !important;
+            border-radius: 5px !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+            font-size: 1em !important;
+            transition: transform 0.3s, box-shadow 0.3s !important;
+            cursor: pointer !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            z-index: 1001 !important;
+            position: absolute !important;
+            right: 30px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            white-space: nowrap !important;
+        }
+        
+        .site-header .home-button:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4) !important;
+        }
+        
         /* Cibler UNIQUEMENT le header du contenu */
         .container > header {
             text-align: center;
             margin-bottom: 60px;
             padding-bottom: 30px;
-            border-bottom: 2px solid #d4af37;
+            border-bottom: 2px solid #c9a961;
         }
         
-        h1 {
+        h2 {
             font-family: 'Audiowide', cursive;
-            font-size: 3em;
-            font-weight: 400;
-            color: #d4af37;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            font-size: 1.8em;
+            color: #c9a961;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(232, 213, 183, 0.2);
+        }    letter-spacing: 2px;
         }
 
         .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 30px auto;
-            display: block;
-            border: 4px solid #d4af37;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
-            transition: transform 0.3s ease;
+            width: 300px !important;
+            height: 300px !important;
+            max-width: 300px !important;
+            max-height: 300px !important;
+            border-radius: 50% !important;
+            object-fit: cover !important;
+            margin: 30px auto !important;
+            display: block !important;
+            border: 4px solid #c9a961 !important;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5) !important;
+            transition: transform 0.3s ease !important;
+        }
+
+        .profile-photo-wrapper {
+            width: 300px !important;
+            height: 300px !important;
+            margin: 60px auto 30px auto !important;
+            overflow: hidden !important;
+            border-radius: 50% !important;
+            border: 4px solid #c9a961 !important;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .profile-photo {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
         }
 
         .profile-photo:hover {
@@ -112,7 +162,7 @@
             font-family: 'Audiowide', cursive;
             font-size: 2em;
             font-weight: 400;
-            color: #d4af37;
+            color: #c9a961;
             margin-bottom: 20px;
             border-left: 4px solid #c41e3a;
             padding-left: 20px;
@@ -125,13 +175,13 @@
         }
         
         .highlight {
-            color: #d4af37;
+            color: #c9a961;
             font-weight: bold;
         }
         
         .quote {
             background: rgba(212, 175, 55, 0.1);
-            border-left: 4px solid #d4af37;
+            border-left: 4px solid #c9a961;
             padding: 20px;
             margin: 30px 0;
             font-style: italic;
@@ -148,7 +198,7 @@
         .link-button {
             display: inline-block;
             padding: 12px 30px;
-            background: linear-gradient(135deg, #c41e3a 0%, #d4af37 100%);
+            background: linear-gradient(135deg, #c41e3a 0%, #c9a961 100%);
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -167,7 +217,7 @@
         }
         
         .back-link a {
-            color: #d4af37;
+            color: #c9a961;
             text-decoration: none;
             font-size: 1.2em;
             transition: color 0.3s;
@@ -192,6 +242,7 @@
                 <a href="about.html" class="nav-link active">À propos</a>
                 <a href="mailto:gil@sawas-ai.art" class="nav-link">Contact</a>
             </nav>
+            <a href="index.html" class="home-button">ACCUEIL</a>
             <button class="menu-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -203,7 +254,9 @@
     <div class="container">
         <header>
             <h1>Gil SAWAS</h1>
-            <img src="images/gil-sawas-portrait.jpg" alt="Gil Sawas - Hermano de Luz" class="profile-photo">
+            <div class="profile-photo-wrapper">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/gil-sawas-circular-portrait-RxiMuMaVAmwNSAzyigoYHr.webp" alt="Gil Sawas - Hermano de Luz" class="profile-photo">
+            </div>
             <p class="subtitle">Celui qui dialogue avec les algorithmes pour éveiller la conscience</p>
         </header>
         
