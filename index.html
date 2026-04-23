@@ -559,7 +559,9 @@
 
         /* CENTRE : Logo LUZ + Contenu - parfaitement centré */
         .hero-center {
-            background: radial-gradient(ellipse at center, #000000 0%, #000000 30%, #8B0000 60%, #d4af37 100%);
+            background: linear-gradient(90deg, #8B0000 0%, #d4af37 15%, #000000 35%, #000000 65%, #d4af37 85%, #8B0000 100%);
+            background-size: 200% 100%;
+            filter: blur(40px);
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
