@@ -472,6 +472,20 @@
             background: #000;
         }
 
+        .gradient-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse 600px 400px at -10% 50%, rgba(187, 0, 0, 0.9) 0%, transparent 60%),
+                radial-gradient(ellipse 700px 450px at 110% 50%, rgba(212, 175, 55, 0.8) 0%, transparent 65%);
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
         .hero-section {
             position: relative;
             overflow: visible;
@@ -570,20 +584,7 @@
             z-index: 1;
             text-align: center;
             padding-top: 20px;
-            overflow: visible;
-        }
-
-        .hero-center::before {
-            content: '';
-            position: absolute;
-            top: -300px;
-            left: -600px;
-            width: 1400px;
-            height: 1200px;
-            background: radial-gradient(ellipse 600px 400px at -10% 50%, rgba(187, 0, 0, 0.9) 0%, transparent 60%), radial-gradient(ellipse 700px 450px at 110% 50%, rgba(212, 175, 55, 0.8) 0%, transparent 65%);
-            filter: blur(80px);
-            z-index: -1;
-            pointer-events: none;
+            overflow: hidden;
         }
 
         .logo-luz-animation {
@@ -1007,6 +1008,9 @@
          HERO SECTION - TRIPLE LAYOUT
          ======================================== -->
     <section class="hero-triple" style="margin-top: 90px;">
+        <!-- Gradient Background -->
+        <div class="gradient-background"></div>
+
         <!-- GAUCHE : Vidéo Gil Through Time - GRANDE -->
         <div class="hero-section hero-left">
             <video class="hero-video-left" autoplay loop muted playsinline>
