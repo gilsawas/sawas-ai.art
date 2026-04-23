@@ -473,14 +473,13 @@
 
         .hero-triple::before {
             content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
+            position: absolute;
+            top: -300px;
+            left: -50vw;
+            width: 200vw;
             height: 1200px;
             background: radial-gradient(ellipse 600px 400px at -10% 50%, rgba(187, 0, 0, 0.6) 0%, transparent 60%),
                         radial-gradient(ellipse 700px 450px at 110% 50%, rgba(212, 175, 55, 0.5) 0%, transparent 65%);
-            background-attachment: fixed;
             filter: blur(80px);
             z-index: 0;
             pointer-events: none;
