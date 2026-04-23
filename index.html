@@ -469,14 +469,26 @@
             display: grid;
             grid-template-columns: 0.9fr 1.2fr 1fr;
             overflow: visible;
+        }
+
+        .hero-triple::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 480px;
             background: radial-gradient(ellipse 1000px 500px at 0% 50%, rgba(187, 0, 0, 0.6) 0%, transparent 50%),
                         radial-gradient(ellipse 1100px 550px at 100% 50%, rgba(212, 175, 55, 0.5) 0%, transparent 55%);
             filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
         }
 
         .hero-section {
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         /* GAUCHE : Vidéo GRANDE - remplit tout */
