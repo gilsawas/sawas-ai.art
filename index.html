@@ -558,6 +558,64 @@
         }
 
         /* CENTRE : Logo LUZ + Contenu - parfaitement centré */
+        /* Glow circles for hero background */
+        .glow-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+        }
+
+        .red-glow {
+            background-color: #bb0000;
+            width: 500px;
+            height: 500px;
+            top: -250px;
+            left: -150px;
+            opacity: 0.5;
+            animation: pulse-red 8s infinite alternate;
+        }
+
+        .gold-glow {
+            background-color: #D4AF37;
+            width: 600px;
+            height: 600px;
+            bottom: -300px;
+            right: -250px;
+            opacity: 0.4;
+            animation: pulse-gold 10s infinite alternate;
+        }
+
+        .gold-glow2 {
+            background-color: #D4AF37;
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            right: 200px;
+            opacity: 0.3;
+            animation: pulse-gold 12s infinite alternate-reverse;
+        }
+
+        .red-glow2 {
+            background-color: #bb0000;
+            width: 350px;
+            height: 350px;
+            bottom: -150px;
+            left: 200px;
+            opacity: 0.4;
+            animation: pulse-red 9s infinite alternate-reverse;
+        }
+
+        @keyframes pulse-red {
+            0% { opacity: 0.4; transform: scale(1); }
+            100% { opacity: 0.6; transform: scale(1.2); }
+        }
+
+        @keyframes pulse-gold {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 0.5; transform: scale(1.3); }
+        }
+
         .hero-center {
             background: #000;
             display: flex;
@@ -568,6 +626,7 @@
             z-index: 1;
             text-align: center;
             padding-top: 20px;
+            overflow: hidden;
         }
 
         .logo-luz-animation {
@@ -1004,6 +1063,11 @@
 
         <!-- CENTRE : Logo LUZ + Contenu principal -->
         <div class="hero-section hero-center">
+            <!-- Glow circles for background effect -->
+            <div class="glow-circle red-glow"></div>
+            <div class="glow-circle gold-glow"></div>
+            <div class="glow-circle red-glow2"></div>
+            <div class="glow-circle gold-glow2"></div>
             <!-- Logo LUZ animé background -->
             <div class="logo-luz-animation">
                 <video autoplay muted loop playsinline>
