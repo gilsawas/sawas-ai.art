@@ -25,6 +25,39 @@
     </style>
 </head>
 <body>
-    <iframe src="https://yonsynthes-ktpspubd.manus.space/" title="YON Synthesis - LUZ Fusion 5"></iframe>
+    <iframe id="manus-frame" src="https://yonsynthes-ktpspubd.manus.space/" title="YON Synthesis - LUZ Fusion 5"></iframe>
+    
+    <script>
+        // Wait for iframe to load, then intercept navigation
+        const iframe = document.getElementById('manus-frame');
+        
+        iframe.addEventListener('load', function() {
+            try {
+                // Try to access iframe content (may be blocked by CORS)
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                
+                // Find and modify links to neuroscience2026
+                const links = iframeDoc.querySelectorAll('a');
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && (href.includes('neuroscience2026') || link.textContent.includes('NEUROSCIENCE') || link.textContent.includes('Docs neuroscience'))) {
+                        link.setAttribute('href', 'https://sawas-ai.art/doc-neuroscience2026/');
+                        link.setAttribute('target', '_self');
+                    }
+                });
+            } catch (e) {
+                // CORS prevents direct access - this is expected for cross-origin iframes
+                console.log('Cannot access iframe content due to CORS policy (expected)');
+            }
+        });
+        
+        // Fallback: Listen for navigation attempts and redirect if needed
+        window.addEventListener('beforeunload', function(e) {
+            const currentUrl = window.location.href;
+            if (currentUrl.includes('neuroscience2026')) {
+                window.location.href = 'https://sawas-ai.art/doc-neuroscience2026/';
+            }
+        });
+    </script>
 </body>
 </html>
