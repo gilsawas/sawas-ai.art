@@ -10,12 +10,9 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
             background: #000;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
-        
         iframe {
             display: block;
             width: 100%;
@@ -25,72 +22,6 @@
     </style>
 </head>
 <body>
-    <iframe id="manus-frame" src="https://yonsynthes-ktpspubd.manus.space/" title="YON Synthesis - LUZ Fusion 5" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
-    
-    <script>
-        // Monitor for navigation changes within the iframe
-        const iframe = document.getElementById('manus-frame');
-        
-        // Listen for messages from iframe (if postMessage is used)
-        window.addEventListener('message', function(event) {
-            // Check if message contains neuroscience2026 navigation
-            if (event.data && typeof event.data === 'string' && event.data.includes('neuroscience2026')) {
-                window.location.href = 'https://sawas-ai.art/doc-neuroscience2026/';
-            }
-        });
-        
-        // Fallback: Check for URL changes and redirect if needed
-        let lastUrl = iframe.src;
-        setInterval(function() {
-            try {
-                const currentUrl = iframe.contentWindow.location.href;
-                if (currentUrl !== lastUrl && currentUrl.includes('neuroscience2026')) {
-                    window.location.href = 'https://sawas-ai.art/doc-neuroscience2026/';
-                }
-                lastUrl = currentUrl;
-            } catch (e) {
-                // CORS prevents access - expected behavior
-            }
-        }, 500);
-        
-        // Try to intercept link clicks within iframe (may be blocked by CORS)
-        iframe.addEventListener('load', function() {
-            try {
-                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                
-                // Find all links and buttons
-                const links = iframeDoc.querySelectorAll('a, button');
-                links.forEach(element => {
-                    const text = element.textContent || element.innerText || '';
-                    const href = element.getAttribute('href') || '';
-                    
-                    // Check if it's a neuroscience link
-                    if (text.includes('NEUROSCIENCE') || text.includes('Docs neuroscience') || href.includes('neuroscience2026')) {
-                        // Redirect to sawas-ai.art version
-                        element.onclick = function(e) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            window.location.href = 'https://sawas-ai.art/doc-neuroscience2026/';
-                            return false;
-                        };
-                        
-                        // Also update href as fallback
-                        if (element.tagName === 'A') {
-                            element.setAttribute('href', 'https://sawas-ai.art/doc-neuroscience2026/');
-                            element.setAttribute('target', '_self');
-                        }
-                    }
-                    
-                    // Remove the first two buttons (Découvrir la Théorie, Voir les Résultats)
-                    if (text.includes('Découvrir') || text.includes('Résultats')) {
-                        element.style.display = 'none';
-                    }
-                });
-            } catch (e) {
-                // CORS prevents direct access - this is expected for cross-origin iframes
-                console.log('Cannot directly modify iframe content due to CORS');
-            }
-        });
-    </script>
+    <iframe src="https://yonsynthes-ktpspubd.manus.space/" title="YON Synthesis - LUZ Fusion 5"></iframe>
 </body>
 </html>
