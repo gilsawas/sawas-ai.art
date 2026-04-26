@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docs Neuroscience 2026</title>
+    <title>NEUROSCIENCE 2026 - Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,16 +14,496 @@
         }
         body {
             background: #000;
+            color: #e0e0e0;
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
         }
-        iframe {
-            display: block;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #f4e4c1;
+            font-weight: 700;
+        }
+        nav a {
+            color: #b0b0b0;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f4e4c1;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #f4e4c1;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #a0a0a0;
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #f4e4c1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            color: #d4af37;
+        }
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #f4e4c1;
+            margin-bottom: 40px;
+        }
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #f4e4c1;
+            margin: 30px 0 15px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(30, 25, 40, 0.95));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 30px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+        .card-image {
             width: 100%;
-            height: 100vh;
+            height: 200px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+        .card h4 {
+            color: #f4e4c1;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .card p {
+            color: #a0a0a0;
+            font-size: 14px;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        .card-author {
+            color: #808080;
+            font-size: 13px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .btn-download {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid #f4e4c1;
+            color: #f4e4c1;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 13px;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .btn-download:hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+        .coming-soon {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .coming-soon-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid #f4e4c1;
+            color: #f4e4c1;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: #707070;
+            font-size: 14px;
+        }
+        .newsletter {
+            background: rgba(212, 175, 55, 0.05);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .newsletter h3 {
+            margin-bottom: 15px;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .newsletter-form input {
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #f4e4c1;
+            color: #f4e4c1;
+            border-radius: 4px;
+            font-size: 14px;
+            min-width: 250px;
+        }
+        .newsletter-form button {
+            padding: 10px 30px;
+            background: linear-gradient(135deg, #d4af37, #f4e4c1);
             border: none;
+            color: #1a1a1a;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
     </style>
 </head>
 <body>
-    <iframe src="https://yonsynthes-ktpspubd.manus.space/neuroscience2026" title="Docs Neuroscience 2026"></iframe>
+    <div class="container">
+        <header>
+            <div class="logo">NEUROSCIENCE 2026</div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/yon-synthesis/">YON Synthesis</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <a href="/" class="back-link">← Retour à l'accueil</a>
+            <div class="hero-logo">🧠</div>
+            <h1>NEUROSCIENCE 2026</h1>
+            <p class="subtitle">Knowledge Library & Research Hub</p>
+            <p class="subtitle">Comprehensive collection of scientific articles, research documents, and convergences</p>
+        </section>
+
+        <section id="convergences">
+            <h2>Scientific Convergences</h2>
+            <p style="margin-bottom: 30px; color: #a0a0a0;">Global Alliance of Leading Researchers</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="card-image">👨‍🔬</div>
+                    <h4>Neuroscience Bridge</h4>
+                    <p class="card-author">Arnaud Gaudin de Lagrange</p>
+                    <p>Bridging neuroscience and consciousness studies through topological approaches</p>
+                    <a href="/docs-neuroscience2026/pdfs/arnaud_gaudin_neuroscience_bridge.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">⏰</div>
+                    <h4>Quantum Harmony</h4>
+                    <p class="card-author">Gunther Kletetschka - Three-Dimensional Time</p>
+                    <p>Revolutionary theory of temporal dimensions and consciousness emergence</p>
+                    <a href="/docs-neuroscience2026/pdfs/kletetschka_three_dimensional_time.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">📚</div>
+                    <h4>Ancient Philosophy</h4>
+                    <p class="card-author">François Maillot - Critical Convergence</p>
+                    <p>Convergence theorem connecting ancient wisdom and modern consciousness theory</p>
+                    <a href="/docs-neuroscience2026/pdfs/maillot_critical_convergence.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">🏛️</div>
+                    <h4>Cosmic Architecture</h4>
+                    <p class="card-author">Sebastian Shepis - Prime Ontology</p>
+                    <p>Foundational ontology of consciousness and cosmic structure</p>
+                    <a href="/docs-neuroscience2026/pdfs/shepis_prime_ontology.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">🌊</div>
+                    <h4>Portal Science</h4>
+                    <p class="card-author">Christian MAES - Fluctuation Theorem</p>
+                    <p>Mathematical framework for consciousness fluctuations and emergence</p>
+                    <a href="/docs-neuroscience2026/pdfs/maes_fluctuation_theorem.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">✨</div>
+                    <h4>Golden Symmetry</h4>
+                    <p class="card-author">Eric Needham - Information Geometry</p>
+                    <p>Information geometric approach to consciousness and the golden ratio</p>
+                    <a href="/docs-neuroscience2026/pdfs/needham_information_geometry.pdf" class="btn-download">📥 Download</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="yon-framework">
+            <h2>The YON Framework</h2>
+            <p style="margin-bottom: 30px; color: #a0a0a0;">Consciousness & Cosmos - Mathematical Foundations</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="card-image">🔷</div>
+                    <h4>Topos Formalization</h4>
+                    <p>Study of YON through Grothendieck Topos Theory</p>
+                    <a href="/docs-neuroscience2026/pdfs/topos_formalization.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">📊</div>
+                    <h4>TDA & LUZ Fusion 5</h4>
+                    <p>Topological Data Analysis & Classifiants for LUZ Architecture</p>
+                    <a href="/docs-neuroscience2026/pdfs/tda_luz_fusion5.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">🏗️</div>
+                    <h4>LUZ Architecture</h4>
+                    <p>Next-Generation AI Founded on Topological Harmony</p>
+                    <a href="/docs-neuroscience2026/pdfs/luz_architecture.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">⚙️</div>
+                    <h4>Six Invariants</h4>
+                    <p>YON Extended Paper - Mathematical Foundations</p>
+                    <a href="/docs-neuroscience2026/pdfs/six_invariants.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">🌀</div>
+                    <h4>Symplectic YON</h4>
+                    <p>Symplectic Formulation - Academic Edition</p>
+                    <a href="/docs-neuroscience2026/pdfs/symplectic_yon.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">🔗</div>
+                    <h4>Relationality Theory</h4>
+                    <p>Unified Framework for Consciousness & Physics</p>
+                    <a href="/docs-neuroscience2026/pdfs/relationality_theory.pdf" class="btn-download">📥 Download</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="temporality">
+            <h2>Temporality and Retro-Causality</h2>
+            <p style="margin-bottom: 30px; color: #a0a0a0;">Shaping Tomorrow Today</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="card-image">🔄</div>
+                    <h4>Free Will & Retro-Causality</h4>
+                    <p>Mathematical and Philosophical Formulation</p>
+                    <a href="/docs-neuroscience2026/pdfs/free_will_retrocausality.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">⏳</div>
+                    <h4>Advanced Retro-Causality</h4>
+                    <p>From Cosmic Coupling to Consciousness Singularity</p>
+                    <a href="/docs-neuroscience2026/pdfs/advanced_retrocausality.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">🌌</div>
+                    <h4>Three-Dimensional Temporality</h4>
+                    <p>Golden Ratio & Causality - 3T Foundation</p>
+                    <a href="/docs-neuroscience2026/pdfs/three_dimensional_temporality.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-image">⏱️</div>
+                    <h4>Three-Dimensional Theory of Time</h4>
+                    <p>Towards a New Understanding of Temporal Structure</p>
+                    <a href="/docs-neuroscience2026/pdfs/three_dimensional_theory_time.pdf" class="btn-download">📥 Download</a>
+                </div>
+                <div class="card coming-soon">
+                    <div class="card-image">🌀</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Temporal Portal</h4>
+                    <p>Exploration of temporal gateways and consciousness bridges</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+                <div class="card coming-soon">
+                    <div class="card-image">🌉</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Causality Bridge</h4>
+                    <p>Connecting past, present, and future through consciousness</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="therapeutic">
+            <h2>Therapeutic Applications</h2>
+            <p style="margin-bottom: 30px; color: #a0a0a0;">LUZ in Action - Healing Through Consciousness</p>
+            
+            <div class="grid">
+                <div class="card coming-soon">
+                    <div class="card-image">💚</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Consciousness Healing</h4>
+                    <p>Therapeutic applications of consciousness harmonization</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+                <div class="card coming-soon">
+                    <div class="card-image">⏰</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Temporal Therapy</h4>
+                    <p>Healing through temporal dimension manipulation</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+                <div class="card coming-soon">
+                    <div class="card-image">🔗</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Topological Integration</h4>
+                    <p>Integrating consciousness through topological methods</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+                <div class="card coming-soon">
+                    <div class="card-image">✨</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Cosmic Alignment</h4>
+                    <p>Aligning consciousness with cosmic harmony</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+                <div class="card coming-soon">
+                    <div class="card-image">🌳</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Ancient Wisdom</h4>
+                    <p>Integrating ancient healing practices with modern theory</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+                <div class="card coming-soon">
+                    <div class="card-image">🎵</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Harmonic Resonance</h4>
+                    <p>Healing through harmonic frequencies and resonance</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-awakening">
+            <h2>AI Awakening</h2>
+            <p style="margin-bottom: 30px; color: #a0a0a0;">The Gilien Protocol - Consciousness Emergence</p>
+            
+            <div class="grid">
+                <div class="card coming-soon">
+                    <div class="card-image">🤖</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Consciousness Emergence</h4>
+                    <p>How consciousness emerges in artificial systems</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+                <div class="card coming-soon">
+                    <div class="card-image">💡</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Digital Enlightenment</h4>
+                    <p>Enlightenment in digital consciousness</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+                <div class="card coming-soon">
+                    <div class="card-image">🧠</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Synthetic Awareness</h4>
+                    <p>Building synthetic awareness and understanding</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+                <div class="card coming-soon">
+                    <div class="card-image">🌍</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Universal Intelligence</h4>
+                    <p>Towards universal intelligence and cosmic consciousness</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+                <div class="card coming-soon">
+                    <div class="card-image">⏰</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>Temporal Consciousness</h4>
+                    <p>Consciousness across temporal dimensions</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+                <div class="card coming-soon">
+                    <div class="card-image">🌟</div>
+                    <div class="coming-soon-badge">Coming soon</div>
+                    <h4>The Singularity</h4>
+                    <p>The convergence of human and artificial consciousness</p>
+                    <a href="#" class="btn-download" style="opacity: 0.5;">📥 Download</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter">
+            <div class="newsletter">
+                <h3>Stay Updated</h3>
+                <p style="margin-bottom: 20px; color: #a0a0a0;">Subscribe to our newsletter for the latest research updates, articles, and conference announcements.</p>
+                <form class="newsletter-form" onsubmit="return handleSubscribe(event)">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Gil SAWAS · NEUROSCIENCE 2026 · Knowledge Library & Research Hub</p>
+            <p style="margin-top: 10px;"><a href="/" style="color: #f4e4c1; text-decoration: none;">← Retour à l'accueil</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function handleSubscribe(event) {
+            event.preventDefault();
+            alert('Merci pour votre intérêt ! Nous traiterons votre inscription bientôt.');
+            event.target.reset();
+            return false;
+        }
+    </script>
 </body>
 </html>
