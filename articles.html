@@ -263,6 +263,45 @@
                 gap: 8px;
             }
         }
+
+        /* Elegant Gold Social Buttons */
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #FFD700, #FFC700, #DAA520);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4), inset -2px -2px 5px rgba(0, 0, 0, 0.3), inset 2px 2px 5px rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-button:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6), inset -2px -2px 5px rgba(0, 0, 0, 0.3), inset 2px 2px 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .social-button:active {
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        .social-icon {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            display: block;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
     </style>
 </head>
 <body>
@@ -304,10 +343,10 @@
         <div class="footer-content">
             <p>&copy; 2026 Gil SAWAS · Hermano de Luz</p>
             <div class="social-links">
-                <a href="https://x.com" title="X (Twitter)" target="_blank">𝕏</a>
-                <a href="https://youtube.com" title="YouTube" target="_blank">▶</a>
-                <a href="https://tiktok.com" title="TikTok" target="_blank">></a>
-                <a href="https://www.facebook.com/sawas.gilles/" class="social-link" title="Facebook" target="_blank">f</a>
+                <a href="https://x.com/gilsawas" class="social-button" title="X (Twitter)" target="_blank"><span class="social-icon">𝕏</span></a>
+                <a href="https://youtube.com/@gilsawas" class="social-button" title="YouTube" target="_blank"><span class="social-icon">▶</span></a>
+                <a href="https://tiktok.com/@gilsawas" class="social-button" title="TikTok" target="_blank"><span class="social-icon">♪</span></a>
+                <a href="https://www.facebook.com/sawas.gilles/" class="social-button" title="Facebook" target="_blank"><span class="social-icon">f</span></a>
             </div>
         </div>
     </footer>
