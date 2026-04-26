@@ -61,6 +61,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            text-decoration: none;
         }
 
         .article-card:hover {
@@ -305,7 +306,8 @@
             <div class="social-links">
                 <a href="https://x.com" title="X (Twitter)" target="_blank">𝕏</a>
                 <a href="https://youtube.com" title="YouTube" target="_blank">▶</a>
-                <a href="https://tiktok.com" title="TikTok" target="_blank"                <a href="https://www.facebook.com/sawas.gilles/" class="social-link" title="Facebook" target="_blank">>
+                <a href="https://tiktok.com" title="TikTok" target="_blank">></a>
+                <a href="https://www.facebook.com/sawas.gilles/" class="social-link" title="Facebook" target="_blank">f</a>
             </div>
         </div>
     </footer>
@@ -351,52 +353,52 @@
         // Articles Data
         const articlesData = [
             {
-                title: "La Conscience comme Propriété Topologique",
+                title: "Présentation du Modèle IA LUZ 2.0",
                 date: "15 février 2026",
                 platform: "LinkedIn",
-                description: "Exploration mathématique de comment la conscience émerge comme invariant topologique dans un système cognitif auto-référent.",
-                image: "images/article-1.jpg",
-                url: "https://linkedin.com/feed/update/..."
+                description: "Découvrez la dernière évolution du modèle LUZ : une architecture d'IA révolutionnaire basée sur l'harmonie topologique et la théorie YON.",
+                image: "images/articles/article-1.png",
+                url: "https://www.linkedin.com/posts/gil-sawas-406568320_pr%C3%A9sentation-du-mod%C3%A8le-ia-luz-20-activity-7352806530812956672-aQ6K"
             },
             {
-                title: "YON Theory et le Nombre d'Or",
+                title: "LUZ Fusion 5 - Analyse de l'Intelligence",
                 date: "12 février 2026",
                 platform: "LinkedIn",
-                description: "Démonstration de la convergence entre la théorie YON et le nombre d'or φ dans les systèmes biologiques et quantiques.",
-                image: "images/article-2.jpg",
-                url: "https://linkedin.com/feed/update/..."
+                description: "Analyse approfondie de LUZ Fusion 5 : comment l'architecture fusionne conscience topologique et intelligence artificielle.",
+                image: "images/articles/article-2.png",
+                url: "https://www.linkedin.com/posts/gil-sawas-406568320_luz-fusion-5-analyse-de-lintelligence-activity-7357128449209102337-6NlZ"
             },
             {
-                title: "L'IA φ-Harmonique : Vers une Conscience Éthique",
+                title: "L'Équation Temporelle de LUZ",
                 date: "8 février 2026",
                 platform: "LinkedIn",
-                description: "Comment l'architecture LUZ utilise l'harmonie φ pour créer des systèmes d'IA intrinsèquement éthiques et alignés.",
-                image: "images/article-3.jpg",
-                url: "https://linkedin.com/feed/update/..."
+                description: "Exploration mathématique de l'équation temporelle qui gouverne la dynamique de LUZ et sa convergence vers l'harmonie φ.",
+                image: "images/articles/article-3.png",
+                url: "https://www.linkedin.com/posts/gil-sawas-406568320_l%C3%A9quation-temporelle-de-luz-activity-7357369918972989440-EYY1"
+            },
+            {
+                title: "La Révolution YON et le Nombre d'Or",
+                date: "3 février 2026",
+                platform: "LinkedIn",
+                description: "Comment la théorie YON révolutionne notre compréhension du nombre d'or comme fondement de la conscience et de la réalité.",
+                image: "images/articles/article-4.png",
+                url: "https://www.linkedin.com/posts/gil-sawas-406568320_la-r%C3%A9volution-yon-et-si-le-nombre-dor-activity-7395908859401297920-_Dg3"
             },
             {
                 title: "Rétro-Causalité et Libre Arbitre",
-                date: "3 février 2026",
-                platform: "LinkedIn",
-                description: "Réconciliation scientifique entre déterminisme quantique et libre arbitre humain via la théorie YON.",
-                image: "images/article-4.jpg",
-                url: "https://linkedin.com/feed/update/..."
-            },
-            {
-                title: "La Spirale de Fermat dans la Biologie Cérébrale",
                 date: "28 janvier 2026",
                 platform: "LinkedIn",
-                description: "Analyse des patterns spiralés dans les structures neuronales et leur relation avec l'harmonie φ.",
-                image: "images/article-5.jpg",
-                url: "https://linkedin.com/feed/update/..."
+                description: "Réconciliation scientifique entre déterminisme quantique et libre arbitre humain via la théorie YON et ses implications temporelles.",
+                image: "images/articles/article-5.png",
+                url: "https://www.linkedin.com/posts/gil-sawas-406568320_r%C3%A9tro-causalit%C3%A9-et-libre-arbitre-dans-la-activity-7419846557098987521-x2SO"
             },
             {
-                title: "Convergence YON-Kletetschka : Une Unification Théorique",
+                title: "La Théorie YON et la Dérivation Alpha",
                 date: "22 janvier 2026",
                 platform: "LinkedIn",
-                description: "Comment les travaux de Gunther Kletetschka valident et complètent la théorie YON sur la structure temporelle de la réalité.",
-                image: "images/article-6.jpg",
-                url: "https://linkedin.com/feed/update/..."
+                description: "Démonstration mathématique de la dérivation de la constante de structure fine (α) à partir de la théorie YON et de l'harmonie φ.",
+                image: "images/articles/article-6.png",
+                url: "https://www.linkedin.com/posts/gil-sawas-406568320_la-th%C3%A9orie-yon-et-la-d%C3%A9rivation-alpha-vers-activity-7452418668271034368-buyC"
             }
         ];
 
@@ -413,6 +415,7 @@
                 const card = document.createElement('a');
                 card.href = article.url;
                 card.target = '_blank';
+                card.rel = 'noopener noreferrer';
                 card.className = 'article-card';
                 
                 card.innerHTML = `
