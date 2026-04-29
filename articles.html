@@ -266,64 +266,47 @@
 
         /* Elegant Gold Social Buttons - 3D Sphere Effect */
         .social-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            display: inline-block;
             width: 65px;
             height: 65px;
             border-radius: 50%;
-            background: radial-gradient(circle at 35% 35%, #FFE135, #FFD700, #FFC700, #DAA520, #B8860B);
-            box-shadow: 
-                0 10px 25px rgba(0, 0, 0, 0.5),
-                inset -4px -4px 10px rgba(0, 0, 0, 0.4),
-                inset 4px 4px 10px rgba(255, 255, 255, 0.3),
-                inset 0 0 20px rgba(0, 0, 0, 0.15);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
             text-decoration: none;
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 3px solid rgba(184, 134, 11, 0.6);
-            position: relative;
+            transition: all 0.3s ease;
             cursor: pointer;
-        }
-
-        .social-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.5), transparent 70%);
-            pointer-events: none;
-            z-index: 0;
+            border: none;
+            padding: 0;
         }
 
         .social-button:hover {
-            transform: translateY(-10px) scale(1.18);
-            box-shadow: 
-                0 18px 40px rgba(0, 0, 0, 0.7),
-                inset -4px -4px 10px rgba(0, 0, 0, 0.4),
-                inset 4px 4px 10px rgba(255, 255, 255, 0.4),
-                inset 0 0 25px rgba(255, 215, 0, 0.4);
+            transform: translateY(-8px) scale(1.12);
+            filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.3));
         }
 
         .social-button:active {
-            transform: translateY(-4px) scale(1.1);
-            box-shadow: 
-                0 8px 18px rgba(0, 0, 0, 0.5),
-                inset -3px -3px 8px rgba(0, 0, 0, 0.3),
-                inset 3px 3px 8px rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        .social-button.twitter {
+            background-image: url('images/social/bouton-x.png');
+        }
+
+        .social-button.youtube {
+            background-image: url('images/social/bouton-youtube.png');
+        }
+
+        .social-button.tiktok {
+            background-image: url('images/social/bouton-tiktok.png');
+        }
+
+        .social-button.facebook {
+            background-image: url('images/social/bouton-facebook.png');
         }
 
         .social-icon {
-            font-size: 32px;
-            font-weight: bold;
-            color: #1a1a1a;
-            display: block;
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            display: none;
         }
 
         .social-links {
@@ -374,10 +357,10 @@
         <div class="footer-content">
             <p>&copy; 2026 Gil SAWAS · Hermano de Luz</p>
             <div class="social-links">
-                <a href="https://x.com/gilsawas" class="social-button" title="X (Twitter)" target="_blank"><span class="social-icon">𝕏</span></a>
-                <a href="https://youtube.com/@gilsawas" class="social-button" title="YouTube" target="_blank"><span class="social-icon">▶</span></a>
-                <a href="https://tiktok.com/@gilsawas" class="social-button" title="TikTok" target="_blank"><span class="social-icon">♪</span></a>
-                <a href="https://www.facebook.com/sawas.gilles/" class="social-button" title="Facebook" target="_blank"><span class="social-icon">f</span></a>
+                <a href="https://x.com/gilsawas" class="social-button twitter" title="X (Twitter)" target="_blank"></a>
+                <a href="https://youtube.com/@gilsawas" class="social-button youtube" title="YouTube" target="_blank"></a>
+                <a href="https://tiktok.com/@gilsawas" class="social-button tiktok" title="TikTok" target="_blank"></a>
+                <a href="https://www.facebook.com/sawas.gilles/" class="social-button facebook" title="Facebook" target="_blank"></a>
             </div>
         </div>
     </footer>
