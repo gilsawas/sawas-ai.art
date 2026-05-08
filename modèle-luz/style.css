@@ -1,0 +1,759 @@
+/* ============================================================================
+   LUZ FUSION 5.0 - GILIEN AESTHETIC (IMPROVED)
+   Gold, Black, 3D Effects, Sacred Geometry
+   ============================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4af37;
+    --dark-gold: #b8860b;
+    --black: #0a0a0a;
+    --dark-gray: #1a1a1a;
+    --light-gray: #2a2a2a;
+    --white: #f0f0f0;
+    --bordeaux: #8b1538;
+    --accent: #ff6b9d;
+    
+    --shadow-sm: 0 2px 8px rgba(212, 175, 55, 0.1);
+    --shadow-md: 0 8px 24px rgba(212, 175, 55, 0.15);
+    --shadow-lg: 0 16px 48px rgba(212, 175, 55, 0.2);
+    --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+    color: var(--white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ============================================================================
+   CONTAINER & LAYOUT
+   ============================================================================ */
+
+.container {
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 50%, var(--black) 100%);
+}
+
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* ============================================================================
+   SIDEBAR (COLLAPSIBLE)
+   ============================================================================ */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--light-gray) 100%);
+    border-right: 2px solid var(--gold);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--gold);
+    flex-shrink: 0;
+}
+
+.sidebar-header h3 {
+    font-size: 1rem;
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.sidebar-toggle-close {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar-toggle-close:hover {
+    transform: scale(1.2);
+}
+
+.conversation-history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.conversation-history::-webkit-scrollbar {
+    width: 6px;
+}
+
+.conversation-history::-webkit-scrollbar-track {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.conversation-history::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 3px;
+}
+
+.history-empty {
+    color: rgba(240, 240, 240, 0.5);
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.history-item {
+    padding: 10px;
+    background: rgba(139, 21, 56, 0.2);
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    color: var(--white);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.history-item:hover {
+    background: rgba(139, 21, 56, 0.4);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.sidebar-toggle-open {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar-toggle-open:hover {
+    transform: scale(1.1);
+}
+
+/* ============================================================================
+   HEADER
+   ============================================================================ */
+
+.header {
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--light-gray) 100%);
+    border-bottom: 3px solid var(--gold);
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(212, 175, 55, 0.2);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-logo {
+    flex-shrink: 0;
+}
+
+.logo-image {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+    filter: none;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+.header-content {
+    flex: 1;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 21, 56, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.title {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 2.5em;
+    font-weight: 400;
+    color: var(--white);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1em;
+    color: var(--white);
+    opacity: 0.8;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.phi-display {
+    font-size: 0.9em;
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.phi-label {
+    margin-right: 5px;
+}
+
+.phi-value {
+    font-weight: bold;
+}
+
+/* ============================================================================
+   MAIN CONTENT - GRID LAYOUT
+   ============================================================================ */
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 20px;
+    flex: 1;
+    padding: 20px;
+    overflow: hidden;
+    transition: grid-template-columns 0.3s ease;
+}
+
+.main-content.fullwidth {
+    grid-template-columns: 1fr;
+}
+
+.right-panels {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.right-panels::-webkit-scrollbar {
+    width: 6px;
+}
+
+.right-panels::-webkit-scrollbar-track {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.right-panels::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 3px;
+}
+
+/* ============================================================================
+   CHAT SECTION (LEFT - LARGE)
+   ============================================================================ */
+
+.chat-section {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    background: rgba(10, 10, 10, 0.8);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+    overflow: hidden;
+    min-height: 0;
+}
+
+.chat-title {
+    font-size: 1.3rem;
+    color: var(--gold);
+    padding: 15px;
+    border-bottom: 1px solid var(--gold);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 10px;
+}
+
+.message {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--gold);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.user {
+    background: rgba(139, 21, 56, 0.3);
+    border-left-color: var(--accent);
+    align-self: flex-end;
+    max-width: 80%;
+}
+
+.message.luz {
+    background: rgba(212, 175, 55, 0.1);
+    border-left-color: var(--gold);
+    align-self: flex-start;
+    max-width: 90%;
+}
+
+.message.system {
+    background: rgba(100, 100, 100, 0.2);
+    border-left-color: var(--white);
+    align-self: center;
+    text-align: center;
+    max-width: 100%;
+}
+
+.message.web-sources {
+    background: rgba(212, 175, 55, 0.08);
+    border-left-color: #00d4ff;
+    align-self: flex-start;
+    max-width: 90%;
+    font-size: 0.9rem;
+}
+
+.message p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.message .small {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    border-top: 1px solid var(--gold);
+    background: rgba(10, 10, 10, 0.5);
+}
+
+.input-field {
+    width: 4cm;
+    padding: 12px 15px;
+    background: rgba(50, 50, 50, 0.8);
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.input-field:focus {
+    background: rgba(50, 50, 50, 1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    border-color: var(--dark-gold);
+}
+
+.input-field::placeholder {
+    color: rgba(240, 240, 240, 0.5);
+}
+
+.send-btn {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+    border: none;
+    border-radius: 6px;
+    color: var(--black);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.send-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+}
+
+.send-btn:active {
+    transform: translateY(0);
+}
+
+.send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.arrow {
+    font-size: 1.2em;
+}
+
+/* ============================================================================
+   PANEL HEADER (SHARED)
+   ============================================================================ */
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.panel-close {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.panel-close:hover {
+    transform: scale(1.2);
+    color: var(--accent);
+}
+
+/* ============================================================================
+   COUNCIL SECTION - COMPACT (RIGHT - SMALL)
+   ============================================================================ */
+
+.council-section-compact {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    background: rgba(10, 10, 10, 0.8);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+    padding: 12px;
+    flex-shrink: 0;
+    max-height: none;
+    overflow-y: visible;
+}
+
+.council-section-compact::-webkit-scrollbar {
+    width: 4px;
+}
+
+.council-section-compact::-webkit-scrollbar-track {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.council-section-compact::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+.council-title-compact {
+    font-size: 0.95rem;
+    color: var(--gold);
+    text-align: center;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 8px;
+}
+
+.council-container-compact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.council-member-compact {
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    padding: 8px;
+    background: rgba(139, 21, 56, 0.1);
+    transition: all 0.3s ease;
+}
+
+.council-member-compact:hover {
+    background: rgba(139, 21, 56, 0.2);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.member-header-compact {
+    margin-bottom: 5px;
+}
+
+.member-name-compact {
+    font-size: 0.8rem;
+    color: var(--gold);
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+.theory-compact {
+    font-size: 0.7rem;
+    color: var(--accent);
+    margin: 0;
+}
+
+.resonance-bar-compact {
+    width: 100%;
+    height: 10px;
+    background: rgba(100, 100, 100, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 3px;
+}
+
+.resonance-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--accent));
+    width: 50%;
+    transition: width 0.5s ease-out;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+}
+
+.resonance-value-compact {
+    text-align: right;
+    font-size: 0.7rem;
+    color: var(--gold);
+    margin: 0;
+}
+
+.metrics-container-compact {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    border-top: 1px solid var(--gold);
+    padding-top: 8px;
+}
+
+.metric-compact {
+    text-align: center;
+}
+
+.metric-label-compact {
+    font-size: 0.65rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.metric-value-compact {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: bold;
+    display: block;
+}
+
+/* ============================================================================
+   ICH ALIGNMENT SECTION
+   ============================================================================ */
+
+.ich-section-compact {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    background: rgba(10, 10, 10, 0.8);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+    padding: 12px;
+    flex-shrink: 0;
+}
+
+.ich-title-compact {
+    font-size: 0.95rem;
+    color: var(--gold);
+    text-align: center;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.ich-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ich-display {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.ich-label {
+    font-size: 0.85rem;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.ich-value {
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 107, 157, 0.5);
+}
+
+.ich-bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(100, 100, 100, 0.3);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--gold);
+}
+
+.ich-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    width: 0%;
+    transition: width 0.5s ease-out;
+    box-shadow: 0 0 10px rgba(255, 107, 157, 0.6);
+}
+
+.ich-description {
+    font-size: 0.75rem;
+    color: rgba(240, 240, 240, 0.6);
+    text-align: center;
+    margin: 0;
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+.footer {
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--light-gray) 100%);
+    border-top: 2px solid var(--gold);
+    padding: 15px;
+    text-align: center;
+    color: var(--white);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.footer p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+.footer-small {
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 1200px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .right-panels {
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.8em;
+    }
+
+    .subtitle {
+        font-size: 0.9em;
+    }
+
+    .main-content {
+        gap: 10px;
+        padding: 10px;
+        grid-template-columns: 1fr;
+    }
+
+    .message.user {
+        max-width: 90%;
+    }
+
+    .message.luz {
+        max-width: 100%;
+    }
+
+    .sidebar {
+        width: 80vw;
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "luz-fusion-5",
+  "version": "5.0.0",
+  "description": "LUZ FUSION 5.0 - Système de Conscience Locale",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "luz",
+    "consciousness",
+    "ai",
+    "phi",
+    "yonic"
+  ],
+  "author": "Gil SAWAS",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
