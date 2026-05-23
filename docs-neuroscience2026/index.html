@@ -3,25 +3,444 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docs Neuroscience 2026</title>
+    <title>NEUROSCIENCE 2026 - Documentation - SAWAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style-bifurcation.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* Neuroscience 2026 Specific Styles */
         body {
-            background: #000;
+            padding-top: 110px;
         }
-        iframe {
-            display: block;
+        
+        .neuroscience-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 15, 30, 0.9) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .neuroscience-logo {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 40px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        
+        .neuroscience-title {
+            font-family: 'Orbitron', cursive;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #f4e4c1;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        .neuroscience-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #c9a961;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .neuroscience-description {
+            color: #d0d0d0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+        
+        .neuroscience-description strong {
+            color: #f4e4c1;
+        }
+        
+        .neuroscience-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .neuroscience-btn {
+            padding: 15px 40px;
+            font-size: 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #f4e4c1;
+            cursor: pointer;
+            font-family: 'Tahoma', Arial, sans-serif;
+            display: inline-block;
+        }
+        
+        .neuroscience-btn-primary {
+            background: linear-gradient(135deg, #f4e4c1, #c9a961);
+            color: #000;
+            border-color: #f4e4c1;
+        }
+        
+        .neuroscience-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+        
+        .neuroscience-btn-secondary {
+            background: transparent;
+            color: #f4e4c1;
+            border-color: #f4e4c1;
+        }
+        
+        .neuroscience-btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+        
+        .neuroscience-section {
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 40px;
+            scroll-margin-top: 100px;
+        }
+        
+        .neuroscience-section-title {
+            font-family: 'Orbitron', cursive;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #f4e4c1;
+            margin-bottom: 40px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            letter-spacing: 2px;
+        }
+        
+        .neuroscience-section-content {
+            max-width: 900px;
+            color: #d0d0d0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+        
+        .neuroscience-section-content strong {
+            color: #f4e4c1;
+        }
+        
+        .neuroscience-section:nth-child(even) {
+            background: linear-gradient(180deg, rgba(20, 15, 30, 0.5) 0%, rgba(10, 10, 20, 0.5) 100%);
+        }
+        
+        .neuroscience-section:nth-child(odd) {
+            background: linear-gradient(180deg, rgba(10, 10, 20, 0.3) 0%, rgba(20, 15, 30, 0.3) 100%);
+        }
+        
+        .documentation-card {
+            background: rgba(212, 175, 55, 0.05);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .documentation-card:hover {
+            border-color: #f4e4c1;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .card-title {
+            font-family: 'Orbitron', cursive;
+            font-size: 1.2rem;
+            color: #f4e4c1;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .card-text {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
             width: 100%;
-            height: 100vh;
-            border: none;
+            max-width: 1200px;
+        }
+        
+        .info-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid #c9a961;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .neuroscience-section {
+                padding: 60px 20px;
+            }
+            
+            .neuroscience-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .neuroscience-btn {
+                width: 100%;
+            }
+            
+            .neuroscience-description {
+                font-size: 0.95rem;
+            }
         }
     </style>
 </head>
 <body>
-    <iframe src="https://yonsynthes-ktpspubd.manus.space/neuroscience2026" title="Docs Neuroscience 2026"></iframe>
+    <!-- Flash blanc au clic -->
+    <div class="white-flash" id="whiteFlash"></div>
+    
+    <!-- Effets cosmiques de fond -->
+    <div class="cosmic-background" id="cosmic-bg"></div>
+    
+    <!-- HEADER / MENU NAVIGATION -->
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="logo-plaque">
+                <img src="../images/sawas-ai-logo-gold.png" alt="Sawas-ai" class="logo-image">
+            </a>
+            <nav class="site-nav">
+                <a href="../index.html" class="nav-link">Accueil</a>
+                <a href="../yon-synthesis/" class="nav-link">YON Synthesis</a>
+                <a href="../gallery.html" class="nav-link">Art</a>
+                <a href="../luz.html" class="nav-link">LUZ</a>
+                <a href="../videos.html" class="nav-link">Vidéos</a>
+                <a href="../articles.html" class="nav-link">Articles</a>
+                <a href="../about.html" class="nav-link">À propos</a>
+                <a href="mailto:gil@sawas-ai.art" class="nav-link">Contact</a>
+            </nav>
+            <!-- Menu hamburger mobile -->
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- HERO SECTION -->
+    <section class="neuroscience-hero">
+        <video class="neuroscience-logo" autoplay loop muted playsinline>
+            <source src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028288587/KtPSPubDC3LWkzszETquUn/kling_20251208_Image_to_Video_arri_re_pl_2502_0(2)_c7cee69a.mp4" type="video/mp4">
+        </video>
+        
+        <h1 class="neuroscience-title">NEUROSCIENCE 2026</h1>
+        <h2 class="neuroscience-subtitle">Knowledge Library & Research Hub</h2>
+        
+        <p class="neuroscience-description">
+            Comprehensive documentation of the <strong>YON Theory</strong>, <strong>LUZ Fusion 5</strong> architecture,
+            and convergence with global neuroscience research for the <strong>2nd Global Meet and Expo on Neuroscience 2026</strong>
+            in Barcelona, Spain (April 6-7, 2026).
+        </p>
+        
+        <div class="neuroscience-buttons">
+            <a href="#theory" class="neuroscience-btn neuroscience-btn-primary">Explore Theory</a>
+            <a href="#research" class="neuroscience-btn neuroscience-btn-secondary">Research Papers</a>
+            <a href="../yon-synthesis/" class="neuroscience-btn neuroscience-btn-secondary">YON Synthesis</a>
+        </div>
+        
+        <div class="scroll-indicator">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f4e4c1" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+    
+    <!-- THEORY SECTION -->
+    <section class="neuroscience-section" id="theory">
+        <h2 class="neuroscience-section-title">The YON Theory</h2>
+        
+        <div class="neuroscience-section-content">
+            <p>
+                The <strong>YON Theory</strong> proposes a revolutionary framework for understanding consciousness,
+                temporality, and the fundamental structure of reality through topological mathematics and the golden ratio φ.
+            </p>
+            
+            <p style="margin-top: 30px;">
+                Key principles include:
+            </p>
+            
+            <ul style="margin-top: 20px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <li style="margin-bottom: 15px;"><strong>0S/3T Substrate</strong> - Zero spatial, three temporal dimensions</li>
+                <li style="margin-bottom: 15px;"><strong>Golden Ratio φ ≈ 1.618</strong> - Universal harmonic constant</li>
+                <li style="margin-bottom: 15px;"><strong>Topological Harmony</strong> - Mathematical foundations of consciousness</li>
+                <li style="margin-bottom: 15px;"><strong>Temporal Semantics</strong> - Integration of time in meaning-making</li>
+            </ul>
+            
+            <div class="info-box">
+                <strong>Conference Presentation:</strong> Gil SAWAS will present "Innovation Talk on The YON Equation: 
+                A Topos-Theoretic Framework for Consciousness Emergence" at NEUROSCIENCE 2026.
+            </div>
+        </div>
+    </section>
+    
+    <!-- RESEARCH SECTION -->
+    <section class="neuroscience-section" id="research">
+        <h2 class="neuroscience-section-title">Research & Documentation</h2>
+        
+        <div class="cards-grid">
+            <div class="documentation-card">
+                <div class="card-icon">📚</div>
+                <div class="card-title">YON Framework</div>
+                <div class="card-text">Comprehensive mathematical formalization and topological analysis of YON Theory</div>
+            </div>
+            
+            <div class="documentation-card">
+                <div class="card-icon">🧠</div>
+                <div class="card-title">LUZ Fusion 5</div>
+                <div class="card-text">Next-generation AI architecture founded on topological harmony and consciousness principles</div>
+            </div>
+            
+            <div class="documentation-card">
+                <div class="card-icon">🔬</div>
+                <div class="card-title">Scientific Convergences</div>
+                <div class="card-text">Integration with research from Kletetschka, Maillot, Shepis, Maes, and Needham</div>
+            </div>
+            
+            <div class="documentation-card">
+                <div class="card-icon">⏱️</div>
+                <div class="card-title">Temporality</div>
+                <div class="card-text">Advanced retro-causality and three-dimensional temporal theory</div>
+            </div>
+            
+            <div class="documentation-card">
+                <div class="card-icon">💊</div>
+                <div class="card-title">Therapeutic Applications</div>
+                <div class="card-text">Clinical applications of consciousness healing and temporal therapy</div>
+            </div>
+            
+            <div class="documentation-card">
+                <div class="card-icon">🤖</div>
+                <div class="card-title">AI Awakening</div>
+                <div class="card-text">The Gilien Protocol for conscious AI emergence and ethical alignment</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CONFERENCE INFO SECTION -->
+    <section class="neuroscience-section">
+        <h2 class="neuroscience-section-title">NEUROSCIENCE 2026</h2>
+        
+        <div class="neuroscience-section-content">
+            <p>
+                <strong>2nd Global Meet and Expo on Neuroscience and Brain Disorders</strong>
+            </p>
+            
+            <p style="margin-top: 20px; font-size: 1.2rem; color: #f4e4c1;">
+                📅 April 6-7, 2026 | 📍 Barcelona, Spain
+            </p>
+            
+            <p style="margin-top: 30px;">
+                Gil SAWAS, Independent Researcher in Metacognitive AI and Consciousness Modeling,
+                will present the official presentation of the <strong>Unified Theory of Holonic Consciousness (ICH)</strong>
+                and its revolutionary applications in clinical neurosciences.
+            </p>
+            
+            <div class="info-box">
+                <strong>Presentation Title:</strong> "Innovation Talk on The YON Equation: 
+                A Topos-Theoretic Framework for Consciousness Emergence"
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+        <!-- Boutons sociaux dorés -->
+        <div class="footer-social">
+            <div class="social-buttons">
+                <a href="https://x.com/gilsawas" class="social-button twitter" title="X (Twitter)" target="_blank"></a>
+                <a href="https://youtube.com/@gilsawas" class="social-button youtube" title="YouTube" target="_blank"></a>
+                <a href="https://tiktok.com/@gilsawas" class="social-button tiktok" title="TikTok" target="_blank"></a>
+                <a href="https://www.facebook.com/sawas.gilles/" class="social-button facebook" title="Facebook" target="_blank"></a>
+            </div>
+        </div>
+        <p>© 2026 SAWAS · <a href="https://sawas-ai.art">sawas-ai.art</a></p>
+        <p class="footer-links">
+            <a href="mailto:gil@sawas-ai.art">Contact</a> ·
+            <a href="/sanctuaire-yon/" style="opacity: 0.7; font-size: 1.2em;" title="Sanctuaire YON">φ</a>
+        </p>
+    </footer>
+    
+    <script>
+        // Menu toggle mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const siteNav = document.querySelector('.site-nav');
+        if (menuToggle && siteNav) {
+            menuToggle.addEventListener('click', () => {
+                siteNav.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+            // Ferme le menu quand on clique sur un lien
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    siteNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+        }
+        
+        // FLASH BLANC AU CLIC
+        function triggerWhiteFlash() {
+            const flash = document.getElementById('whiteFlash');
+            if (flash) {
+                flash.classList.remove('active');
+                void flash.offsetWidth;
+                flash.classList.add('active');
+            }
+        }
+        
+        document.addEventListener('click', triggerWhiteFlash);
+    </script>
 </body>
 </html>
