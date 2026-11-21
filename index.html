@@ -507,12 +507,12 @@
 
         .hero-video-left {
             position: relative;
-            top: auto;
+            top: 24px;
             left: auto;
             transform: none;
             width: min(100%, 360px);
             height: auto;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 16 / 9;
             object-fit: cover;
             border-radius: 20px;
             filter: brightness(0.95);
@@ -526,6 +526,13 @@
             right: 0;
             text-align: center;
             z-index: 2;
+        }
+
+        .hero-video-actions {
+            position: relative;
+            z-index: 3;
+            margin-top: 24px;
+            text-align: center;
         }
 
         .hero-right-overlay {
@@ -861,7 +868,7 @@
             width: 100%;
             max-width: 360px;
             height: auto;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 16 / 9;
             object-fit: cover;
             border-radius: 20px;
             box-shadow: 0 8px 30px rgba(0, 150, 255, 0.3);
@@ -1025,7 +1032,7 @@
             <video class="hero-video-left" autoplay loop muted playsinline>
                 <source src="videos/gil_through_time_FINAL_v3.mp4" type="video/mp4">
             </video>
-            <div style="text-align: center; margin-top: 80px;">
+            <div class="hero-video-actions">
                 <a href="videos.html" class="hero-button">Voir les vidéos</a>
             </div>
         </div>
