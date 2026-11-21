@@ -183,7 +183,7 @@
            BANNER NEUROSCIENCE
            ======================================== */
         .neuroscience-banner {
-            margin-top: 40px;
+            margin-top: 120px;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
@@ -466,7 +466,8 @@
         .hero-triple {
             position: relative;
             width: 100%;
-            height: 480px;
+            height: 520px;
+            margin-top: 130px;
             display: grid;
             grid-template-columns: 0.9fr 1.2fr 1fr;
             overflow: visible !important;
@@ -505,17 +506,17 @@
         }
 
         .hero-video-left {
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            height: 90%;
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            width: min(100%, 360px);
+            height: auto;
+            aspect-ratio: 1 / 1;
             object-fit: cover;
             border-radius: 20px;
             filter: brightness(0.95);
-            max-width: 400px;
-            max-height: 250px;
+            max-width: 360px;
         }
 
         .hero-left-overlay {
@@ -591,8 +592,9 @@
         }
 
         .logo-luz-animation {
-            width: 280px;
-            height: 280px;
+            width: min(280px, 90%);
+            height: auto;
+            aspect-ratio: 1 / 1;
             margin: 0 auto 0.5rem auto;
             position: relative;
             z-index: 1;
@@ -603,7 +605,8 @@
         .logo-luz-animation video {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
             background: #000;
         }
 
@@ -622,8 +625,8 @@
         .art-gallery-slideshow {
             width: 100%;
             max-width: 350px;
-            height: clamp(250px, 38vh, 360px);
-            max-height: 360px;
+            height: auto;
+            aspect-ratio: 1 / 1;
             position: relative;
             border-radius: 8px;
             overflow: hidden;
@@ -636,7 +639,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            max-height: 360px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
             background-size: cover;
             background-position: center;
             opacity: 0;
@@ -855,9 +859,10 @@
         .hero-left video,
         .hero-video-left {
             width: 100%;
-            max-width: 600px;
+            max-width: 360px;
             height: auto;
-            object-fit: contain; /* Garde proportions originales */
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
             border-radius: 20px;
             box-shadow: 0 8px 30px rgba(0, 150, 255, 0.3);
         }
@@ -1011,7 +1016,7 @@
     <!-- ========================================
          HERO SECTION - TRIPLE LAYOUT
          ======================================== -->
-    <section class="hero-triple" style="margin-top: 90px;">
+    <section class="hero-triple">
         <!-- Gradient Background -->
         <div class="gradient-background"></div>
 
