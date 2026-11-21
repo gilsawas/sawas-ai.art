@@ -1,0 +1,146 @@
+/* Shared SAWAS navigation — identical red/gold treatment across all pages. */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 110px;
+    min-height: 110px;
+    padding: 10px 30px;
+    background: linear-gradient(135deg, #b22222, #8b0000);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+}
+.site-header .header-content {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.site-header .logo-plaque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 380px;
+    height: 90px;
+    padding: 10px 25px;
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a, #111);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 3px rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+.site-header .logo-plaque::before,
+.site-header .logo-plaque::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c9a961, #ffc87c);
+}
+.site-header .logo-plaque::before { left: 10px; }
+.site-header .logo-plaque::after { right: 10px; }
+.site-header .logo-plaque img {
+    width: auto;
+    height: 78px;
+    max-width: 300px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+.site-header .site-nav,
+.site-header .main-nav,
+.site-header .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+    flex-wrap: nowrap;
+}
+.site-header .site-nav a,
+.site-header .main-nav a,
+.site-header .nav-menu a,
+.site-header .nav-link {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+.site-header .site-nav a:hover,
+.site-header .main-nav a:hover,
+.site-header .nav-menu a:hover,
+.site-header .nav-link:hover {
+    color: #fff8dc;
+    background: #b8860b;
+    border-bottom: 3px solid #f4e4c1;
+    padding-bottom: 5px;
+}
+.site-header .site-nav a.active,
+.site-header .main-nav a.active,
+.site-header .nav-menu a.active,
+.site-header .nav-link.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.25);
+    font-weight: 600;
+}
+.site-header .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+.site-header .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #c9a961;
+    border-radius: 2px;
+}
+@media (max-width: 1100px) {
+    .site-header .logo-plaque { width: 250px; }
+    .site-header .site-nav a,
+    .site-header .main-nav a,
+    .site-header .nav-menu a { font-size: 12px; padding: 7px 9px; }
+}
+@media (max-width: 767px) {
+    .site-header { height: 72px; min-height: 72px; padding: 5px 15px; }
+    .site-header .logo-plaque { width: 150px; height: 58px; padding: 5px 12px; }
+    .site-header .logo-plaque img { height: 48px; }
+    .site-header .menu-toggle { display: flex; }
+    .site-header .site-nav,
+    .site-header .main-nav,
+    .site-header .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 1rem 0;
+        flex-direction: column;
+        background: linear-gradient(135deg, #b22222, #8b0000);
+    }
+    .site-header .site-nav.active,
+    .site-header .main-nav.active,
+    .site-header .nav-menu.active { display: flex; }
+    .site-header .site-nav a,
+    .site-header .main-nav a,
+    .site-header .nav-menu a { width: 100%; text-align: center; padding: 1rem; }
+}
