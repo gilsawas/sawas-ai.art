@@ -94,8 +94,9 @@
 .site-header .main-nav a.active,
 .site-header .nav-menu a.active,
 .site-header .nav-link.active {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.25);
+    color: #1a1a1a;
+    background: #b8860b;
+    border-bottom: 3px solid #c5a059;
     font-weight: 600;
 }
 .site-header .menu-toggle {
