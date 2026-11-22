@@ -96,8 +96,19 @@
 .site-header .nav-link.active {
     color: #ffffff;
     background: transparent;
-    border-bottom: 0;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 4px 8px;
+    border-radius: 4px;
     font-weight: 600;
+}
+.site-header .site-nav a.active:hover,
+.site-header .main-nav a.active:hover,
+.site-header .nav-menu a.active:hover,
+.site-header .nav-link.active:hover {
+    color: #ffffff;
+    background: transparent;
+    border-bottom: 3px solid #ffffff;
+    padding-bottom: 5px;
 }
 .site-header .menu-toggle {
     display: none;
