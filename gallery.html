@@ -32,16 +32,14 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 60px 20px;
-            padding-top: calc(60px + 70px); /* Compense hauteur header */
+            padding-top: 30px;
         }
         
         /* Proteger le site-header du CSS inline */
         .site-header {
             display: flex !important;
-            position: fixed !important;
+            position: sticky !important;
             top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
             z-index: 1000 !important;
             height: 110px !important;
             background: linear-gradient(135deg, #b22222, #8b0000) !important;
