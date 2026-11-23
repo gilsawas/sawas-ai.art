@@ -39,6 +39,8 @@ jobs:
           name: github-pages
           # Upload entire repository
           path: '.'
+      - name: Wait for artifact registration
+        run: sleep 20
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
