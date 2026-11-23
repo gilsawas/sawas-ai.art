@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style-bifurcation.css">
 
     <style>
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -19,7 +19,7 @@
         
         body {
             font-family: 'Tahoma', Arial, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            background: #000000;
             color: #e0e0e0;
             line-height: 1.8;
         }
@@ -28,17 +28,15 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 60px 20px;
-            padding-top: calc(60px + 70px); /* Compense hauteur header */
+            padding-top: 30px;
         }
         
         /* Proteger le site-header du CSS inline */
         .site-header {
             display: flex !important;
-            position: fixed !important;
+            position: relative !important;
             top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            z-index: 1000 !important;
+            z-index: 1100 !important;
             height: 110px !important;
             background: linear-gradient(135deg, #b22222, #8b0000) !important;
             align-items: center !important;
@@ -439,4 +437,3 @@
     </script>
 </body>
 </html>
-
