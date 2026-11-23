@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="style-bifurcation.css">
 
     <style>
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -37,9 +37,8 @@
         /* Proteger le site-header du CSS inline */
         .site-header {
             display: flex !important;
-            position: sticky !important;
-            top: 0 !important;
-            z-index: 1000 !important;
+            position: relative !important;
+            z-index: 1100 !important;
             height: 110px !important;
             background: linear-gradient(135deg, #b22222, #8b0000) !important;
             align-items: center !important;
